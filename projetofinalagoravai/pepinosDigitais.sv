@@ -8,10 +8,10 @@ module pepinosDigitais (
     output logic      [9:0] vga_g,      // 10-bit VGA green
     output logic      [9:0] vga_b,      // 10-bit VGA blue
     output logic            clock_25M,  // 25 MHz clock for the VGA DAC
-    output logic            vga_blank  // VGA DAC blank pin
-//	 input logic				select,		 // botões
-//	 input logic				move_x,
-//	 input logic				move_y
+    output logic            vga_blank,  // VGA DAC blank pin
+	 input logic				select,		 // botões
+	 input logic				move_x,
+	 input logic				move_y
 );
   parameter SCREEN_WIDTH = 10'd640;
   parameter SCREEN_HEIGHT = 10'd480;
@@ -62,6 +62,10 @@ module pepinosDigitais (
 	parameter LARGURA_CARTA = 104;
 	parameter ALTURA_CARTA = 95;
 	parameter ESPACAMENTO_CARTAS = 20;
+	parameter OFFSET = 26;
+	
+	int pos = 0;
+	
 	
 	integer PAR_CARTAS_1[2:0] = '{COLOR_CYAN_r, COLOR_CYAN_g, COLOR_CYAN_b};
 	integer PAR_CARTAS_2[2:0] = '{COLOR_YELLOW_r, COLOR_YELLOW_g, COLOR_YELLOW_b};
@@ -100,7 +104,7 @@ module pepinosDigitais (
 		de
 	);
   
-	int cardOrder[20] = '{7, 4, 16, 6, 18, 19, 5, 17, 2, 0, 10, 9, 12, 8,	11, 3, 1, 13, 15, 14};
+	int cardOrder[20] = '{7, 4, 16, 6, 18, 19, 5, 17, 2, 0, 10, 9, 12, 8, 11, 3, 1, 13, 15, 14};
 //	randomizer instancia_randomizer (
 //		cardOrder
 //	);
@@ -121,11 +125,10 @@ module pepinosDigitais (
 
   
   
-  logic [9:0] paint_r, paint_g, paint_b;
-
-	int pos;
+	logic [9:0] paint_r, paint_g, paint_b;
+	int cardPos;
   
-  always_comb begin
+	always_comb begin
   
    paint_r = COLOR_BLACK;
 	paint_g = COLOR_BLACK;
@@ -154,14 +157,13 @@ module pepinosDigitais (
 //	end
 //  end
 	
-	pos = 0;
+	cardPos = 0;
   for(int i=0;i<5;i++) begin
-	for(int j=0;j<2;j++) begin
+	for(int j=0;j<4;j++) begin
 		if (sx > POSX_CARTA[i] && sx < (POSX_CARTA[i]+LARGURA_CARTA) && sy > POSY_CARTA[j] && sy < (POSY_CARTA[j]+ALTURA_CARTA)) begin
-			pos = i + j*5;
-
-			
-			case(cardOrder[pos])
+			cardPos = 4*i +j;
+		
+			case(cardOrder[cardPos])
 				0, 1: begin
 						paint_r = COLOR_LIME_r;
 						paint_g = COLOR_LIME_g;
@@ -218,12 +220,37 @@ module pepinosDigitais (
 						paint_b = COLOR_BLACK;
 					end 
 			endcase
+			
+			if(cardPos == pos) begin
+				if (sx > (POSX_CARTA[i]+OFFSET) && sx < (POSX_CARTA[i]+LARGURA_CARTA-OFFSET) && sy > (POSY_CARTA[j]+OFFSET) && sy < (POSY_CARTA[j]+ALTURA_CARTA-OFFSET)) begin
+						paint_r = COLOR_WHITE;
+						paint_g = COLOR_WHITE;
+						paint_b = COLOR_WHITE;
+				end
+			end
+		
 		end
 	end
 	//PAINTING = PAINTING+4;
 	
   end
  end
+ 
+	always_ff @ (posedge clock_50M) begin
+		if (move_y) begin
+			if(((pos+1) % 4) == 0)
+				pos = pos - 3;
+			else
+				pos++;
+		end
+		
+		if (move_x) begin
+			if(pos < 4)
+				pos = pos + 16;
+			else
+				pos = pos - 4;
+		end
+	end
   
  
   // VGA signal output
