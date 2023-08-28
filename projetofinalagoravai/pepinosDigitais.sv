@@ -80,8 +80,14 @@ module pepinosDigitais (
       sy,
       hsync,
       vsync,
-      de
-  );
+		de
+	);
+  
+	int cardOrder[20];
+	randomizer instancia_randomizer (
+		cardOrder
+	);
+  
 	
 	
   logic frame;  // high for one clock tick at the start of vertical blanking
@@ -100,6 +106,7 @@ module pepinosDigitais (
   
   logic [9:0] paint_r, paint_g, paint_b;
 
+	int pos;
   
   always_comb begin
   
@@ -107,16 +114,16 @@ module pepinosDigitais (
 	paint_g = COLOR_BLACK;
 	paint_b = COLOR_BLACK;
 	
-	CARTAS[0][2:0] = '{COLOR_CYAN_r, COLOR_CYAN_g, COLOR_CYAN_b};
-	CARTAS[1][2:0] = '{COLOR_YELLOW_r, COLOR_YELLOW_g, COLOR_YELLOW_b};
-	CARTAS[2][2:0] = '{COLOR_MAGENTA_r, COLOR_MAGENTA_g, COLOR_MAGENTA_b};
-	CARTAS[3][2:0] = '{COLOR_BLUE_r, COLOR_BLUE_g, COLOR_BLUE_b};
-	CARTAS[4][2:0] = '{COLOR_LIME_r, COLOR_LIME_g, COLOR_LIME_b};
-	CARTAS[5][2:0] = '{COLOR_RED_r, COLOR_RED_g, COLOR_RED_b};
-	CARTAS[6][2:0] = '{COLOR_RED_r, COLOR_RED_g, COLOR_RED_b};
-	CARTAS[7][2:0] = '{COLOR_RED_r, COLOR_RED_g, COLOR_RED_b};
-	CARTAS[8][2:0] = '{COLOR_RED_r, COLOR_RED_g, COLOR_RED_b};
-	CARTAS[9][2:0] = '{COLOR_RED_r, COLOR_RED_g, COLOR_RED_b};
+//	CARTAS[0][2:0] = '{COLOR_CYAN_r, COLOR_CYAN_g, COLOR_CYAN_b};
+//	CARTAS[1][2:0] = '{COLOR_YELLOW_r, COLOR_YELLOW_g, COLOR_YELLOW_b};
+//	CARTAS[2][2:0] = '{COLOR_MAGENTA_r, COLOR_MAGENTA_g, COLOR_MAGENTA_b};
+//	CARTAS[3][2:0] = '{COLOR_BLUE_r, COLOR_BLUE_g, COLOR_BLUE_b};
+//	CARTAS[4][2:0] = '{COLOR_LIME_r, COLOR_LIME_g, COLOR_LIME_b};
+//	CARTAS[5][2:0] = '{COLOR_RED_r, COLOR_RED_g, COLOR_RED_b};
+//	CARTAS[6][2:0] = '{COLOR_RED_r, COLOR_RED_g, COLOR_RED_b};
+//	CARTAS[7][2:0] = '{COLOR_RED_r, COLOR_RED_g, COLOR_RED_b};
+//	CARTAS[8][2:0] = '{COLOR_RED_r, COLOR_RED_g, COLOR_RED_b};
+//	CARTAS[9][2:0] = '{COLOR_RED_r, COLOR_RED_g, COLOR_RED_b};
 	
 	PAINTING = 0;
 //  for(int i=0;i<5;i++) begin
@@ -130,37 +137,48 @@ module pepinosDigitais (
 //	end
 //  end
 	
+	pos = 0;
   for(int i=0;i<5;i++) begin
 	for(int j=0;j<2;j++) begin
 		if (sx > POSX_CARTA[i] && sx < (POSX_CARTA[i]+LARGURA_CARTA) && sy > POSY_CARTA[j] && sy < (POSY_CARTA[j]+ALTURA_CARTA)) begin
-			paint_r = CARTAS[i+j][0];
-			paint_g = CARTAS[i+j][1];
-			paint_b = CARTAS[i+j][2];
+			pos = i + j*5;
+			
+			if(cardOrder[pos] == 9) begin
+				paint_r = COLOR_LIME_r;
+				paint_g = COLOR_LIME_g;
+				paint_b = COLOR_LIME_b;
+			end else begin 
+				paint_r = COLOR_MAGENTA_r;
+				paint_g = COLOR_MAGENTA_g;
+				paint_b = COLOR_MAGENTA_b;
+			end
+//			paint_r = CARTAS[i+j][0];
+//			paint_g = CARTAS[i+j][1];
+//			paint_b = CARTAS[i+j][2];
 		end
 	end
 	//PAINTING = PAINTING+4;
 	
   end
-  
-  end
+ end
   
  
   // VGA signal output
-  always_ff @(posedge clock_25M) begin
-    vga_hsync = hsync;
-    vga_vsync = vsync;
+	always_ff @(posedge clock_25M) begin
+		vga_hsync = hsync;
+		vga_vsync = vsync;
 
-    if (de) begin
-      vga_r = paint_r;
-      vga_g = paint_g;
-      vga_b = paint_b;
-    end else begin  // VGA colour should be black in blanking interval
-      vga_r = 10'h0;
-      vga_g = 10'h0;
-      vga_b = 10'h0;
-    end
+		if (de) begin
+			vga_r = paint_r;
+			vga_g = paint_g;
+			vga_b = paint_b;
+		end else begin  // VGA colour should be black in blanking interval
+			vga_r = 10'h0;
+			vga_g = 10'h0;
+			vga_b = 10'h0;
+		end
 
 
-  end
+	end
 endmodule
 

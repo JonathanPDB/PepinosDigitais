@@ -89,4 +89,5 @@ set_location_assignment PIN_F10 -to vga_r[1]
 set_location_assignment PIN_C8 -to vga_r[0]
 set_location_assignment PIN_D8 -to vga_vsync
 set_global_assignment -name SYSTEMVERILOG_FILE cardPair.sv
+set_global_assignment -name SYSTEMVERILOG_FILE randomizer.sv
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
