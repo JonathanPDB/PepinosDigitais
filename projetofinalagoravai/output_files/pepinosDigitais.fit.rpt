@@ -1,5 +1,5 @@
 Fitter report for pepinosDigitais
-Mon Aug 28 18:29:46 2023
+Mon Aug 28 19:04:58 2023
 Quartus II 64-Bit Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Web Edition
 
 
@@ -20,25 +20,26 @@ Quartus II 64-Bit Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Web Editio
  12. Output Pins
  13. I/O Bank Usage
  14. All Package Pins
- 15. Output Pin Default Load For Reported TCO
- 16. Fitter Resource Utilization by Entity
- 17. Delay Chain Summary
- 18. Pad To Core Delay Chain Fanout
- 19. Control Signals
- 20. Global & Other Fast Signals
- 21. Non-Global High Fan-Out Signals
- 22. Other Routing Usage Summary
- 23. LAB Logic Elements
- 24. LAB-wide Signals
- 25. LAB Signals Sourced
- 26. LAB Signals Sourced Out
- 27. LAB Distinct Inputs
- 28. Fitter Device Options
- 29. Operating Settings and Conditions
- 30. Estimated Delay Added for Hold Timing Summary
- 31. Estimated Delay Added for Hold Timing Details
- 32. Fitter Messages
- 33. Fitter Suppressed Messages
+ 15. Clock Delay Control Summary
+ 16. Output Pin Default Load For Reported TCO
+ 17. Fitter Resource Utilization by Entity
+ 18. Delay Chain Summary
+ 19. Pad To Core Delay Chain Fanout
+ 20. Control Signals
+ 21. Global & Other Fast Signals
+ 22. Non-Global High Fan-Out Signals
+ 23. Other Routing Usage Summary
+ 24. LAB Logic Elements
+ 25. LAB-wide Signals
+ 26. LAB Signals Sourced
+ 27. LAB Signals Sourced Out
+ 28. LAB Distinct Inputs
+ 29. Fitter Device Options
+ 30. Operating Settings and Conditions
+ 31. Estimated Delay Added for Hold Timing Summary
+ 32. Estimated Delay Added for Hold Timing Details
+ 33. Fitter Messages
+ 34. Fitter Suppressed Messages
 
 
 
@@ -64,17 +65,17 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                     ;
 +------------------------------------+-----------------------------------------------+
-; Fitter Status                      ; Successful - Mon Aug 28 18:29:46 2023         ;
+; Fitter Status                      ; Successful - Mon Aug 28 19:04:58 2023         ;
 ; Quartus II 64-Bit Version          ; 12.1 Build 243 01/31/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; pepinosDigitais                               ;
 ; Top-level Entity Name              ; pepinosDigitais                               ;
 ; Family                             ; Cyclone II                                    ;
 ; Device                             ; EP2C35F672C6                                  ;
 ; Timing Models                      ; Final                                         ;
-; Total logic elements               ; 614 / 33,216 ( 2 % )                          ;
-;     Total combinational functions  ; 596 / 33,216 ( 2 % )                          ;
-;     Dedicated logic registers      ; 53 / 33,216 ( < 1 % )                         ;
-; Total registers                    ; 53                                            ;
+; Total logic elements               ; 1,125 / 33,216 ( 3 % )                        ;
+;     Total combinational functions  ; 1,105 / 33,216 ( 3 % )                        ;
+;     Dedicated logic registers      ; 93 / 33,216 ( < 1 % )                         ;
+; Total registers                    ; 93                                            ;
 ; Total pins                         ; 38 / 475 ( 8 % )                              ;
 ; Total virtual pins                 ; 0                                             ;
 ; Total memory bits                  ; 0 / 483,840 ( 0 % )                           ;
@@ -151,8 +152,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Type                ; Value                  ;
 +---------------------+------------------------+
 ; Placement (by node) ;                        ;
-;     -- Requested    ; 0 / 693 ( 0.00 % )     ;
-;     -- Achieved     ; 0 / 693 ( 0.00 % )     ;
+;     -- Requested    ; 0 / 1244 ( 0.00 % )    ;
+;     -- Achieved     ; 0 / 1244 ( 0.00 % )    ;
 ;                     ;                        ;
 ; Routing (by net)    ;                        ;
 ;     -- Requested    ; 0 / 0 ( 0.00 % )       ;
@@ -175,7 +176,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
 ; Partition Name                 ; # Nodes ; # Preserved Nodes ; Preservation Level Used ; Netlist Type Used ;
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
-; Top                            ; 690     ; 0                 ; N/A                     ; Source File       ;
+; Top                            ; 1241    ; 0                 ; N/A                     ; Source File       ;
 ; hard_block:auto_generated_inst ; 3       ; 0                 ; N/A                     ; Source File       ;
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
 
@@ -186,52 +187,52 @@ Parallel compilation was disabled, but you have multiple processors available. E
 The pin-out file can be found in C:/Users/brown/OneDrive/UFRGS/11º Semestre/PepinosDigitais/projetofinalagoravai/output_files/pepinosDigitais.pin.
 
 
-+---------------------------------------------------------------------+
-; Fitter Resource Usage Summary                                       ;
-+---------------------------------------------+-----------------------+
-; Resource                                    ; Usage                 ;
-+---------------------------------------------+-----------------------+
-; Total logic elements                        ; 614 / 33,216 ( 2 % )  ;
-;     -- Combinational with no register       ; 561                   ;
-;     -- Register only                        ; 18                    ;
-;     -- Combinational with a register        ; 35                    ;
-;                                             ;                       ;
-; Logic element usage by number of LUT inputs ;                       ;
-;     -- 4 input functions                    ; 313                   ;
-;     -- 3 input functions                    ; 86                    ;
-;     -- <=2 input functions                  ; 197                   ;
-;     -- Register only                        ; 18                    ;
-;                                             ;                       ;
-; Logic elements by mode                      ;                       ;
-;     -- normal mode                          ; 460                   ;
-;     -- arithmetic mode                      ; 136                   ;
-;                                             ;                       ;
-; Total registers*                            ; 53 / 34,593 ( < 1 % ) ;
-;     -- Dedicated logic registers            ; 53 / 33,216 ( < 1 % ) ;
-;     -- I/O registers                        ; 0 / 1,377 ( 0 % )     ;
-;                                             ;                       ;
-; Total LABs:  partially or completely used   ; 47 / 2,076 ( 2 % )    ;
-; Virtual pins                                ; 0                     ;
-; I/O pins                                    ; 38 / 475 ( 8 % )      ;
-;     -- Clock pins                           ; 1 / 8 ( 13 % )        ;
-;                                             ;                       ;
-; Global signals                              ; 2                     ;
-; M4Ks                                        ; 0 / 105 ( 0 % )       ;
-; Total block memory bits                     ; 0 / 483,840 ( 0 % )   ;
-; Total block memory implementation bits      ; 0 / 483,840 ( 0 % )   ;
-; Embedded Multiplier 9-bit elements          ; 0 / 70 ( 0 % )        ;
-; PLLs                                        ; 0 / 4 ( 0 % )         ;
-; Global clocks                               ; 2 / 16 ( 13 % )       ;
-; JTAGs                                       ; 0 / 1 ( 0 % )         ;
-; ASMI blocks                                 ; 0 / 1 ( 0 % )         ;
-; CRC blocks                                  ; 0 / 1 ( 0 % )         ;
-; Average interconnect usage (total/H/V)      ; 0% / 0% / 0%          ;
-; Peak interconnect usage (total/H/V)         ; 6% / 5% / 6%          ;
-; Maximum fan-out                             ; 77                    ;
-; Highest non-global fan-out                  ; 77                    ;
-; Total fan-out                               ; 2071                  ;
-; Average fan-out                             ; 2.92                  ;
-+---------------------------------------------+-----------------------+
++----------------------------------------------------------------------+
+; Fitter Resource Usage Summary                                        ;
++---------------------------------------------+------------------------+
+; Resource                                    ; Usage                  ;
++---------------------------------------------+------------------------+
+; Total logic elements                        ; 1,125 / 33,216 ( 3 % ) ;
+;     -- Combinational with no register       ; 1032                   ;
+;     -- Register only                        ; 20                     ;
+;     -- Combinational with a register        ; 73                     ;
+;                                             ;                        ;
+; Logic element usage by number of LUT inputs ;                        ;
+;     -- 4 input functions                    ; 589                    ;
+;     -- 3 input functions                    ; 178                    ;
+;     -- <=2 input functions                  ; 338                    ;
+;     -- Register only                        ; 20                     ;
+;                                             ;                        ;
+; Logic elements by mode                      ;                        ;
+;     -- normal mode                          ; 833                    ;
+;     -- arithmetic mode                      ; 272                    ;
+;                                             ;                        ;
+; Total registers*                            ; 93 / 34,593 ( < 1 % )  ;
+;     -- Dedicated logic registers            ; 93 / 33,216 ( < 1 % )  ;
+;     -- I/O registers                        ; 0 / 1,377 ( 0 % )      ;
+;                                             ;                        ;
+; Total LABs:  partially or completely used   ; 79 / 2,076 ( 4 % )     ;
+; Virtual pins                                ; 0                      ;
+; I/O pins                                    ; 38 / 475 ( 8 % )       ;
+;     -- Clock pins                           ; 1 / 8 ( 13 % )         ;
+;                                             ;                        ;
+; Global signals                              ; 3                      ;
+; M4Ks                                        ; 0 / 105 ( 0 % )        ;
+; Total block memory bits                     ; 0 / 483,840 ( 0 % )    ;
+; Total block memory implementation bits      ; 0 / 483,840 ( 0 % )    ;
+; Embedded Multiplier 9-bit elements          ; 0 / 70 ( 0 % )         ;
+; PLLs                                        ; 0 / 4 ( 0 % )          ;
+; Global clocks                               ; 3 / 16 ( 19 % )        ;
+; JTAGs                                       ; 0 / 1 ( 0 % )          ;
+; ASMI blocks                                 ; 0 / 1 ( 0 % )          ;
+; CRC blocks                                  ; 0 / 1 ( 0 % )          ;
+; Average interconnect usage (total/H/V)      ; 1% / 1% / 1%           ;
+; Peak interconnect usage (total/H/V)         ; 10% / 9% / 12%         ;
+; Maximum fan-out                             ; 60                     ;
+; Highest non-global fan-out                  ; 60                     ;
+; Total fan-out                               ; 3812                   ;
+; Average fan-out                             ; 3.02                   ;
++---------------------------------------------+------------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
 
@@ -243,32 +244,33 @@ The pin-out file can be found in C:/Users/brown/OneDrive/UFRGS/11º Semestre/Pepi
 +---------------------------------------------+----------------------+--------------------------------+
 ; Difficulty Clustering Region                ; Low                  ; Low                            ;
 ;                                             ;                      ;                                ;
-; Total logic elements                        ; 614 / 33216 ( 2 % )  ; 0 / 33216 ( 0 % )              ;
-;     -- Combinational with no register       ; 561                  ; 0                              ;
-;     -- Register only                        ; 18                   ; 0                              ;
-;     -- Combinational with a register        ; 35                   ; 0                              ;
+; Total logic elements                        ; 1125 / 33216 ( 3 % ) ; 0 / 33216 ( 0 % )              ;
+;     -- Combinational with no register       ; 1032                 ; 0                              ;
+;     -- Register only                        ; 20                   ; 0                              ;
+;     -- Combinational with a register        ; 73                   ; 0                              ;
 ;                                             ;                      ;                                ;
 ; Logic element usage by number of LUT inputs ;                      ;                                ;
-;     -- 4 input functions                    ; 313                  ; 0                              ;
-;     -- 3 input functions                    ; 86                   ; 0                              ;
-;     -- <=2 input functions                  ; 197                  ; 0                              ;
-;     -- Register only                        ; 18                   ; 0                              ;
+;     -- 4 input functions                    ; 589                  ; 0                              ;
+;     -- 3 input functions                    ; 178                  ; 0                              ;
+;     -- <=2 input functions                  ; 338                  ; 0                              ;
+;     -- Register only                        ; 20                   ; 0                              ;
 ;                                             ;                      ;                                ;
 ; Logic elements by mode                      ;                      ;                                ;
-;     -- normal mode                          ; 460                  ; 0                              ;
-;     -- arithmetic mode                      ; 136                  ; 0                              ;
+;     -- normal mode                          ; 833                  ; 0                              ;
+;     -- arithmetic mode                      ; 272                  ; 0                              ;
 ;                                             ;                      ;                                ;
-; Total registers                             ; 53                   ; 0                              ;
-;     -- Dedicated logic registers            ; 53 / 33216 ( < 1 % ) ; 0 / 33216 ( 0 % )              ;
+; Total registers                             ; 93                   ; 0                              ;
+;     -- Dedicated logic registers            ; 93 / 33216 ( < 1 % ) ; 0 / 33216 ( 0 % )              ;
 ;                                             ;                      ;                                ;
-; Total LABs:  partially or completely used   ; 47 / 2076 ( 2 % )    ; 0 / 2076 ( 0 % )               ;
+; Total LABs:  partially or completely used   ; 79 / 2076 ( 4 % )    ; 0 / 2076 ( 0 % )               ;
 ;                                             ;                      ;                                ;
 ; Virtual pins                                ; 0                    ; 0                              ;
 ; I/O pins                                    ; 38                   ; 0                              ;
 ; Embedded Multiplier 9-bit elements          ; 0 / 70 ( 0 % )       ; 0 / 70 ( 0 % )                 ;
 ; Total memory bits                           ; 0                    ; 0                              ;
 ; Total RAM block bits                        ; 0                    ; 0                              ;
-; Clock control block                         ; 2 / 20 ( 10 % )      ; 0 / 20 ( 0 % )                 ;
+; Clock control block                         ; 3 / 20 ( 15 % )      ; 0 / 20 ( 0 % )                 ;
+; Clock delay control block                   ; 1 / 16 ( 6 % )       ; 0 / 16 ( 0 % )                 ;
 ;                                             ;                      ;                                ;
 ; Connections                                 ;                      ;                                ;
 ;     -- Input Connections                    ; 0                    ; 0                              ;
@@ -277,8 +279,8 @@ The pin-out file can be found in C:/Users/brown/OneDrive/UFRGS/11º Semestre/Pepi
 ;     -- Registered Output Connections        ; 0                    ; 0                              ;
 ;                                             ;                      ;                                ;
 ; Internal Connections                        ;                      ;                                ;
-;     -- Total Connections                    ; 2071                 ; 0                              ;
-;     -- Registered Connections               ; 273                  ; 0                              ;
+;     -- Total Connections                    ; 3812                 ; 0                              ;
+;     -- Registered Connections               ; 462                  ; 0                              ;
 ;                                             ;                      ;                                ;
 ; External Connections                        ;                      ;                                ;
 ;     -- Top                                  ; 0                    ; 0                              ;
@@ -311,9 +313,9 @@ The pin-out file can be found in C:/Users/brown/OneDrive/UFRGS/11º Semestre/Pepi
 ; Name      ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Power Up High ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination ; Location assigned by ;
 +-----------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
 ; clock_50M ; N2    ; 2        ; 0            ; 18           ; 0           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
-; move_x    ; G26   ; 5        ; 65           ; 27           ; 1           ; 31                    ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
-; move_y    ; N23   ; 5        ; 65           ; 20           ; 2           ; 62                    ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
-; select    ; W26   ; 6        ; 65           ; 10           ; 2           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
+; move_x    ; G26   ; 5        ; 65           ; 27           ; 1           ; 60                    ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
+; move_y    ; N23   ; 5        ; 65           ; 20           ; 2           ; 36                    ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
+; select    ; W26   ; 6        ; 65           ; 10           ; 2           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
 +-----------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
 
 
@@ -1056,6 +1058,15 @@ The pin-out file can be found in C:/Users/brown/OneDrive/UFRGS/11º Semestre/Pepi
 Note: Pin directions (input, output or bidir) are based on device operating in user mode.
 
 
++-----------------------------------------------------------------------------------------------+
+; Clock Delay Control Summary                                                                   ;
++-----------------------+------------+-----------------+------------------+---------------------+
+; Name                  ; Source I/O ; Location        ; Delay Chain Mode ; Delay Chain Setting ;
++-----------------------+------------+-----------------+------------------+---------------------+
+; select~clk_delay_ctrl ; select     ; CLKDELAYCTRL_G7 ; none             ; N/A                 ;
++-----------------------+------------+-----------------+------------------+---------------------+
+
+
 +-------------------------------------------------------------------------------+
 ; Output Pin Default Load For Reported TCO                                      ;
 +----------------------------------+-------+------------------------------------+
@@ -1098,7 +1109,7 @@ Note: User assignments will override these defaults. The user specified values a
 +---------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------------------------------------+--------------+
 ; Compilation Hierarchy Node            ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M4Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                               ; Library Name ;
 +---------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------------------------------------+--------------+
-; |pepinosDigitais                      ; 614 (573)   ; 53 (32)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 38   ; 0            ; 561 (541)    ; 18 (18)           ; 35 (13)          ; |pepinosDigitais                                  ;              ;
+; |pepinosDigitais                      ; 1125 (1084) ; 93 (72)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 38   ; 0            ; 1032 (1012)  ; 20 (20)           ; 73 (50)          ; |pepinosDigitais                                  ;              ;
 ;    |clock_25M_divider:inst_clock_25M| ; 1 (1)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; |pepinosDigitais|clock_25M_divider:inst_clock_25M ;              ;
 ;    |vga:instancia_vga|                ; 42 (42)     ; 20 (20)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 20 (20)      ; 0 (0)             ; 22 (22)          ; |pepinosDigitais|vga:instancia_vga                ;              ;
 +---------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------------------------------------+--------------+
@@ -1144,10 +1155,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; vga_b[9]  ; Output   ; --            ; --            ; --                    ; --  ;
 ; clock_25M ; Output   ; --            ; --            ; --                    ; --  ;
 ; vga_blank ; Output   ; --            ; --            ; --                    ; --  ;
-; select    ; Input    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
 ; clock_50M ; Input    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
 ; move_y    ; Input    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
 ; move_x    ; Input    ; (6) 2523 ps   ; (6) 2523 ps   ; --                    ; --  ;
+; select    ; Input    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
 +-----------+----------+---------------+---------------+-----------------------+-----+
 
 
@@ -1156,103 +1167,106 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------+-------------------+---------+
 ; Source Pin / Fanout ; Pad To Core Index ; Setting ;
 +---------------------+-------------------+---------+
-; select              ;                   ;         ;
 ; clock_50M           ;                   ;         ;
 ; move_y              ;                   ;         ;
-;      - pos~3        ; 0                 ; 0       ;
-;      - pos~5        ; 0                 ; 0       ;
+;      - pos~2        ; 1                 ; 0       ;
+;      - pos~4        ; 0                 ; 0       ;
 ;      - pos~6        ; 1                 ; 0       ;
 ;      - pos~7        ; 1                 ; 0       ;
+;      - LessThan36~0 ; 1                 ; 0       ;
 ;      - pos~8        ; 1                 ; 0       ;
-;      - pos~9        ; 0                 ; 0       ;
+;      - pos~9        ; 1                 ; 0       ;
 ;      - pos~10       ; 1                 ; 0       ;
 ;      - pos~11       ; 1                 ; 0       ;
 ;      - pos~12       ; 1                 ; 0       ;
-;      - pos~13       ; 0                 ; 0       ;
+;      - pos~13       ; 1                 ; 0       ;
 ;      - pos~14       ; 1                 ; 0       ;
-;      - pos~15       ; 0                 ; 0       ;
-;      - pos~16       ; 0                 ; 0       ;
-;      - pos~17       ; 0                 ; 0       ;
+;      - LessThan36~3 ; 0                 ; 0       ;
+;      - pos~15       ; 1                 ; 0       ;
+;      - pos~16       ; 1                 ; 0       ;
+;      - pos~17       ; 1                 ; 0       ;
 ;      - pos~18       ; 1                 ; 0       ;
-;      - pos~19       ; 0                 ; 0       ;
-;      - pos~20       ; 0                 ; 0       ;
-;      - pos~21       ; 0                 ; 0       ;
+;      - pos~19       ; 1                 ; 0       ;
+;      - pos~20       ; 1                 ; 0       ;
+;      - pos~21       ; 1                 ; 0       ;
 ;      - pos~22       ; 1                 ; 0       ;
-;      - pos~23       ; 0                 ; 0       ;
-;      - pos~24       ; 0                 ; 0       ;
-;      - pos~25       ; 0                 ; 0       ;
+;      - pos~23       ; 1                 ; 0       ;
+;      - pos~24       ; 1                 ; 0       ;
+;      - pos~25       ; 1                 ; 0       ;
 ;      - pos~26       ; 0                 ; 0       ;
-;      - pos~27       ; 0                 ; 0       ;
-;      - pos~28       ; 0                 ; 0       ;
-;      - pos~29       ; 0                 ; 0       ;
+;      - pos~27       ; 1                 ; 0       ;
+;      - pos~28       ; 1                 ; 0       ;
+;      - pos~29       ; 1                 ; 0       ;
 ;      - pos~30       ; 1                 ; 0       ;
 ;      - pos~31       ; 1                 ; 0       ;
 ;      - pos~32       ; 0                 ; 0       ;
-;      - pos~33       ; 0                 ; 0       ;
-;      - pos~34       ; 0                 ; 0       ;
-;      - pos~35       ; 0                 ; 0       ;
-;      - pos~36       ; 0                 ; 0       ;
-;      - pos~37       ; 0                 ; 0       ;
-;      - pos~38       ; 1                 ; 0       ;
-;      - pos~39       ; 0                 ; 0       ;
-;      - pos~40       ; 1                 ; 0       ;
-;      - pos~41       ; 0                 ; 0       ;
-;      - pos~42       ; 0                 ; 0       ;
-;      - pos~43       ; 0                 ; 0       ;
-;      - pos~44       ; 1                 ; 0       ;
-;      - pos~45       ; 1                 ; 0       ;
-;      - pos~46       ; 1                 ; 0       ;
-;      - pos~47       ; 1                 ; 0       ;
-;      - pos~48       ; 1                 ; 0       ;
-;      - pos~49       ; 0                 ; 0       ;
-;      - pos~50       ; 0                 ; 0       ;
-;      - pos~51       ; 1                 ; 0       ;
-;      - pos~52       ; 0                 ; 0       ;
-;      - pos~53       ; 0                 ; 0       ;
-;      - pos~54       ; 0                 ; 0       ;
-;      - pos~55       ; 0                 ; 0       ;
-;      - pos~56       ; 0                 ; 0       ;
-;      - pos~57       ; 0                 ; 0       ;
-;      - pos~58       ; 0                 ; 0       ;
-;      - pos~59       ; 0                 ; 0       ;
-;      - pos~60       ; 0                 ; 0       ;
-;      - pos~61       ; 0                 ; 0       ;
-;      - pos[31]~63   ; 1                 ; 0       ;
-;      - pos[3]~65    ; 0                 ; 0       ;
-;      - pos[0]       ; 1                 ; 0       ;
-;      - pos[1]       ; 0                 ; 0       ;
+;      - pos[31]~33   ; 0                 ; 0       ;
+;      - pos~34       ; 1                 ; 0       ;
+;      - pos[2]~36    ; 0                 ; 0       ;
+;      - pos[0]       ; 0                 ; 0       ;
+;      - pos[1]       ; 1                 ; 0       ;
 ; move_x              ;                   ;         ;
-;      - Add28~0      ; 0                 ; 6       ;
-;      - pos[3]~62    ; 0                 ; 6       ;
-;      - Add28~1      ; 0                 ; 6       ;
-;      - pos[31]~63   ; 0                 ; 6       ;
-;      - Add28~60     ; 0                 ; 6       ;
-;      - Add28~63     ; 0                 ; 6       ;
-;      - Add28~66     ; 0                 ; 6       ;
-;      - Add28~69     ; 0                 ; 6       ;
-;      - Add28~72     ; 0                 ; 6       ;
-;      - Add28~75     ; 0                 ; 6       ;
-;      - Add28~78     ; 0                 ; 6       ;
-;      - Add28~81     ; 0                 ; 6       ;
-;      - Add28~84     ; 0                 ; 6       ;
-;      - Add28~87     ; 0                 ; 6       ;
-;      - Add28~90     ; 0                 ; 6       ;
-;      - Add28~93     ; 0                 ; 6       ;
-;      - Add28~96     ; 0                 ; 6       ;
-;      - Add28~99     ; 0                 ; 6       ;
-;      - Add28~102    ; 0                 ; 6       ;
-;      - Add28~105    ; 0                 ; 6       ;
-;      - Add28~108    ; 0                 ; 6       ;
-;      - Add28~111    ; 0                 ; 6       ;
-;      - Add28~114    ; 0                 ; 6       ;
-;      - Add28~117    ; 0                 ; 6       ;
-;      - Add28~122    ; 0                 ; 6       ;
-;      - Add28~125    ; 0                 ; 6       ;
-;      - Add28~128    ; 0                 ; 6       ;
-;      - Add28~131    ; 0                 ; 6       ;
-;      - Add28~134    ; 0                 ; 6       ;
-;      - Add28~137    ; 0                 ; 6       ;
-;      - Add28~140    ; 0                 ; 6       ;
+;      - Add28~30     ; 1                 ; 6       ;
+;      - Add28~31     ; 1                 ; 6       ;
+;      - pos[31]~33   ; 1                 ; 6       ;
+;      - Add28~86     ; 1                 ; 6       ;
+;      - Add28~87     ; 1                 ; 6       ;
+;      - Add28~88     ; 1                 ; 6       ;
+;      - Add28~89     ; 1                 ; 6       ;
+;      - Add28~90     ; 1                 ; 6       ;
+;      - Add28~91     ; 1                 ; 6       ;
+;      - Add28~92     ; 1                 ; 6       ;
+;      - Add28~93     ; 1                 ; 6       ;
+;      - Add28~94     ; 1                 ; 6       ;
+;      - Add28~95     ; 1                 ; 6       ;
+;      - Add28~96     ; 1                 ; 6       ;
+;      - Add28~97     ; 1                 ; 6       ;
+;      - Add28~98     ; 1                 ; 6       ;
+;      - Add28~99     ; 1                 ; 6       ;
+;      - Add28~100    ; 1                 ; 6       ;
+;      - Add28~101    ; 1                 ; 6       ;
+;      - Add28~102    ; 1                 ; 6       ;
+;      - Add28~103    ; 1                 ; 6       ;
+;      - Add28~104    ; 1                 ; 6       ;
+;      - Add28~105    ; 1                 ; 6       ;
+;      - Add28~106    ; 1                 ; 6       ;
+;      - Add28~107    ; 1                 ; 6       ;
+;      - Add28~108    ; 1                 ; 6       ;
+;      - Add28~109    ; 1                 ; 6       ;
+;      - Add28~110    ; 1                 ; 6       ;
+;      - Add28~111    ; 1                 ; 6       ;
+;      - Add28~112    ; 1                 ; 6       ;
+;      - Add28~113    ; 1                 ; 6       ;
+;      - Add28~114    ; 1                 ; 6       ;
+;      - Add28~115    ; 1                 ; 6       ;
+;      - Add28~116    ; 1                 ; 6       ;
+;      - Add28~117    ; 1                 ; 6       ;
+;      - Add28~118    ; 1                 ; 6       ;
+;      - Add28~119    ; 1                 ; 6       ;
+;      - Add28~120    ; 1                 ; 6       ;
+;      - Add28~121    ; 1                 ; 6       ;
+;      - Add28~122    ; 1                 ; 6       ;
+;      - Add28~123    ; 1                 ; 6       ;
+;      - Add28~124    ; 1                 ; 6       ;
+;      - Add28~125    ; 1                 ; 6       ;
+;      - Add28~126    ; 1                 ; 6       ;
+;      - Add28~127    ; 1                 ; 6       ;
+;      - Add28~128    ; 1                 ; 6       ;
+;      - Add28~129    ; 1                 ; 6       ;
+;      - Add28~130    ; 1                 ; 6       ;
+;      - Add28~131    ; 1                 ; 6       ;
+;      - Add28~132    ; 1                 ; 6       ;
+;      - Add28~133    ; 1                 ; 6       ;
+;      - Add28~134    ; 1                 ; 6       ;
+;      - Add28~135    ; 1                 ; 6       ;
+;      - Add28~136    ; 1                 ; 6       ;
+;      - Add28~137    ; 1                 ; 6       ;
+;      - Add28~138    ; 1                 ; 6       ;
+;      - Add28~139    ; 1                 ; 6       ;
+;      - pos[2]~35    ; 1                 ; 6       ;
+;      - pos[2]~36    ; 1                 ; 6       ;
+;      - pos[3]~37    ; 1                 ; 6       ;
+; select              ;                   ;         ;
 +---------------------+-------------------+---------+
 
 
@@ -1261,14 +1275,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 ; Name                                     ; Location           ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
-; always1~14                               ; LCCOMB_X48_Y30_N24 ; 5       ; Sync. load   ; no     ; --                   ; --               ; --                        ;
-; clock_25M_divider:inst_clock_25M|clk_out ; LCFF_X1_Y18_N21    ; 52      ; Clock        ; yes    ; Global Clock         ; GCLK3            ; --                        ;
+; always1~64                               ; LCCOMB_X41_Y26_N20 ; 11      ; Sync. load   ; no     ; --                   ; --               ; --                        ;
+; always3~1                                ; LCCOMB_X38_Y25_N24 ; 40      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; clock_25M_divider:inst_clock_25M|clk_out ; LCFF_X1_Y18_N21    ; 52      ; Clock        ; yes    ; Global Clock         ; GCLK1            ; --                        ;
 ; clock_50M                                ; PIN_N2             ; 1       ; Clock        ; no     ; --                   ; --               ; --                        ;
-; move_y                                   ; PIN_N23            ; 62      ; Latch enable ; no     ; --                   ; --               ; --                        ;
-; pos[31]~63                               ; LCCOMB_X56_Y27_N22 ; 28      ; Latch enable ; no     ; --                   ; --               ; --                        ;
-; pos[3]~65                                ; LCCOMB_X64_Y19_N30 ; 2       ; Latch enable ; yes    ; Global Clock         ; GCLK6            ; --                        ;
-; vga:instancia_vga|Equal0~3               ; LCCOMB_X50_Y28_N14 ; 13      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; vga_g~12                                 ; LCCOMB_X48_Y28_N26 ; 10      ; Sync. clear  ; no     ; --                   ; --               ; --                        ;
+; move_y                                   ; PIN_N23            ; 36      ; Latch enable ; no     ; --                   ; --               ; --                        ;
+; pos[2]~36                                ; LCCOMB_X64_Y19_N30 ; 2       ; Latch enable ; yes    ; Global Clock         ; GCLK4            ; --                        ;
+; pos[31]~33                               ; LCCOMB_X45_Y25_N14 ; 28      ; Latch enable ; no     ; --                   ; --               ; --                        ;
+; select                                   ; PIN_W26            ; 1       ; Clock        ; no     ; --                   ; --               ; --                        ;
+; select~clk_delay_ctrl                    ; CLKDELAYCTRL_G7    ; 40      ; Clock        ; yes    ; Global Clock         ; GCLK7            ; --                        ;
+; vga:instancia_vga|Equal0~3               ; LCCOMB_X40_Y28_N24 ; 10      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; vga:instancia_vga|de~1                   ; LCCOMB_X43_Y28_N14 ; 8       ; Sync. clear  ; no     ; --                   ; --               ; --                        ;
 +------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 
 
@@ -1277,8 +1294,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------------------------------+--------------------+---------+----------------------+------------------+---------------------------+
 ; Name                                     ; Location           ; Fan-Out ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +------------------------------------------+--------------------+---------+----------------------+------------------+---------------------------+
-; clock_25M_divider:inst_clock_25M|clk_out ; LCFF_X1_Y18_N21    ; 52      ; Global Clock         ; GCLK3            ; --                        ;
-; pos[3]~65                                ; LCCOMB_X64_Y19_N30 ; 2       ; Global Clock         ; GCLK6            ; --                        ;
+; clock_25M_divider:inst_clock_25M|clk_out ; LCFF_X1_Y18_N21    ; 52      ; Global Clock         ; GCLK1            ; --                        ;
+; pos[2]~36                                ; LCCOMB_X64_Y19_N30 ; 2       ; Global Clock         ; GCLK4            ; --                        ;
+; select~clk_delay_ctrl                    ; CLKDELAYCTRL_G7    ; 40      ; Global Clock         ; GCLK7            ; --                        ;
 +------------------------------------------+--------------------+---------+----------------------+------------------+---------------------------+
 
 
@@ -1287,71 +1305,126 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------------------------------+---------+
 ; Name                                       ; Fan-Out ;
 +--------------------------------------------+---------+
-; Equal420~0                                 ; 77      ;
-; move_y                                     ; 62      ;
-; move_x                                     ; 31      ;
-; pos[3]~62                                  ; 31      ;
-; pos[31]~63                                 ; 28      ;
-; Add28~1                                    ; 28      ;
-; pos[0]                                     ; 22      ;
-; pos[1]                                     ; 20      ;
-; always1~26                                 ; 19      ;
-; always1~48                                 ; 17      ;
-; vga:instancia_vga|sx[4]                    ; 17      ;
-; always1~9                                  ; 16      ;
-; vga:instancia_vga|sy[7]                    ; 15      ;
-; vga:instancia_vga|sy[5]                    ; 15      ;
-; always1~52                                 ; 14      ;
-; always1~13                                 ; 14      ;
-; vga:instancia_vga|Equal0~3                 ; 13      ;
-; always1~20                                 ; 13      ;
-; vga:instancia_vga|sy[4]                    ; 13      ;
-; vga:instancia_vga|sy[3]                    ; 13      ;
-; vga:instancia_vga|sx[3]                    ; 13      ;
+; move_x                                     ; 60      ;
+; pos[1]                                     ; 48      ;
+; always3~1                                  ; 40      ;
+; Equal421~2                                 ; 40      ;
+; Equal421~0                                 ; 40      ;
+; isOut[13]~2                                ; 40      ;
+; pos[3]                                     ; 38      ;
+; pos[0]                                     ; 38      ;
+; move_y                                     ; 36      ;
+; cardsFlipped~80                            ; 32      ;
+; Add27~2                                    ; 32      ;
+; Add27~0                                    ; 32      ;
+; cardsFlipped~114                           ; 31      ;
+; LessThan36~10                              ; 31      ;
+; pos[31]~33                                 ; 28      ;
+; pos[2]                                     ; 24      ;
+; cardsFlipped~86                            ; 21      ;
+; Equal421~1                                 ; 20      ;
+; cardsFlipped~120                           ; 20      ;
+; vga:instancia_vga|sy[7]                    ; 18      ;
+; vga:instancia_vga|sx[4]                    ; 18      ;
+; vga:instancia_vga|sy[6]                    ; 15      ;
+; vga:instancia_vga|sx[3]                    ; 15      ;
+; vga:instancia_vga|sy[5]                    ; 14      ;
+; vga:instancia_vga|sy[4]                    ; 14      ;
+; vga:instancia_vga|sy[3]                    ; 14      ;
+; vga:instancia_vga|sx[2]                    ; 14      ;
+; vga:instancia_vga|sx[8]                    ; 14      ;
+; always1~16                                 ; 13      ;
+; vga:instancia_vga|sy[2]                    ; 13      ;
 ; vga:instancia_vga|sx[6]                    ; 13      ;
 ; vga:instancia_vga|sx[5]                    ; 13      ;
-; vga:instancia_vga|sy[6]                    ; 12      ;
-; vga:instancia_vga|sx[1]                    ; 12      ;
-; vga:instancia_vga|sx[9]                    ; 12      ;
-; vga:instancia_vga|sx[8]                    ; 12      ;
-; Add27~2                                    ; 12      ;
-; Add27~0                                    ; 12      ;
-; always1~29                                 ; 11      ;
-; vga:instancia_vga|sy[2]                    ; 11      ;
-; vga:instancia_vga|sx[2]                    ; 11      ;
-; vga:instancia_vga|sx[7]                    ; 11      ;
-; pos[3]                                     ; 10      ;
-; pos[2]                                     ; 10      ;
-; always1~37                                 ; 10      ;
-; vga_g~12                                   ; 10      ;
-; vga:instancia_vga|sy[1]                    ; 10      ;
-; pos[4]                                     ; 9       ;
-; vga_b~5                                    ; 9       ;
-; vga:instancia_vga|sy[8]                    ; 9       ;
-; vga:instancia_vga|sy[9]                    ; 9       ;
-; vga:instancia_vga|sx[0]                    ; 9       ;
-; always1~49                                 ; 8       ;
+; isFlipped~52                               ; 12      ;
+; always1~59                                 ; 12      ;
+; always1~49                                 ; 12      ;
+; always1~22                                 ; 12      ;
+; vga:instancia_vga|sy[1]                    ; 12      ;
+; pos[4]                                     ; 11      ;
+; cardsFlipped~103                           ; 11      ;
+; always1~64                                 ; 11      ;
+; vga:instancia_vga|sy[8]                    ; 11      ;
+; vga:instancia_vga|sx[9]                    ; 11      ;
+; cardsFlipped~124                           ; 10      ;
+; vga:instancia_vga|Equal0~3                 ; 10      ;
+; always1~58                                 ; 10      ;
+; always1~57                                 ; 10      ;
+; always1~48                                 ; 10      ;
+; always1~31                                 ; 10      ;
+; always1~20                                 ; 10      ;
+; vga:instancia_vga|sy[9]                    ; 10      ;
+; vga:instancia_vga|sx[1]                    ; 10      ;
+; cardsFlipped~102                           ; 9       ;
+; cardsFlipped~94                            ; 9       ;
+; cardsFlipped~69                            ; 9       ;
+; vga_b~6                                    ; 9       ;
+; always1~56                                 ; 9       ;
+; always1~47                                 ; 9       ;
+; always1~32                                 ; 9       ;
+; always1~23                                 ; 9       ;
+; always1~15                                 ; 9       ;
+; always1~14                                 ; 9       ;
+; paint_r~24                                 ; 9       ;
+; Add46~0                                    ; 9       ;
+; isFlipped~101                              ; 8       ;
+; cardsFlipped~104                           ; 8       ;
+; cardsFlipped~28                            ; 8       ;
+; vga:instancia_vga|de~1                     ; 8       ;
+; Equal20~10                                 ; 8       ;
+; always1~43                                 ; 8       ;
+; paint_r~29                                 ; 8       ;
 ; always1~34                                 ; 8       ;
-; Equal167~1                                 ; 8       ;
+; always1~33                                 ; 8       ;
+; always1~28                                 ; 8       ;
+; always1~13                                 ; 8       ;
+; always1~12                                 ; 8       ;
 ; vga:instancia_vga|sy[0]                    ; 8       ;
-; always1~53                                 ; 7       ;
-; vga:instancia_vga|Equal0~1                 ; 7       ;
-; paint_g~22                                 ; 7       ;
-; paint_r~29                                 ; 7       ;
-; vga_r~5                                    ; 6       ;
-; always1~55                                 ; 6       ;
-; paint_g~29                                 ; 6       ;
-; always1~46                                 ; 6       ;
-; pos[5]                                     ; 5       ;
-; pos[6]                                     ; 5       ;
-; pos[7]                                     ; 5       ;
-; pos[8]                                     ; 5       ;
-; pos[9]                                     ; 5       ;
-; pos[10]                                    ; 5       ;
-; pos[11]                                    ; 5       ;
-; pos[12]                                    ; 5       ;
-; pos[13]                                    ; 5       ;
+; vga:instancia_vga|sx[7]                    ; 8       ;
+; isFlipped~102                              ; 7       ;
+; paint_g~57                                 ; 7       ;
+; numberOfCardsFlipped~0                     ; 7       ;
+; isFlipped~51                               ; 7       ;
+; isFlipped~50                               ; 7       ;
+; always1~44                                 ; 7       ;
+; paint_g~11                                 ; 7       ;
+; paint_r~30                                 ; 7       ;
+; paint_r~28                                 ; 7       ;
+; always1~17                                 ; 7       ;
+; paint_r~25                                 ; 7       ;
+; always1~8                                  ; 7       ;
+; LessThan13~0                               ; 7       ;
+; vga:instancia_vga|sx[0]                    ; 7       ;
+; Add39~0                                    ; 7       ;
+; pos[22]                                    ; 6       ;
+; isFlipped~103                              ; 6       ;
+; vga_r~42                                   ; 6       ;
+; paint_g~58                                 ; 6       ;
+; cardsFlipped~39                            ; 6       ;
+; cardsFlipped~31                            ; 6       ;
+; isOut[18]                                  ; 6       ;
+; paint_r~47                                 ; 6       ;
+; isOut[12]                                  ; 6       ;
+; paint_r~43                                 ; 6       ;
+; paint_r~42                                 ; 6       ;
+; always1~51                                 ; 6       ;
+; always1~50                                 ; 6       ;
+; paint_r~31                                 ; 6       ;
+; always1~40                                 ; 6       ;
+; paint_r~23                                 ; 6       ;
+; always1~4                                  ; 6       ;
+; Add42~0                                    ; 6       ;
 ; pos[14]                                    ; 5       ;
+; pos[13]                                    ; 5       ;
+; pos[12]                                    ; 5       ;
+; pos[11]                                    ; 5       ;
+; pos[10]                                    ; 5       ;
+; pos[9]                                     ; 5       ;
+; pos[8]                                     ; 5       ;
+; pos[7]                                     ; 5       ;
+; pos[6]                                     ; 5       ;
+; pos[5]                                     ; 5       ;
 ; pos[15]                                    ; 5       ;
 ; pos[16]                                    ; 5       ;
 ; pos[17]                                    ; 5       ;
@@ -1359,7 +1432,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; pos[19]                                    ; 5       ;
 ; pos[20]                                    ; 5       ;
 ; pos[21]                                    ; 5       ;
-; pos[22]                                    ; 5       ;
 ; pos[23]                                    ; 5       ;
 ; pos[24]                                    ; 5       ;
 ; pos[25]                                    ; 5       ;
@@ -1369,221 +1441,645 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; pos[29]                                    ; 5       ;
 ; pos[30]                                    ; 5       ;
 ; pos[31]                                    ; 5       ;
-; paint_r~55                                 ; 5       ;
-; always1~63                                 ; 5       ;
+; paint_r~80                                 ; 5       ;
+; paint_r~78                                 ; 5       ;
+; cardsFlipped~95                            ; 5       ;
+; cardsFlipped~54                            ; 5       ;
+; numberOfCardsFlipped~3                     ; 5       ;
+; isOut[1]                                   ; 5       ;
+; isOut[7]                                   ; 5       ;
+; isOut[6]                                   ; 5       ;
+; isOut[0]                                   ; 5       ;
+; isOut[9]                                   ; 5       ;
+; isOut[8]                                   ; 5       ;
+; isFlipped[18]                              ; 5       ;
+; isOut[19]                                  ; 5       ;
+; isOut[3]                                   ; 5       ;
+; paint_r~48                                 ; 5       ;
+; isOut[13]                                  ; 5       ;
+; paint_r~45                                 ; 5       ;
 ; paint_r~44                                 ; 5       ;
-; paint_r~42                                 ; 5       ;
-; always1~54                                 ; 5       ;
-; paint_g~27                                 ; 5       ;
-; always1~51                                 ; 5       ;
-; always1~50                                 ; 5       ;
-; always1~43                                 ; 5       ;
-; always1~30                                 ; 5       ;
-; paint_b~14                                 ; 5       ;
-; paint_b~12                                 ; 5       ;
-; paint_b~10                                 ; 5       ;
-; always1~14                                 ; 5       ;
-; Equal41~7                                  ; 5       ;
-; Equal41~5                                  ; 5       ;
-; Equal41~4                                  ; 5       ;
-; LessThan13~0                               ; 5       ;
-; vga:instancia_vga|Equal0~0                 ; 5       ;
-; paint_r~58                                 ; 4       ;
-; paint_r~57                                 ; 4       ;
-; paint_g~63                                 ; 4       ;
-; always1~62                                 ; 4       ;
-; pos~61                                     ; 4       ;
-; vga:instancia_vga|Equal1~3                 ; 4       ;
-; vga_g~16                                   ; 4       ;
-; always1~61                                 ; 4       ;
-; paint_b~17                                 ; 4       ;
-; always1~56                                 ; 4       ;
+; isOut[11]                                  ; 5       ;
+; isOut[2]                                   ; 5       ;
+; always1~55                                 ; 5       ;
+; paint_r~36                                 ; 5       ;
+; isOut[10]                                  ; 5       ;
+; vga_r~19                                   ; 5       ;
+; isOut[5]                                   ; 5       ;
+; isOut[4]                                   ; 5       ;
+; vga_r~12                                   ; 5       ;
+; always1~46                                 ; 5       ;
+; paint_g~10                                 ; 5       ;
+; paint_r~26                                 ; 5       ;
+; Add45~0                                    ; 5       ;
+; Add44~0                                    ; 5       ;
+; Add41~0                                    ; 5       ;
+; Add40~0                                    ; 5       ;
+; Add37~0                                    ; 5       ;
+; Add36~0                                    ; 5       ;
+; paint_r~81                                 ; 4       ;
+; paint_r~79                                 ; 4       ;
+; paint_r~76                                 ; 4       ;
+; cardsFlipped~49                            ; 4       ;
+; cardsFlipped~46                            ; 4       ;
+; cardsFlipped~35                            ; 4       ;
+; cardsFlipped~33                            ; 4       ;
+; cardsFlipped~22                            ; 4       ;
+; cardsFlipped~18                            ; 4       ;
+; isFlipped~62                               ; 4       ;
+; isFlipped~57                               ; 4       ;
+; isFlipped~54                               ; 4       ;
+; isFlipped~53                               ; 4       ;
+; numberOfCardsFlipped~2                     ; 4       ;
+; numberOfCardsFlipped~1                     ; 4       ;
+; Decoder0~4                                 ; 4       ;
+; isFlipped~48                               ; 4       ;
+; Decoder0~2                                 ; 4       ;
+; vga:instancia_vga|Equal1~2                 ; 4       ;
+; vga:instancia_vga|Equal0~2                 ; 4       ;
+; isOut[14]                                  ; 4       ;
+; isFlipped[1]                               ; 4       ;
+; isFlipped[7]                               ; 4       ;
+; isOut[16]                                  ; 4       ;
+; isFlipped[6]                               ; 4       ;
+; isOut[17]                                  ; 4       ;
+; isFlipped[0]                               ; 4       ;
+; isFlipped[9]                               ; 4       ;
+; isFlipped[8]                               ; 4       ;
+; isOut[15]                                  ; 4       ;
+; isFlipped[19]                              ; 4       ;
+; isFlipped[3]                               ; 4       ;
+; isFlipped[13]                              ; 4       ;
+; isFlipped[12]                              ; 4       ;
+; isFlipped[11]                              ; 4       ;
 ; paint_r~41                                 ; 4       ;
-; paint_g~26                                 ; 4       ;
-; always1~42                                 ; 4       ;
-; always1~21                                 ; 4       ;
-; always1~11                                 ; 4       ;
-; paint_g~18                                 ; 4       ;
-; paint_g~66                                 ; 3       ;
-; paint_r~54                                 ; 3       ;
-; paint_b~36                                 ; 3       ;
-; pos~59                                     ; 3       ;
-; pos~57                                     ; 3       ;
-; pos~55                                     ; 3       ;
-; pos~53                                     ; 3       ;
-; pos~51                                     ; 3       ;
-; pos~49                                     ; 3       ;
-; pos~47                                     ; 3       ;
-; pos~45                                     ; 3       ;
-; pos~43                                     ; 3       ;
-; pos~41                                     ; 3       ;
-; pos~39                                     ; 3       ;
-; pos~37                                     ; 3       ;
-; pos~35                                     ; 3       ;
-; pos~33                                     ; 3       ;
+; paint_r~38                                 ; 4       ;
+; paint_r~37                                 ; 4       ;
+; isFlipped[2]                               ; 4       ;
+; isFlipped[10]                              ; 4       ;
+; isFlipped[5]                               ; 4       ;
+; isFlipped[4]                               ; 4       ;
+; vga_r~13                                   ; 4       ;
+; LessThan12~1                               ; 4       ;
+; paint_r~27                                 ; 4       ;
+; always1~19                                 ; 4       ;
+; LessThan13~2                               ; 4       ;
+; Equal20~7                                  ; 4       ;
+; Equal20~5                                  ; 4       ;
+; Equal20~4                                  ; 4       ;
+; vga:instancia_vga|LessThan5~0              ; 4       ;
+; vga:instancia_vga|Equal0~0                 ; 4       ;
+; Add47~2                                    ; 4       ;
+; isFlipped~104                              ; 3       ;
+; vga_r~43                                   ; 3       ;
+; Equal62~3                                  ; 3       ;
+; cardsFlipped~98                            ; 3       ;
+; cardsFlipped~97                            ; 3       ;
+; cardsFlipped~96                            ; 3       ;
+; cardsFlipped~93                            ; 3       ;
+; cardsFlipped~90                            ; 3       ;
+; cardsFlipped~66                            ; 3       ;
+; cardsFlipped~60                            ; 3       ;
+; cardsFlipped~59                            ; 3       ;
+; cardsFlipped~43                            ; 3       ;
+; cardsFlipped~42                            ; 3       ;
+; cardsFlipped~29                            ; 3       ;
+; cardsFlipped~23                            ; 3       ;
+; numberOfCardsFlipped~7                     ; 3       ;
+; numberOfCardsFlipped~6                     ; 3       ;
+; isFlipped~64                               ; 3       ;
+; isFlipped~63                               ; 3       ;
+; isFlipped~61                               ; 3       ;
+; isFlipped~60                               ; 3       ;
+; isFlipped~59                               ; 3       ;
+; isFlipped~58                               ; 3       ;
+; isFlipped~56                               ; 3       ;
+; isFlipped~55                               ; 3       ;
+; numberOfCardsFlipped~5                     ; 3       ;
+; numberOfCardsFlipped~4                     ; 3       ;
+; pos~32                                     ; 3       ;
 ; pos~31                                     ; 3       ;
+; pos~30                                     ; 3       ;
 ; pos~29                                     ; 3       ;
+; pos~28                                     ; 3       ;
 ; pos~27                                     ; 3       ;
+; pos~26                                     ; 3       ;
 ; pos~25                                     ; 3       ;
+; pos~24                                     ; 3       ;
 ; pos~23                                     ; 3       ;
+; pos~22                                     ; 3       ;
 ; pos~21                                     ; 3       ;
+; pos~20                                     ; 3       ;
 ; pos~19                                     ; 3       ;
+; pos~18                                     ; 3       ;
 ; pos~17                                     ; 3       ;
+; pos~16                                     ; 3       ;
 ; pos~15                                     ; 3       ;
+; pos~14                                     ; 3       ;
+; Add28~10                                   ; 3       ;
 ; pos~13                                     ; 3       ;
+; pos~12                                     ; 3       ;
 ; pos~11                                     ; 3       ;
+; pos~10                                     ; 3       ;
 ; pos~9                                      ; 3       ;
+; pos~8                                      ; 3       ;
 ; pos~7                                      ; 3       ;
-; paint_b~20                                 ; 3       ;
-; vga_g~23                                   ; 3       ;
-; vga_g~17                                   ; 3       ;
-; vga_g~15                                   ; 3       ;
-; paint_g~42                                 ; 3       ;
-; paint_g~41                                 ; 3       ;
-; vga_r~8                                    ; 3       ;
-; vga_b~3                                    ; 3       ;
-; always1~57                                 ; 3       ;
-; paint_r~43                                 ; 3       ;
-; paint_r~40                                 ; 3       ;
-; paint_r~37                                 ; 3       ;
-; Equal41~12                                 ; 3       ;
-; paint_r~33                                 ; 3       ;
-; always1~45                                 ; 3       ;
-; always1~44                                 ; 3       ;
-; paint_g~23                                 ; 3       ;
+; pos~3                                      ; 3       ;
+; pos~2                                      ; 3       ;
+; isFlipped[14]                              ; 3       ;
+; isFlipped[15]                              ; 3       ;
+; isFlipped[16]                              ; 3       ;
+; isFlipped[17]                              ; 3       ;
+; vga_g~19                                   ; 3       ;
+; vga_g~12                                   ; 3       ;
+; vga_g~8                                    ; 3       ;
+; vga_g~7                                    ; 3       ;
+; vga_g~6                                    ; 3       ;
+; paint_g~16                                 ; 3       ;
+; vga:instancia_vga|de~0                     ; 3       ;
+; paint_r~46                                 ; 3       ;
+; vga_r~27                                   ; 3       ;
+; vga_r~26                                   ; 3       ;
+; paint_r~39                                 ; 3       ;
+; always1~63                                 ; 3       ;
+; always1~54                                 ; 3       ;
+; paint_g~14                                 ; 3       ;
 ; paint_r~32                                 ; 3       ;
-; LessThan32~0                               ; 3       ;
-; LessThan8~0                                ; 3       ;
-; always1~7                                  ; 3       ;
-; LessThan2~0                                ; 3       ;
-; vga:instancia_vga|Equal1~0                 ; 3       ;
-; vga_g~26                                   ; 2       ;
-; paint_b~38                                 ; 2       ;
+; Equal20~9                                  ; 3       ;
+; always1~39                                 ; 3       ;
+; always1~25                                 ; 3       ;
+; LessThan3~1                                ; 3       ;
+; always1~5                                  ; 3       ;
+; LessThan9~0                                ; 3       ;
+; LessThan34~0                               ; 3       ;
+; Add47~0                                    ; 3       ;
+; Add43~0                                    ; 3       ;
+; Add38~0                                    ; 3       ;
+; Add35~2                                    ; 3       ;
+; Add35~0                                    ; 3       ;
+; cardsFlipped~123                           ; 2       ;
+; cardsFlipped~121                           ; 2       ;
 ; paint_b~37                                 ; 2       ;
-; vga_b~6                                    ; 2       ;
-; paint_r~53                                 ; 2       ;
-; vga_r~10                                   ; 2       ;
-; paint_r~52                                 ; 2       ;
-; vga_g~25                                   ; 2       ;
-; LessThan36~8                               ; 2       ;
-; LessThan36~4                               ; 2       ;
+; vga_r~44                                   ; 2       ;
+; paint_r~84                                 ; 2       ;
+; paint_r~83                                 ; 2       ;
+; paint_r~82                                 ; 2       ;
+; vga_r~41                                   ; 2       ;
+; paint_r~77                                 ; 2       ;
+; always1~65                                 ; 2       ;
+; isOut[14]~44                               ; 2       ;
+; isFlipped~95                               ; 2       ;
+; isFlipped~93                               ; 2       ;
+; isOut[16]~37                               ; 2       ;
+; isFlipped~91                               ; 2       ;
+; isOut[17]~32                               ; 2       ;
+; isFlipped~89                               ; 2       ;
+; isFlipped~87                               ; 2       ;
+; isFlipped~85                               ; 2       ;
+; isOut[15]~23                               ; 2       ;
+; isFlipped~83                               ; 2       ;
+; Decoder20~9                                ; 2       ;
+; Decoder21~9                                ; 2       ;
+; isFlipped~81                               ; 2       ;
+; Decoder20~8                                ; 2       ;
+; Decoder21~8                                ; 2       ;
+; isFlipped~79                               ; 2       ;
+; Decoder20~7                                ; 2       ;
+; Decoder21~7                                ; 2       ;
+; isFlipped~77                               ; 2       ;
+; Decoder21~6                                ; 2       ;
+; Decoder20~6                                ; 2       ;
+; isFlipped~75                               ; 2       ;
+; Decoder21~5                                ; 2       ;
+; Decoder20~5                                ; 2       ;
+; isFlipped~73                               ; 2       ;
+; Decoder20~4                                ; 2       ;
+; Decoder21~4                                ; 2       ;
+; isFlipped~71                               ; 2       ;
+; Decoder20~3                                ; 2       ;
+; Decoder21~3                                ; 2       ;
+; isFlipped~69                               ; 2       ;
+; Decoder20~2                                ; 2       ;
+; Decoder21~2                                ; 2       ;
+; isFlipped~67                               ; 2       ;
+; Decoder21~1                                ; 2       ;
+; Decoder20~1                                ; 2       ;
+; isFlipped~65                               ; 2       ;
+; cardsFlipped~119                           ; 2       ;
+; Decoder21~0                                ; 2       ;
+; cardsFlipped~113                           ; 2       ;
+; Decoder20~0                                ; 2       ;
+; cardsFlipped~100                           ; 2       ;
+; cardsFlipped~99                            ; 2       ;
+; cardsFlipped~92                            ; 2       ;
+; cardsFlipped~91                            ; 2       ;
+; cardsFlipped~89                            ; 2       ;
+; cardsFlipped~88                            ; 2       ;
+; cardsFlipped~87                            ; 2       ;
+; cardsFlipped~68                            ; 2       ;
+; cardsFlipped~67                            ; 2       ;
+; cardsFlipped~65                            ; 2       ;
+; cardsFlipped~64                            ; 2       ;
+; cardsFlipped~63                            ; 2       ;
+; cardsFlipped~62                            ; 2       ;
+; cardsFlipped~58                            ; 2       ;
+; cardsFlipped~41                            ; 2       ;
+; cardsFlipped~40                            ; 2       ;
+; cardsFlipped~36                            ; 2       ;
+; LessThan73~4                               ; 2       ;
+; LessThan73~3                               ; 2       ;
+; LessThan73~2                               ; 2       ;
+; LessThan73~1                               ; 2       ;
+; LessThan73~0                               ; 2       ;
+; pos~34                                     ; 2       ;
+; Add28~29                                   ; 2       ;
+; Add28~28                                   ; 2       ;
+; Add28~27                                   ; 2       ;
+; Add28~26                                   ; 2       ;
+; Add28~25                                   ; 2       ;
+; Add28~24                                   ; 2       ;
+; Add28~23                                   ; 2       ;
+; Add28~22                                   ; 2       ;
+; Add28~21                                   ; 2       ;
+; Add28~20                                   ; 2       ;
+; Add28~19                                   ; 2       ;
+; Add28~18                                   ; 2       ;
+; Add28~17                                   ; 2       ;
+; Add28~16                                   ; 2       ;
+; Add28~15                                   ; 2       ;
+; Add28~14                                   ; 2       ;
+; Add28~13                                   ; 2       ;
+; Add28~12                                   ; 2       ;
+; Add28~11                                   ; 2       ;
+; Add28~9                                    ; 2       ;
+; Add28~8                                    ; 2       ;
+; Add28~7                                    ; 2       ;
+; Add28~6                                    ; 2       ;
+; Add28~5                                    ; 2       ;
+; Add28~4                                    ; 2       ;
+; Add28~3                                    ; 2       ;
+; pos~6                                      ; 2       ;
 ; pos~5                                      ; 2       ;
-; pos~4                                      ; 2       ;
-; pos~3                                      ; 2       ;
-; pos~2                                      ; 2       ;
-; paint_b~23                                 ; 2       ;
-; paint_g~57                                 ; 2       ;
-; vga_g~20                                   ; 2       ;
-; paint_g~54                                 ; 2       ;
+; Add28~0                                    ; 2       ;
 ; paint_g~53                                 ; 2       ;
-; paint_g[9]~45                              ; 2       ;
-; paint_g~39                                 ; 2       ;
-; paint_g~36                                 ; 2       ;
-; paint_g~35                                 ; 2       ;
-; paint_g~34                                 ; 2       ;
-; paint_b~19                                 ; 2       ;
-; paint_g~32                                 ; 2       ;
-; paint_g~31                                 ; 2       ;
+; paint_g~43                                 ; 2       ;
+; paint_b~4                                  ; 2       ;
+; paint_g~40                                 ; 2       ;
+; vga_g~15                                   ; 2       ;
 ; vga_g~13                                   ; 2       ;
-; paint_g[9]~30                              ; 2       ;
-; paint_r~46                                 ; 2       ;
-; always1~59                                 ; 2       ;
-; paint_b~16                                 ; 2       ;
-; paint_r~39                                 ; 2       ;
-; paint_r~38                                 ; 2       ;
-; vga_r~2                                    ; 2       ;
-; paint_b~15                                 ; 2       ;
-; paint_g~28                                 ; 2       ;
-; Equal62~0                                  ; 2       ;
-; LessThan13~2                               ; 2       ;
+; vga_g~10                                   ; 2       ;
+; paint_g~24                                 ; 2       ;
+; paint_g~23                                 ; 2       ;
+; paint_g~22                                 ; 2       ;
+; paint_g~21                                 ; 2       ;
+; vga_g~9                                    ; 2       ;
+; vga_g~4                                    ; 2       ;
+; paint_r~75                                 ; 2       ;
+; paint_r~73                                 ; 2       ;
+; paint_r~61                                 ; 2       ;
+; paint_r~60                                 ; 2       ;
+; paint_r~59                                 ; 2       ;
+; paint_r~58                                 ; 2       ;
+; paint_r~56                                 ; 2       ;
+; paint_r~55                                 ; 2       ;
+; paint_r~51                                 ; 2       ;
+; paint_r~50                                 ; 2       ;
+; paint_r~49                                 ; 2       ;
+; vga_r~36                                   ; 2       ;
+; vga_r~33                                   ; 2       ;
+; vga_r~32                                   ; 2       ;
+; vga_r~31                                   ; 2       ;
+; vga_r~28                                   ; 2       ;
+; vga_r~22                                   ; 2       ;
+; vga_r~21                                   ; 2       ;
+; Decoder0~1                                 ; 2       ;
 ; paint_r~35                                 ; 2       ;
-; paint_r~34                                 ; 2       ;
-; LessThan3~0                                ; 2       ;
-; LessThan12~1                               ; 2       ;
-; LessThan12~0                               ; 2       ;
-; always1~41                                 ; 2       ;
-; Equal41~10                                 ; 2       ;
-; always1~39                                 ; 2       ;
+; vga_r~20                                   ; 2       ;
+; paint_r~33                                 ; 2       ;
+; vga_r~18                                   ; 2       ;
+; Equal62~2                                  ; 2       ;
+; paint_g~13                                 ; 2       ;
+; LessThan14~1                               ; 2       ;
+; always1~42                                 ; 2       ;
+; vga_r~11                                   ; 2       ;
+; paint_g~12                                 ; 2       ;
 ; always1~38                                 ; 2       ;
-; paint_r~31                                 ; 2       ;
-; paint_r~30                                 ; 2       ;
-; always1~22                                 ; 2       ;
-; vga:instancia_vga|Equal0~2                 ; 2       ;
-; always1~16                                 ; 2       ;
-; Equal41~8                                  ; 2       ;
-; vga:instancia_vga|LessThan3~0              ; 2       ;
-; LessThan16~1                               ; 2       ;
-; LessThan9~2                                ; 2       ;
-; LessThan14~0                               ; 2       ;
+; always1~37                                 ; 2       ;
+; Decoder0~0                                 ; 2       ;
+; always1~27                                 ; 2       ;
+; LessThan8~0                                ; 2       ;
+; LessThan16~2                               ; 2       ;
+; always1~10                                 ; 2       ;
+; always1~9                                  ; 2       ;
+; LessThan12~0                               ; 2       ;
 ; always1~6                                  ; 2       ;
+; Equal20~8                                  ; 2       ;
+; paint_r~22                                 ; 2       ;
+; LessThan18~0                               ; 2       ;
+; vga:instancia_vga|Equal0~1                 ; 2       ;
 ; clock_25M_divider:inst_clock_25M|clk_out   ; 2       ;
-; Add26~62                                   ; 2       ;
-; Add26~60                                   ; 2       ;
-; Add26~58                                   ; 2       ;
-; Add26~56                                   ; 2       ;
-; Add26~54                                   ; 2       ;
-; Add26~52                                   ; 2       ;
-; Add26~50                                   ; 2       ;
-; Add26~48                                   ; 2       ;
-; Add26~46                                   ; 2       ;
-; Add26~44                                   ; 2       ;
-; Add26~42                                   ; 2       ;
-; Add26~40                                   ; 2       ;
-; Add26~38                                   ; 2       ;
-; Add26~36                                   ; 2       ;
-; Add26~34                                   ; 2       ;
-; Add26~32                                   ; 2       ;
-; Add26~30                                   ; 2       ;
-; Add26~28                                   ; 2       ;
-; Add26~26                                   ; 2       ;
-; Add26~24                                   ; 2       ;
-; Add26~22                                   ; 2       ;
-; Add26~20                                   ; 2       ;
-; Add26~18                                   ; 2       ;
-; Add26~16                                   ; 2       ;
-; Add26~14                                   ; 2       ;
-; Add26~12                                   ; 2       ;
-; Add26~10                                   ; 2       ;
-; Add26~8                                    ; 2       ;
-; Add27~62                                   ; 2       ;
-; Add27~60                                   ; 2       ;
-; Add27~58                                   ; 2       ;
-; Add27~56                                   ; 2       ;
-; Add27~54                                   ; 2       ;
-; Add27~52                                   ; 2       ;
-; Add27~50                                   ; 2       ;
-; Add27~48                                   ; 2       ;
-; Add27~46                                   ; 2       ;
-; Add27~44                                   ; 2       ;
-; Add27~42                                   ; 2       ;
-; Add27~40                                   ; 2       ;
-; Add27~38                                   ; 2       ;
-; Add27~36                                   ; 2       ;
-; Add27~34                                   ; 2       ;
-; Add27~32                                   ; 2       ;
-; Add27~30                                   ; 2       ;
-; Add27~28                                   ; 2       ;
-; Add27~26                                   ; 2       ;
-; Add27~24                                   ; 2       ;
-; Add27~22                                   ; 2       ;
-; Add27~20                                   ; 2       ;
-; Add27~18                                   ; 2       ;
-; Add27~16                                   ; 2       ;
-; Add27~14                                   ; 2       ;
-; Add27~12                                   ; 2       ;
-; Add27~10                                   ; 2       ;
-; Add27~8                                    ; 2       ;
+; Add47~30                                   ; 2       ;
+; Add47~28                                   ; 2       ;
+; Add46~28                                   ; 2       ;
+; Add47~26                                   ; 2       ;
+; Add46~26                                   ; 2       ;
+; Add45~26                                   ; 2       ;
+; Add47~24                                   ; 2       ;
+; Add46~24                                   ; 2       ;
+; Add45~24                                   ; 2       ;
+; Add44~24                                   ; 2       ;
+; Add47~22                                   ; 2       ;
+; Add46~22                                   ; 2       ;
+; Add45~22                                   ; 2       ;
+; Add44~22                                   ; 2       ;
+; Add43~22                                   ; 2       ;
+; Add47~20                                   ; 2       ;
+; Add46~20                                   ; 2       ;
+; Add45~20                                   ; 2       ;
+; Add44~20                                   ; 2       ;
+; Add43~20                                   ; 2       ;
+; Add42~20                                   ; 2       ;
+; Add47~18                                   ; 2       ;
+; Add46~18                                   ; 2       ;
+; Add45~18                                   ; 2       ;
+; Add44~18                                   ; 2       ;
+; Add43~18                                   ; 2       ;
+; Add42~18                                   ; 2       ;
+; Add41~18                                   ; 2       ;
+; Add47~16                                   ; 2       ;
+; Add46~16                                   ; 2       ;
+; Add45~16                                   ; 2       ;
+; Add44~16                                   ; 2       ;
+; Add43~16                                   ; 2       ;
+; Add42~16                                   ; 2       ;
+; Add41~16                                   ; 2       ;
+; Add40~16                                   ; 2       ;
+; Add47~14                                   ; 2       ;
+; Add46~14                                   ; 2       ;
+; Add45~14                                   ; 2       ;
+; Add44~14                                   ; 2       ;
+; Add43~14                                   ; 2       ;
+; Add42~14                                   ; 2       ;
+; Add41~14                                   ; 2       ;
+; Add40~14                                   ; 2       ;
+; Add39~14                                   ; 2       ;
+; Add47~12                                   ; 2       ;
+; Add46~12                                   ; 2       ;
+; Add45~12                                   ; 2       ;
+; Add44~12                                   ; 2       ;
+; Add43~12                                   ; 2       ;
+; Add42~12                                   ; 2       ;
+; Add41~12                                   ; 2       ;
+; Add40~12                                   ; 2       ;
+; Add39~12                                   ; 2       ;
+; Add38~12                                   ; 2       ;
+; Add47~10                                   ; 2       ;
+; Add46~10                                   ; 2       ;
+; Add45~10                                   ; 2       ;
+; Add44~10                                   ; 2       ;
+; Add43~10                                   ; 2       ;
+; Add42~10                                   ; 2       ;
+; Add41~10                                   ; 2       ;
+; Add40~10                                   ; 2       ;
+; Add39~10                                   ; 2       ;
+; Add38~10                                   ; 2       ;
+; Add37~10                                   ; 2       ;
+; Add47~8                                    ; 2       ;
+; Add46~8                                    ; 2       ;
+; Add45~8                                    ; 2       ;
+; Add44~8                                    ; 2       ;
+; Add43~8                                    ; 2       ;
+; Add42~8                                    ; 2       ;
+; Add41~8                                    ; 2       ;
+; Add40~8                                    ; 2       ;
+; Add39~8                                    ; 2       ;
+; Add38~8                                    ; 2       ;
+; Add37~8                                    ; 2       ;
+; Add36~8                                    ; 2       ;
+; Add47~6                                    ; 2       ;
+; Add46~6                                    ; 2       ;
+; Add45~6                                    ; 2       ;
+; Add44~6                                    ; 2       ;
+; Add43~6                                    ; 2       ;
+; Add42~6                                    ; 2       ;
+; Add41~6                                    ; 2       ;
+; Add40~6                                    ; 2       ;
+; Add39~6                                    ; 2       ;
+; Add38~6                                    ; 2       ;
+; Add37~6                                    ; 2       ;
+; Add36~6                                    ; 2       ;
+; Add35~6                                    ; 2       ;
+; Add47~4                                    ; 2       ;
+; Add46~4                                    ; 2       ;
+; Add45~4                                    ; 2       ;
+; Add44~4                                    ; 2       ;
+; Add43~4                                    ; 2       ;
+; Add42~4                                    ; 2       ;
+; Add41~4                                    ; 2       ;
+; Add40~4                                    ; 2       ;
+; Add39~4                                    ; 2       ;
+; Add38~4                                    ; 2       ;
+; Add37~4                                    ; 2       ;
+; Add36~4                                    ; 2       ;
+; Add35~4                                    ; 2       ;
+; Add46~2                                    ; 2       ;
+; Add45~2                                    ; 2       ;
+; Add44~2                                    ; 2       ;
+; Add43~2                                    ; 2       ;
+; Add42~2                                    ; 2       ;
+; Add41~2                                    ; 2       ;
+; Add40~2                                    ; 2       ;
+; Add39~2                                    ; 2       ;
+; Add38~2                                    ; 2       ;
+; Add37~2                                    ; 2       ;
+; Add36~2                                    ; 2       ;
+; select                                     ; 1       ;
 ; clock_50M                                  ; 1       ;
 ; clock_25M_divider:inst_clock_25M|clk_out~0 ; 1       ;
-; paint_g~67                                 ; 1       ;
-; paint_b~39                                 ; 1       ;
-; paint_g~65                                 ; 1       ;
-; paint_g~64                                 ; 1       ;
-; paint_r~56                                 ; 1       ;
-; always1~64                                 ; 1       ;
-; pos[3]~66                                  ; 1       ;
-; pos[2]~64                                  ; 1       ;
-; Add28~140                                  ; 1       ;
+; isFlipped~124                              ; 1       ;
+; isFlipped~123                              ; 1       ;
+; isFlipped~122                              ; 1       ;
+; isFlipped~121                              ; 1       ;
+; isFlipped~120                              ; 1       ;
+; isFlipped~119                              ; 1       ;
+; isFlipped~118                              ; 1       ;
+; isFlipped~117                              ; 1       ;
+; isFlipped~116                              ; 1       ;
+; isFlipped~115                              ; 1       ;
+; isFlipped~114                              ; 1       ;
+; isFlipped~113                              ; 1       ;
+; isFlipped~112                              ; 1       ;
+; isFlipped~111                              ; 1       ;
+; isFlipped~110                              ; 1       ;
+; isFlipped~109                              ; 1       ;
+; isFlipped~108                              ; 1       ;
+; isFlipped~107                              ; 1       ;
+; isFlipped~106                              ; 1       ;
+; isFlipped~105                              ; 1       ;
+; cardsFlipped~125                           ; 1       ;
+; cardsFlipped~122                           ; 1       ;
+; paint_b~38                                 ; 1       ;
+; paint_r~86                                 ; 1       ;
+; paint_g~61                                 ; 1       ;
+; paint_g~60                                 ; 1       ;
+; vga_g~20                                   ; 1       ;
+; paint_g~59                                 ; 1       ;
+; paint_r~85                                 ; 1       ;
+; vga_r~40                                   ; 1       ;
+; LessThan17~3                               ; 1       ;
+; isFlipped~100                              ; 1       ;
+; isFlipped~99                               ; 1       ;
+; isFlipped~98                               ; 1       ;
+; isFlipped~97                               ; 1       ;
+; isOut[14]~46                               ; 1       ;
+; isOut[14]~45                               ; 1       ;
+; isOut[1]~43                                ; 1       ;
+; isOut[1]~42                                ; 1       ;
+; isFlipped~96                               ; 1       ;
+; isOut[7]~41                                ; 1       ;
+; isOut[7]~40                                ; 1       ;
+; isFlipped~94                               ; 1       ;
+; isOut[16]~39                               ; 1       ;
+; isOut[16]~38                               ; 1       ;
+; isOut[6]~36                                ; 1       ;
+; isOut[6]~35                                ; 1       ;
+; isFlipped~92                               ; 1       ;
+; isOut[17]~34                               ; 1       ;
+; isOut[17]~33                               ; 1       ;
+; isOut[0]~31                                ; 1       ;
+; isOut[0]~30                                ; 1       ;
+; isFlipped~90                               ; 1       ;
+; isOut[9]~29                                ; 1       ;
+; isOut[9]~28                                ; 1       ;
+; isFlipped~88                               ; 1       ;
+; isOut[8]~27                                ; 1       ;
+; isOut[8]~26                                ; 1       ;
+; isFlipped~86                               ; 1       ;
+; isOut[15]~25                               ; 1       ;
+; isOut[15]~24                               ; 1       ;
+; isOut[18]~22                               ; 1       ;
+; isOut[18]~21                               ; 1       ;
+; isFlipped~84                               ; 1       ;
+; isOut[19]~20                               ; 1       ;
+; isOut[19]~19                               ; 1       ;
+; isFlipped~82                               ; 1       ;
+; isOut[3]~18                                ; 1       ;
+; isOut[3]~17                                ; 1       ;
+; isFlipped~80                               ; 1       ;
+; isOut[13]~16                               ; 1       ;
+; isOut[13]~15                               ; 1       ;
+; isFlipped~78                               ; 1       ;
+; isOut[12]~14                               ; 1       ;
+; isOut[12]~13                               ; 1       ;
+; isFlipped~76                               ; 1       ;
+; isOut[11]~12                               ; 1       ;
+; isOut[11]~11                               ; 1       ;
+; isFlipped~74                               ; 1       ;
+; isOut[2]~10                                ; 1       ;
+; isOut[2]~9                                 ; 1       ;
+; isFlipped~72                               ; 1       ;
+; isOut[10]~8                                ; 1       ;
+; isOut[10]~7                                ; 1       ;
+; isFlipped~70                               ; 1       ;
+; isOut[5]~6                                 ; 1       ;
+; isOut[5]~5                                 ; 1       ;
+; isFlipped~68                               ; 1       ;
+; isOut[4]~4                                 ; 1       ;
+; isOut[4]~3                                 ; 1       ;
+; Mux40~11                                   ; 1       ;
+; Mux40~10                                   ; 1       ;
+; Mux40~9                                    ; 1       ;
+; Mux40~8                                    ; 1       ;
+; Mux40~7                                    ; 1       ;
+; Mux40~6                                    ; 1       ;
+; Mux40~5                                    ; 1       ;
+; Mux40~4                                    ; 1       ;
+; Mux40~3                                    ; 1       ;
+; Mux40~2                                    ; 1       ;
+; Mux41~11                                   ; 1       ;
+; Mux41~10                                   ; 1       ;
+; Mux41~9                                    ; 1       ;
+; Mux41~8                                    ; 1       ;
+; Mux41~7                                    ; 1       ;
+; Mux41~6                                    ; 1       ;
+; Mux41~5                                    ; 1       ;
+; Mux41~4                                    ; 1       ;
+; Mux41~3                                    ; 1       ;
+; Mux41~2                                    ; 1       ;
+; always3~0                                  ; 1       ;
+; Mux40~1                                    ; 1       ;
+; Mux40~0                                    ; 1       ;
+; Mux41~1                                    ; 1       ;
+; Mux41~0                                    ; 1       ;
+; isFlipped~66                               ; 1       ;
+; cardsFlipped~118                           ; 1       ;
+; cardsFlipped~117                           ; 1       ;
+; cardsFlipped~116                           ; 1       ;
+; cardsFlipped~115                           ; 1       ;
+; cardsFlipped~112                           ; 1       ;
+; cardsFlipped~111                           ; 1       ;
+; cardsFlipped~110                           ; 1       ;
+; cardsFlipped~109                           ; 1       ;
+; cardsFlipped~108                           ; 1       ;
+; cardsFlipped~107                           ; 1       ;
+; cardsFlipped~106                           ; 1       ;
+; cardsFlipped~105                           ; 1       ;
+; cardsFlipped~101                           ; 1       ;
+; isOut[13]~1                                ; 1       ;
+; isOut[13]~0                                ; 1       ;
+; cardsFlipped~85                            ; 1       ;
+; cardsFlipped~84                            ; 1       ;
+; cardsFlipped~83                            ; 1       ;
+; cardsFlipped~82                            ; 1       ;
+; cardsFlipped~81                            ; 1       ;
+; cardsFlipped~79                            ; 1       ;
+; cardsFlipped~78                            ; 1       ;
+; cardsFlipped~77                            ; 1       ;
+; cardsFlipped~76                            ; 1       ;
+; cardsFlipped~75                            ; 1       ;
+; cardsFlipped~74                            ; 1       ;
+; cardsFlipped~73                            ; 1       ;
+; cardsFlipped~72                            ; 1       ;
+; cardsFlipped~71                            ; 1       ;
+; cardsFlipped~70                            ; 1       ;
+; cardsFlipped~61                            ; 1       ;
+; cardsFlipped~57                            ; 1       ;
+; cardsFlipped~56                            ; 1       ;
+; cardsFlipped~55                            ; 1       ;
+; cardsFlipped~53                            ; 1       ;
+; cardsFlipped~52                            ; 1       ;
+; cardsFlipped~51                            ; 1       ;
+; cardsFlipped~50                            ; 1       ;
+; cardsFlipped~48                            ; 1       ;
+; cardsFlipped~47                            ; 1       ;
+; cardsFlipped~45                            ; 1       ;
+; cardsFlipped~44                            ; 1       ;
+; cardsFlipped~38                            ; 1       ;
+; cardsFlipped~37                            ; 1       ;
+; cardsFlipped~34                            ; 1       ;
+; cardsFlipped~32                            ; 1       ;
+; cardsFlipped~30                            ; 1       ;
+; cardsFlipped~27                            ; 1       ;
+; cardsFlipped~26                            ; 1       ;
+; cardsFlipped~25                            ; 1       ;
+; cardsFlipped~24                            ; 1       ;
+; cardsFlipped~21                            ; 1       ;
+; cardsFlipped~20                            ; 1       ;
+; cardsFlipped~19                            ; 1       ;
+; cardsFlipped~17                            ; 1       ;
+; cardsFlipped~16                            ; 1       ;
+; cardsFlipped~15                            ; 1       ;
+; cardsFlipped~14                            ; 1       ;
+; LessThan73~10                              ; 1       ;
+; LessThan73~9                               ; 1       ;
+; LessThan73~8                               ; 1       ;
+; LessThan73~7                               ; 1       ;
+; LessThan73~6                               ; 1       ;
+; LessThan73~5                               ; 1       ;
+; Decoder0~3                                 ; 1       ;
+; isFlipped~49                               ; 1       ;
+; pos[3]~37                                  ; 1       ;
+; pos[2]~35                                  ; 1       ;
 ; Add28~139                                  ; 1       ;
 ; Add28~138                                  ; 1       ;
 ; Add28~137                                  ; 1       ;
@@ -1638,81 +2134,31 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Add28~88                                   ; 1       ;
 ; Add28~87                                   ; 1       ;
 ; Add28~86                                   ; 1       ;
-; Add28~85                                   ; 1       ;
-; Add28~84                                   ; 1       ;
-; Add28~83                                   ; 1       ;
-; Add28~82                                   ; 1       ;
-; Add28~81                                   ; 1       ;
-; Add28~80                                   ; 1       ;
-; Add28~79                                   ; 1       ;
-; Add28~78                                   ; 1       ;
-; Add28~77                                   ; 1       ;
-; Add28~76                                   ; 1       ;
-; Add28~75                                   ; 1       ;
-; Add28~74                                   ; 1       ;
-; Add28~73                                   ; 1       ;
-; Add28~72                                   ; 1       ;
-; Add28~71                                   ; 1       ;
-; Add28~70                                   ; 1       ;
-; Add28~69                                   ; 1       ;
-; Add28~68                                   ; 1       ;
-; Add28~67                                   ; 1       ;
-; Add28~66                                   ; 1       ;
-; Add28~65                                   ; 1       ;
-; Add28~64                                   ; 1       ;
-; Add28~63                                   ; 1       ;
-; Add28~62                                   ; 1       ;
-; Add28~61                                   ; 1       ;
-; Add28~60                                   ; 1       ;
-; Add28~59                                   ; 1       ;
-; Add28~58                                   ; 1       ;
-; pos~60                                     ; 1       ;
-; pos~58                                     ; 1       ;
+; Add28~31                                   ; 1       ;
+; Add28~30                                   ; 1       ;
+; LessThan36~9                               ; 1       ;
+; LessThan36~8                               ; 1       ;
 ; LessThan36~7                               ; 1       ;
-; pos~56                                     ; 1       ;
-; pos~54                                     ; 1       ;
-; pos~52                                     ; 1       ;
-; pos~50                                     ; 1       ;
 ; LessThan36~6                               ; 1       ;
-; pos~48                                     ; 1       ;
-; pos~46                                     ; 1       ;
-; pos~44                                     ; 1       ;
-; pos~42                                     ; 1       ;
 ; LessThan36~5                               ; 1       ;
-; pos~40                                     ; 1       ;
-; pos~38                                     ; 1       ;
-; pos~36                                     ; 1       ;
-; pos~34                                     ; 1       ;
+; LessThan36~4                               ; 1       ;
 ; LessThan36~3                               ; 1       ;
-; pos~32                                     ; 1       ;
-; pos~30                                     ; 1       ;
-; pos~28                                     ; 1       ;
-; pos~26                                     ; 1       ;
 ; LessThan36~2                               ; 1       ;
-; pos~24                                     ; 1       ;
-; pos~22                                     ; 1       ;
-; pos~20                                     ; 1       ;
-; pos~18                                     ; 1       ;
 ; LessThan36~1                               ; 1       ;
-; pos~16                                     ; 1       ;
-; pos~14                                     ; 1       ;
-; pos~12                                     ; 1       ;
-; pos~10                                     ; 1       ;
 ; LessThan36~0                               ; 1       ;
-; pos~8                                      ; 1       ;
-; pos~6                                      ; 1       ;
-; Add28~0                                    ; 1       ;
+; pos~4                                      ; 1       ;
 ; pos~1                                      ; 1       ;
 ; pos~0                                      ; 1       ;
 ; vga:instancia_vga|sy~3                     ; 1       ;
 ; vga:instancia_vga|sy~2                     ; 1       ;
 ; vga:instancia_vga|sy~1                     ; 1       ;
 ; vga:instancia_vga|sy~0                     ; 1       ;
-; vga:instancia_vga|Equal1~2                 ; 1       ;
 ; vga:instancia_vga|Equal1~1                 ; 1       ;
+; vga:instancia_vga|Equal1~0                 ; 1       ;
 ; vga:instancia_vga|sx~2                     ; 1       ;
 ; vga:instancia_vga|sx~1                     ; 1       ;
 ; vga:instancia_vga|sx~0                     ; 1       ;
+; paint_b~36                                 ; 1       ;
 ; paint_b~35                                 ; 1       ;
 ; paint_b~34                                 ; 1       ;
 ; paint_b~33                                 ; 1       ;
@@ -1725,21 +2171,34 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; paint_b~26                                 ; 1       ;
 ; paint_b~25                                 ; 1       ;
 ; paint_b~24                                 ; 1       ;
+; paint_b~23                                 ; 1       ;
 ; paint_b~22                                 ; 1       ;
 ; paint_b~21                                 ; 1       ;
-; vga_g~24                                   ; 1       ;
-; paint_g[9]~62                              ; 1       ;
-; paint_r~51                                 ; 1       ;
-; vga_g~22                                   ; 1       ;
-; vga_g~21                                   ; 1       ;
-; paint_g~61                                 ; 1       ;
-; paint_g~60                                 ; 1       ;
-; paint_g~59                                 ; 1       ;
-; paint_g~58                                 ; 1       ;
-; vga_g~19                                   ; 1       ;
-; vga_g~18                                   ; 1       ;
+; paint_b~20                                 ; 1       ;
+; paint_b~19                                 ; 1       ;
+; paint_b~18                                 ; 1       ;
+; paint_b~17                                 ; 1       ;
+; vga_b~5                                    ; 1       ;
+; vga_b~4                                    ; 1       ;
+; vga_b~3                                    ; 1       ;
+; vga_b~2                                    ; 1       ;
+; vga_b~1                                    ; 1       ;
+; paint_b~16                                 ; 1       ;
+; paint_b~15                                 ; 1       ;
+; paint_b~14                                 ; 1       ;
+; paint_b~13                                 ; 1       ;
+; paint_b~12                                 ; 1       ;
+; paint_b~11                                 ; 1       ;
+; paint_b~10                                 ; 1       ;
+; paint_b~9                                  ; 1       ;
+; paint_b~8                                  ; 1       ;
+; paint_b~7                                  ; 1       ;
+; paint_b~6                                  ; 1       ;
+; Equal41~0                                  ; 1       ;
+; paint_b~5                                  ; 1       ;
 ; paint_g~56                                 ; 1       ;
 ; paint_g~55                                 ; 1       ;
+; paint_g~54                                 ; 1       ;
 ; paint_g~52                                 ; 1       ;
 ; paint_g~51                                 ; 1       ;
 ; paint_g~50                                 ; 1       ;
@@ -1747,333 +2206,105 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; paint_g~48                                 ; 1       ;
 ; paint_g~47                                 ; 1       ;
 ; paint_g~46                                 ; 1       ;
+; paint_g~45                                 ; 1       ;
 ; paint_g~44                                 ; 1       ;
-; paint_g~43                                 ; 1       ;
-; vga_g~14                                   ; 1       ;
-; vga_b~4                                    ; 1       ;
-; paint_g~40                                 ; 1       ;
+; paint_g~42                                 ; 1       ;
+; paint_g~41                                 ; 1       ;
+; paint_g~39                                 ; 1       ;
 ; paint_g~38                                 ; 1       ;
 ; paint_g~37                                 ; 1       ;
+; paint_g~36                                 ; 1       ;
+; vga_g~18                                   ; 1       ;
+; vga_g~17                                   ; 1       ;
+; vga_g~16                                   ; 1       ;
+; vga_g~14                                   ; 1       ;
+; paint_g~35                                 ; 1       ;
+; paint_g~34                                 ; 1       ;
 ; paint_g~33                                 ; 1       ;
-; always1~60                                 ; 1       ;
-; vga_r~9                                    ; 1       ;
-; paint_r[9]~50                              ; 1       ;
-; paint_r~49                                 ; 1       ;
-; paint_r~48                                 ; 1       ;
-; paint_b~18                                 ; 1       ;
-; paint_r~47                                 ; 1       ;
-; paint_r[9]~45                              ; 1       ;
-; vga_r~7                                    ; 1       ;
-; vga_r~6                                    ; 1       ;
-; always1~58                                 ; 1       ;
-; vga_r~4                                    ; 1       ;
-; vga_r~3                                    ; 1       ;
-; LessThan14~2                               ; 1       ;
-; LessThan14~1                               ; 1       ;
-; paint_r~36                                 ; 1       ;
-; LessThan13~1                               ; 1       ;
-; Equal41~11                                 ; 1       ;
-; always1~47                                 ; 1       ;
+; paint_g~32                                 ; 1       ;
+; paint_g~31                                 ; 1       ;
+; paint_g~30                                 ; 1       ;
+; paint_g~29                                 ; 1       ;
+; paint_g~28                                 ; 1       ;
+; paint_g~27                                 ; 1       ;
+; paint_g~26                                 ; 1       ;
+; vga_g~11                                   ; 1       ;
 ; paint_g~25                                 ; 1       ;
-; paint_g~24                                 ; 1       ;
-; always1~40                                 ; 1       ;
-; Equal41~9                                  ; 1       ;
+; paint_g~20                                 ; 1       ;
+; paint_g~19                                 ; 1       ;
+; paint_g~18                                 ; 1       ;
+; paint_g~17                                 ; 1       ;
+; vga_g~5                                    ; 1       ;
+; paint_r~74                                 ; 1       ;
+; paint_r~72                                 ; 1       ;
+; paint_r~71                                 ; 1       ;
+; paint_r~70                                 ; 1       ;
+; paint_r~69                                 ; 1       ;
+; paint_r~68                                 ; 1       ;
+; paint_r~67                                 ; 1       ;
+; paint_r~66                                 ; 1       ;
+; paint_r~65                                 ; 1       ;
+; paint_r~64                                 ; 1       ;
+; paint_r~63                                 ; 1       ;
+; paint_r~62                                 ; 1       ;
+; paint_r~57                                 ; 1       ;
+; paint_r~54                                 ; 1       ;
+; paint_r~53                                 ; 1       ;
+; paint_r~52                                 ; 1       ;
+; vga_r~39                                   ; 1       ;
+; vga_r~38                                   ; 1       ;
+; vga_r~37                                   ; 1       ;
+; vga_r~35                                   ; 1       ;
+; paint_g~15                                 ; 1       ;
+; vga_r~34                                   ; 1       ;
+; vga_r~30                                   ; 1       ;
+; vga_r~29                                   ; 1       ;
+; vga_r~25                                   ; 1       ;
+; vga_r~24                                   ; 1       ;
+; paint_r~40                                 ; 1       ;
+; always1~62                                 ; 1       ;
+; always1~61                                 ; 1       ;
+; always1~60                                 ; 1       ;
+; vga_r~23                                   ; 1       ;
+; paint_r~34                                 ; 1       ;
+; always1~53                                 ; 1       ;
+; always1~52                                 ; 1       ;
+; vga_r~17                                   ; 1       ;
+; vga_r~16                                   ; 1       ;
+; vga_r~15                                   ; 1       ;
+; vga_r~14                                   ; 1       ;
+; LessThan14~0                               ; 1       ;
+; always1~45                                 ; 1       ;
+; always1~41                                 ; 1       ;
+; LessThan7~1                                ; 1       ;
+; LessThan7~0                                ; 1       ;
 ; always1~36                                 ; 1       ;
 ; always1~35                                 ; 1       ;
-; always1~33                                 ; 1       ;
-; always1~32                                 ; 1       ;
-; always1~31                                 ; 1       ;
-; Equal167~0                                 ; 1       ;
-; always1~28                                 ; 1       ;
-; always1~27                                 ; 1       ;
-; LessThan8~1                                ; 1       ;
-; always1~25                                 ; 1       ;
+; LessThan11~0                               ; 1       ;
+; always1~30                                 ; 1       ;
+; always1~29                                 ; 1       ;
+; always1~26                                 ; 1       ;
 ; always1~24                                 ; 1       ;
-; paint_b~13                                 ; 1       ;
-; always1~23                                 ; 1       ;
-; paint_b~11                                 ; 1       ;
-; always1~19                                 ; 1       ;
+; always1~21                                 ; 1       ;
+; LessThan8~2                                ; 1       ;
+; LessThan8~1                                ; 1       ;
 ; always1~18                                 ; 1       ;
-; always1~17                                 ; 1       ;
-; paint_b~9                                  ; 1       ;
-; always1~15                                 ; 1       ;
-; paint_b~8                                  ; 1       ;
-; always1~12                                 ; 1       ;
-; always1~10                                 ; 1       ;
-; LessThan17~0                               ; 1       ;
+; LessThan17~2                               ; 1       ;
+; LessThan16~1                               ; 1       ;
 ; LessThan16~0                               ; 1       ;
-; paint_g~21                                 ; 1       ;
-; paint_g~20                                 ; 1       ;
-; always1~8                                  ; 1       ;
-; paint_g~19                                 ; 1       ;
-; Equal41~6                                  ; 1       ;
-; Equal41~3                                  ; 1       ;
-; Equal41~2                                  ; 1       ;
-; Equal41~1                                  ; 1       ;
-; Equal41~0                                  ; 1       ;
-; paint_r~28                                 ; 1       ;
-; LessThan9~1                                ; 1       ;
-; LessThan9~0                                ; 1       ;
-; vga_g~11                                   ; 1       ;
-; vga:instancia_vga|vsync~1                  ; 1       ;
-; vga:instancia_vga|LessThan5~0              ; 1       ;
-; vga:instancia_vga|vsync~0                  ; 1       ;
-; vga:instancia_vga|hsync~1                  ; 1       ;
-; vga:instancia_vga|hsync~0                  ; 1       ;
-; vga_b[8]~reg0                              ; 1       ;
-; vga_b[7]~reg0                              ; 1       ;
-; vga_b[6]~reg0                              ; 1       ;
-; vga_b[5]~reg0                              ; 1       ;
-; vga_b[4]~reg0                              ; 1       ;
-; vga_b[3]~reg0                              ; 1       ;
-; vga_b[2]~reg0                              ; 1       ;
-; vga_b[1]~reg0                              ; 1       ;
-; vga_b[0]~reg0                              ; 1       ;
-; vga_g[9]~reg0                              ; 1       ;
-; vga_g[8]~reg0                              ; 1       ;
-; vga_g[7]~reg0                              ; 1       ;
-; vga_g[6]~reg0                              ; 1       ;
-; vga_g[5]~reg0                              ; 1       ;
-; vga_g[4]~reg0                              ; 1       ;
-; vga_g[3]~reg0                              ; 1       ;
-; vga_g[2]~reg0                              ; 1       ;
-; vga_g[0]~reg0                              ; 1       ;
-; vga_r[9]~reg0                              ; 1       ;
-; vga_r[8]~reg0                              ; 1       ;
-; vga_r[7]~reg0                              ; 1       ;
-; vga_r[6]~reg0                              ; 1       ;
-; vga_r[5]~reg0                              ; 1       ;
-; vga_r[4]~reg0                              ; 1       ;
-; vga_r[3]~reg0                              ; 1       ;
-; vga_r[2]~reg0                              ; 1       ;
-; vga_r[1]~reg0                              ; 1       ;
-; vga_r[0]~reg0                              ; 1       ;
-; vga_vsync~reg0                             ; 1       ;
-; vga_hsync~reg0                             ; 1       ;
-; Add29~58                                   ; 1       ;
-; Add29~57                                   ; 1       ;
-; Add29~56                                   ; 1       ;
-; Add29~55                                   ; 1       ;
-; Add29~54                                   ; 1       ;
-; Add29~53                                   ; 1       ;
-; Add29~52                                   ; 1       ;
-; Add29~51                                   ; 1       ;
-; Add29~50                                   ; 1       ;
-; Add29~49                                   ; 1       ;
-; Add29~48                                   ; 1       ;
-; Add29~47                                   ; 1       ;
-; Add29~46                                   ; 1       ;
-; Add29~45                                   ; 1       ;
-; Add29~44                                   ; 1       ;
-; Add29~43                                   ; 1       ;
-; Add29~42                                   ; 1       ;
-; Add29~41                                   ; 1       ;
-; Add29~40                                   ; 1       ;
-; Add29~39                                   ; 1       ;
-; Add29~38                                   ; 1       ;
-; Add29~37                                   ; 1       ;
-; Add29~36                                   ; 1       ;
-; Add29~35                                   ; 1       ;
-; Add29~34                                   ; 1       ;
-; Add29~33                                   ; 1       ;
-; Add29~32                                   ; 1       ;
-; Add29~31                                   ; 1       ;
-; Add29~30                                   ; 1       ;
-; Add29~29                                   ; 1       ;
-; Add29~28                                   ; 1       ;
-; Add29~27                                   ; 1       ;
-; Add29~26                                   ; 1       ;
-; Add29~25                                   ; 1       ;
-; Add29~24                                   ; 1       ;
-; Add29~23                                   ; 1       ;
-; Add29~22                                   ; 1       ;
-; Add29~21                                   ; 1       ;
-; Add29~20                                   ; 1       ;
-; Add29~19                                   ; 1       ;
-; Add29~18                                   ; 1       ;
-; Add29~17                                   ; 1       ;
-; Add29~16                                   ; 1       ;
-; Add29~15                                   ; 1       ;
-; Add29~14                                   ; 1       ;
-; Add29~13                                   ; 1       ;
-; Add29~12                                   ; 1       ;
-; Add29~11                                   ; 1       ;
-; Add29~10                                   ; 1       ;
-; Add29~9                                    ; 1       ;
-; Add29~8                                    ; 1       ;
-; Add29~7                                    ; 1       ;
-; Add29~6                                    ; 1       ;
-; Add29~5                                    ; 1       ;
-; Add29~4                                    ; 1       ;
-; Add29~3                                    ; 1       ;
-; Add29~2                                    ; 1       ;
-; Add29~1                                    ; 1       ;
-; Add29~0                                    ; 1       ;
-; Add28~56                                   ; 1       ;
-; Add28~55                                   ; 1       ;
-; Add28~54                                   ; 1       ;
-; Add28~53                                   ; 1       ;
-; Add28~52                                   ; 1       ;
-; Add28~51                                   ; 1       ;
-; Add28~50                                   ; 1       ;
-; Add28~49                                   ; 1       ;
-; Add28~48                                   ; 1       ;
-; Add28~47                                   ; 1       ;
-; Add28~46                                   ; 1       ;
-; Add28~45                                   ; 1       ;
-; Add28~44                                   ; 1       ;
-; Add28~43                                   ; 1       ;
-; Add28~42                                   ; 1       ;
-; Add28~41                                   ; 1       ;
-; Add28~40                                   ; 1       ;
-; Add28~39                                   ; 1       ;
-; Add28~38                                   ; 1       ;
-; Add28~37                                   ; 1       ;
-; Add28~36                                   ; 1       ;
-; Add28~35                                   ; 1       ;
-; Add28~34                                   ; 1       ;
-; Add28~33                                   ; 1       ;
-; Add28~32                                   ; 1       ;
-; Add28~31                                   ; 1       ;
-; Add28~30                                   ; 1       ;
-; Add28~29                                   ; 1       ;
-; Add28~28                                   ; 1       ;
-; Add28~27                                   ; 1       ;
-; Add28~26                                   ; 1       ;
-; Add28~25                                   ; 1       ;
-; Add28~24                                   ; 1       ;
-; Add28~23                                   ; 1       ;
-; Add28~22                                   ; 1       ;
-; Add28~21                                   ; 1       ;
-; Add28~20                                   ; 1       ;
-; Add28~19                                   ; 1       ;
-; Add28~18                                   ; 1       ;
-; Add28~17                                   ; 1       ;
-; Add28~16                                   ; 1       ;
-; Add28~15                                   ; 1       ;
-; Add28~14                                   ; 1       ;
-; Add28~13                                   ; 1       ;
-; Add28~12                                   ; 1       ;
-; Add28~11                                   ; 1       ;
-; Add28~10                                   ; 1       ;
-; Add28~9                                    ; 1       ;
-; Add28~8                                    ; 1       ;
-; Add28~7                                    ; 1       ;
-; Add28~6                                    ; 1       ;
-; Add28~5                                    ; 1       ;
-; Add28~4                                    ; 1       ;
-; Add28~3                                    ; 1       ;
-; Add28~2                                    ; 1       ;
-; Add26~61                                   ; 1       ;
-; Add26~59                                   ; 1       ;
-; Add26~57                                   ; 1       ;
-; Add26~55                                   ; 1       ;
-; Add26~53                                   ; 1       ;
-; Add26~51                                   ; 1       ;
-; Add26~49                                   ; 1       ;
-; Add26~47                                   ; 1       ;
-; Add26~45                                   ; 1       ;
-; Add26~43                                   ; 1       ;
-; Add26~41                                   ; 1       ;
-; Add26~39                                   ; 1       ;
-; Add26~37                                   ; 1       ;
-; Add26~35                                   ; 1       ;
-; Add26~33                                   ; 1       ;
-; Add26~31                                   ; 1       ;
-; Add26~29                                   ; 1       ;
-; Add26~27                                   ; 1       ;
-; Add26~25                                   ; 1       ;
-; Add26~23                                   ; 1       ;
-; Add26~21                                   ; 1       ;
-; Add26~19                                   ; 1       ;
-; Add26~17                                   ; 1       ;
-; Add26~15                                   ; 1       ;
-; Add26~13                                   ; 1       ;
-; Add26~11                                   ; 1       ;
-; Add26~9                                    ; 1       ;
-; Add26~7                                    ; 1       ;
-; Add26~6                                    ; 1       ;
-; Add26~5                                    ; 1       ;
-; Add26~4                                    ; 1       ;
-; Add27~61                                   ; 1       ;
-; Add27~59                                   ; 1       ;
-; Add27~57                                   ; 1       ;
-; Add27~55                                   ; 1       ;
-; Add27~53                                   ; 1       ;
-; Add27~51                                   ; 1       ;
-; Add27~49                                   ; 1       ;
-; Add27~47                                   ; 1       ;
-; Add27~45                                   ; 1       ;
-; Add27~43                                   ; 1       ;
-; Add27~41                                   ; 1       ;
-; Add27~39                                   ; 1       ;
-; Add27~37                                   ; 1       ;
-; Add27~35                                   ; 1       ;
-; Add27~33                                   ; 1       ;
-; Add27~31                                   ; 1       ;
-; Add27~29                                   ; 1       ;
-; Add27~27                                   ; 1       ;
-; Add27~25                                   ; 1       ;
-; Add27~23                                   ; 1       ;
-; Add27~21                                   ; 1       ;
-; Add27~19                                   ; 1       ;
-; Add27~17                                   ; 1       ;
-; Add27~15                                   ; 1       ;
-; Add27~13                                   ; 1       ;
-; Add27~11                                   ; 1       ;
-; Add27~9                                    ; 1       ;
-; Add27~7                                    ; 1       ;
-; Add27~6                                    ; 1       ;
-; Add27~5                                    ; 1       ;
-; Add27~4                                    ; 1       ;
-; Add26~3                                    ; 1       ;
-; Add26~2                                    ; 1       ;
-; Add27~3                                    ; 1       ;
-; Add26~1                                    ; 1       ;
-; Add26~0                                    ; 1       ;
-; Add27~1                                    ; 1       ;
-; vga:instancia_vga|Add0~18                  ; 1       ;
-; vga:instancia_vga|Add0~17                  ; 1       ;
-; vga:instancia_vga|Add0~16                  ; 1       ;
-; vga:instancia_vga|Add0~15                  ; 1       ;
-; vga:instancia_vga|Add0~14                  ; 1       ;
-; vga:instancia_vga|Add0~13                  ; 1       ;
-; vga:instancia_vga|Add0~12                  ; 1       ;
-; vga:instancia_vga|Add0~11                  ; 1       ;
-; vga:instancia_vga|Add0~10                  ; 1       ;
-; vga:instancia_vga|Add0~9                   ; 1       ;
-; vga:instancia_vga|Add0~8                   ; 1       ;
-; vga:instancia_vga|Add0~7                   ; 1       ;
-; vga:instancia_vga|Add0~6                   ; 1       ;
-; vga:instancia_vga|Add0~5                   ; 1       ;
-; vga:instancia_vga|Add0~4                   ; 1       ;
-; vga:instancia_vga|Add0~3                   ; 1       ;
-; vga:instancia_vga|Add0~2                   ; 1       ;
-; vga:instancia_vga|Add0~1                   ; 1       ;
-; vga:instancia_vga|Add0~0                   ; 1       ;
-; vga:instancia_vga|Add1~18                  ; 1       ;
-; vga:instancia_vga|Add1~17                  ; 1       ;
-; vga:instancia_vga|Add1~16                  ; 1       ;
-; vga:instancia_vga|Add1~15                  ; 1       ;
-; vga:instancia_vga|Add1~14                  ; 1       ;
-; vga:instancia_vga|Add1~13                  ; 1       ;
-; vga:instancia_vga|Add1~12                  ; 1       ;
-; vga:instancia_vga|Add1~11                  ; 1       ;
-; vga:instancia_vga|Add1~10                  ; 1       ;
-; vga:instancia_vga|Add1~9                   ; 1       ;
-; vga:instancia_vga|Add1~8                   ; 1       ;
-; vga:instancia_vga|Add1~7                   ; 1       ;
-; vga:instancia_vga|Add1~6                   ; 1       ;
-; vga:instancia_vga|Add1~5                   ; 1       ;
-; vga:instancia_vga|Add1~4                   ; 1       ;
-; vga:instancia_vga|Add1~3                   ; 1       ;
-; vga:instancia_vga|Add1~2                   ; 1       ;
-; vga:instancia_vga|Add1~1                   ; 1       ;
-; vga:instancia_vga|Add1~0                   ; 1       ;
-; vga_b[9]~0                                 ; 1       ;
-; vga_g[1]~0                                 ; 1       ;
-; vga_b[9]~reg0                              ; 1       ;
-; vga_g[1]~reg0                              ; 1       ;
+; LessThan3~0                                ; 1       ;
+; LessThan2~1                                ; 1       ;
+; LessThan2~0                                ; 1       ;
+; always1~11                                 ; 1       ;
+; LessThan13~1                               ; 1       ;
+; always1~7                                  ; 1       ;
+; Equal20~6                                  ; 1       ;
+; Equal20~3                                  ; 1       ;
+; Equal20~2                                  ; 1       ;
+; Equal20~1                                  ; 1       ;
+; Equal20~0                                  ; 1       ;
+; LessThan18~1                               ; 1       ;
+; vga:instancia_vga|vsync~2                  ; 1       ;
 +--------------------------------------------+---------+
 
 
@@ -2082,82 +2313,82 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------+------------------------+
 ; Other Routing Resource Type ; Usage                  ;
 +-----------------------------+------------------------+
-; Block interconnects         ; 956 / 94,460 ( 1 % )   ;
-; C16 interconnects           ; 10 / 3,315 ( < 1 % )   ;
-; C4 interconnects            ; 520 / 60,840 ( < 1 % ) ;
-; Direct links                ; 176 / 94,460 ( < 1 % ) ;
-; Global clocks               ; 2 / 16 ( 13 % )        ;
-; Local interconnects         ; 341 / 33,216 ( 1 % )   ;
-; R24 interconnects           ; 24 / 3,091 ( < 1 % )   ;
-; R4 interconnects            ; 578 / 81,294 ( < 1 % ) ;
+; Block interconnects         ; 1,709 / 94,460 ( 2 % ) ;
+; C16 interconnects           ; 6 / 3,315 ( < 1 % )    ;
+; C4 interconnects            ; 981 / 60,840 ( 2 % )   ;
+; Direct links                ; 303 / 94,460 ( < 1 % ) ;
+; Global clocks               ; 3 / 16 ( 19 % )        ;
+; Local interconnects         ; 617 / 33,216 ( 2 % )   ;
+; R24 interconnects           ; 15 / 3,091 ( < 1 % )   ;
+; R4 interconnects            ; 1,006 / 81,294 ( 1 % ) ;
 +-----------------------------+------------------------+
 
 
 +----------------------------------------------------------------------------+
 ; LAB Logic Elements                                                         ;
 +---------------------------------------------+------------------------------+
-; Number of Logic Elements  (Average = 13.06) ; Number of LABs  (Total = 47) ;
+; Number of Logic Elements  (Average = 14.24) ; Number of LABs  (Total = 79) ;
 +---------------------------------------------+------------------------------+
-; 1                                           ; 4                            ;
-; 2                                           ; 2                            ;
-; 3                                           ; 1                            ;
+; 1                                           ; 3                            ;
+; 2                                           ; 1                            ;
+; 3                                           ; 0                            ;
 ; 4                                           ; 0                            ;
 ; 5                                           ; 0                            ;
 ; 6                                           ; 0                            ;
-; 7                                           ; 0                            ;
-; 8                                           ; 0                            ;
-; 9                                           ; 0                            ;
-; 10                                          ; 0                            ;
-; 11                                          ; 2                            ;
-; 12                                          ; 1                            ;
-; 13                                          ; 4                            ;
+; 7                                           ; 1                            ;
+; 8                                           ; 3                            ;
+; 9                                           ; 1                            ;
+; 10                                          ; 1                            ;
+; 11                                          ; 1                            ;
+; 12                                          ; 2                            ;
+; 13                                          ; 2                            ;
 ; 14                                          ; 3                            ;
-; 15                                          ; 5                            ;
-; 16                                          ; 25                           ;
+; 15                                          ; 9                            ;
+; 16                                          ; 52                           ;
 +---------------------------------------------+------------------------------+
 
 
 +-------------------------------------------------------------------+
 ; LAB-wide Signals                                                  ;
 +------------------------------------+------------------------------+
-; LAB-wide Signals  (Average = 0.38) ; Number of LABs  (Total = 47) ;
+; LAB-wide Signals  (Average = 0.48) ; Number of LABs  (Total = 79) ;
 +------------------------------------+------------------------------+
-; 1 Clock                            ; 13                           ;
-; 1 Clock enable                     ; 2                            ;
-; 1 Sync. clear                      ; 1                            ;
-; 1 Sync. load                       ; 2                            ;
+; 1 Clock                            ; 25                           ;
+; 1 Clock enable                     ; 7                            ;
+; 1 Sync. clear                      ; 3                            ;
+; 1 Sync. load                       ; 3                            ;
 +------------------------------------+------------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Signals Sourced  (Average = 14.17) ; Number of LABs  (Total = 47) ;
+; Number of Signals Sourced  (Average = 15.39) ; Number of LABs  (Total = 79) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
-; 1                                            ; 3                            ;
-; 2                                            ; 3                            ;
-; 3                                            ; 1                            ;
+; 1                                            ; 2                            ;
+; 2                                            ; 2                            ;
+; 3                                            ; 0                            ;
 ; 4                                            ; 0                            ;
 ; 5                                            ; 0                            ;
 ; 6                                            ; 0                            ;
-; 7                                            ; 0                            ;
-; 8                                            ; 0                            ;
+; 7                                            ; 1                            ;
+; 8                                            ; 3                            ;
 ; 9                                            ; 0                            ;
-; 10                                           ; 0                            ;
-; 11                                           ; 1                            ;
+; 10                                           ; 1                            ;
+; 11                                           ; 2                            ;
 ; 12                                           ; 1                            ;
-; 13                                           ; 3                            ;
+; 13                                           ; 1                            ;
 ; 14                                           ; 3                            ;
-; 15                                           ; 5                            ;
-; 16                                           ; 18                           ;
-; 17                                           ; 1                            ;
-; 18                                           ; 2                            ;
-; 19                                           ; 1                            ;
-; 20                                           ; 1                            ;
-; 21                                           ; 0                            ;
-; 22                                           ; 0                            ;
-; 23                                           ; 2                            ;
+; 15                                           ; 6                            ;
+; 16                                           ; 37                           ;
+; 17                                           ; 4                            ;
+; 18                                           ; 3                            ;
+; 19                                           ; 2                            ;
+; 20                                           ; 3                            ;
+; 21                                           ; 4                            ;
+; 22                                           ; 1                            ;
+; 23                                           ; 1                            ;
 ; 24                                           ; 1                            ;
 ; 25                                           ; 1                            ;
 +----------------------------------------------+------------------------------+
@@ -2166,64 +2397,65 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                        ;
 +-------------------------------------------------+------------------------------+
-; Number of Signals Sourced Out  (Average = 8.62) ; Number of LABs  (Total = 47) ;
+; Number of Signals Sourced Out  (Average = 9.85) ; Number of LABs  (Total = 79) ;
 +-------------------------------------------------+------------------------------+
 ; 0                                               ; 0                            ;
-; 1                                               ; 6                            ;
-; 2                                               ; 1                            ;
-; 3                                               ; 0                            ;
-; 4                                               ; 2                            ;
-; 5                                               ; 5                            ;
+; 1                                               ; 4                            ;
+; 2                                               ; 2                            ;
+; 3                                               ; 2                            ;
+; 4                                               ; 1                            ;
+; 5                                               ; 1                            ;
 ; 6                                               ; 6                            ;
-; 7                                               ; 2                            ;
-; 8                                               ; 1                            ;
-; 9                                               ; 3                            ;
-; 10                                              ; 6                            ;
-; 11                                              ; 0                            ;
-; 12                                              ; 2                            ;
-; 13                                              ; 2                            ;
-; 14                                              ; 1                            ;
+; 7                                               ; 12                           ;
+; 8                                               ; 5                            ;
+; 9                                               ; 5                            ;
+; 10                                              ; 5                            ;
+; 11                                              ; 5                            ;
+; 12                                              ; 3                            ;
+; 13                                              ; 10                           ;
+; 14                                              ; 2                            ;
 ; 15                                              ; 5                            ;
-; 16                                              ; 5                            ;
+; 16                                              ; 11                           ;
 +-------------------------------------------------+------------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Distinct Inputs  (Average = 17.30) ; Number of LABs  (Total = 47) ;
+; Number of Distinct Inputs  (Average = 19.51) ; Number of LABs  (Total = 79) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
 ; 1                                            ; 1                            ;
-; 2                                            ; 2                            ;
-; 3                                            ; 0                            ;
-; 4                                            ; 3                            ;
-; 5                                            ; 1                            ;
+; 2                                            ; 0                            ;
+; 3                                            ; 1                            ;
+; 4                                            ; 2                            ;
+; 5                                            ; 0                            ;
 ; 6                                            ; 1                            ;
-; 7                                            ; 0                            ;
+; 7                                            ; 2                            ;
 ; 8                                            ; 0                            ;
 ; 9                                            ; 0                            ;
 ; 10                                           ; 1                            ;
 ; 11                                           ; 0                            ;
-; 12                                           ; 0                            ;
-; 13                                           ; 0                            ;
-; 14                                           ; 2                            ;
-; 15                                           ; 1                            ;
-; 16                                           ; 5                            ;
-; 17                                           ; 7                            ;
-; 18                                           ; 3                            ;
-; 19                                           ; 1                            ;
+; 12                                           ; 2                            ;
+; 13                                           ; 1                            ;
+; 14                                           ; 1                            ;
+; 15                                           ; 8                            ;
+; 16                                           ; 10                           ;
+; 17                                           ; 6                            ;
+; 18                                           ; 1                            ;
+; 19                                           ; 6                            ;
 ; 20                                           ; 3                            ;
-; 21                                           ; 1                            ;
-; 22                                           ; 4                            ;
+; 21                                           ; 3                            ;
+; 22                                           ; 3                            ;
 ; 23                                           ; 2                            ;
-; 24                                           ; 1                            ;
-; 25                                           ; 2                            ;
-; 26                                           ; 1                            ;
-; 27                                           ; 0                            ;
-; 28                                           ; 2                            ;
-; 29                                           ; 1                            ;
-; 30                                           ; 2                            ;
+; 24                                           ; 3                            ;
+; 25                                           ; 4                            ;
+; 26                                           ; 0                            ;
+; 27                                           ; 5                            ;
+; 28                                           ; 0                            ;
+; 29                                           ; 2                            ;
+; 30                                           ; 7                            ;
+; 31                                           ; 4                            ;
 +----------------------------------------------+------------------------------+
 
 
@@ -2261,7 +2493,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------+----------------------+-------------------+
 ; Source Clock(s) ; Destination Clock(s) ; Delay Added in ns ;
 +-----------------+----------------------+-------------------+
-; move_y          ; move_y               ; 2.1               ;
+; move_y          ; move_y               ; 7.2               ;
 +-----------------+----------------------+-------------------+
 Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
 This will disable optimization of problematic paths and expose them for further analysis using either the TimeQuest Timing Analyzer or the Classic Timing Analyzer.
@@ -2272,87 +2504,106 @@ This will disable optimization of problematic paths and expose them for further 
 +-----------------+----------------------+-------------------+
 ; Source Register ; Destination Register ; Delay Added in ns ;
 +-----------------+----------------------+-------------------+
-; move_y          ; pos[31]              ; 0.528             ;
-; pos[31]         ; pos[31]              ; 0.528             ;
-; pos[3]          ; pos[2]               ; 0.256             ;
-; pos[0]          ; pos[2]               ; 0.256             ;
-; move_y          ; pos[2]               ; 0.256             ;
-; pos[1]          ; pos[2]               ; 0.256             ;
-; pos[2]          ; pos[2]               ; 0.256             ;
-; pos[4]          ; pos[2]               ; 0.256             ;
-; pos[5]          ; pos[2]               ; 0.256             ;
-; pos[6]          ; pos[2]               ; 0.256             ;
-; pos[7]          ; pos[2]               ; 0.256             ;
-; pos[8]          ; pos[2]               ; 0.256             ;
-; move_x          ; pos[2]               ; 0.256             ;
-; pos[9]          ; pos[2]               ; 0.256             ;
-; pos[10]         ; pos[2]               ; 0.256             ;
-; pos[11]         ; pos[2]               ; 0.256             ;
-; pos[12]         ; pos[2]               ; 0.256             ;
-; pos[13]         ; pos[2]               ; 0.256             ;
-; pos[14]         ; pos[2]               ; 0.256             ;
-; pos[15]         ; pos[2]               ; 0.256             ;
-; pos[16]         ; pos[2]               ; 0.256             ;
-; pos[17]         ; pos[2]               ; 0.256             ;
-; pos[18]         ; pos[2]               ; 0.256             ;
-; pos[19]         ; pos[2]               ; 0.256             ;
-; pos[20]         ; pos[2]               ; 0.256             ;
-; pos[21]         ; pos[2]               ; 0.256             ;
-; pos[22]         ; pos[2]               ; 0.256             ;
-; pos[23]         ; pos[2]               ; 0.256             ;
-; pos[24]         ; pos[2]               ; 0.256             ;
-; pos[25]         ; pos[2]               ; 0.256             ;
-; pos[26]         ; pos[2]               ; 0.256             ;
-; pos[27]         ; pos[2]               ; 0.256             ;
-; pos[28]         ; pos[2]               ; 0.256             ;
-; pos[29]         ; pos[2]               ; 0.256             ;
-; pos[30]         ; pos[2]               ; 0.256             ;
-; pos[31]         ; pos[2]               ; 0.256             ;
-; pos[4]          ; pos[31]              ; 0.118             ;
-; pos[5]          ; pos[31]              ; 0.118             ;
-; pos[6]          ; pos[31]              ; 0.118             ;
-; pos[7]          ; pos[31]              ; 0.118             ;
-; pos[8]          ; pos[31]              ; 0.118             ;
-; pos[9]          ; pos[31]              ; 0.118             ;
-; pos[10]         ; pos[31]              ; 0.118             ;
-; pos[11]         ; pos[31]              ; 0.118             ;
-; pos[12]         ; pos[31]              ; 0.118             ;
-; pos[13]         ; pos[31]              ; 0.118             ;
-; pos[14]         ; pos[31]              ; 0.118             ;
-; pos[15]         ; pos[31]              ; 0.118             ;
-; pos[16]         ; pos[31]              ; 0.118             ;
-; pos[17]         ; pos[31]              ; 0.118             ;
-; pos[18]         ; pos[31]              ; 0.118             ;
-; pos[19]         ; pos[31]              ; 0.118             ;
-; pos[20]         ; pos[31]              ; 0.118             ;
-; pos[21]         ; pos[31]              ; 0.118             ;
-; pos[22]         ; pos[31]              ; 0.118             ;
-; pos[23]         ; pos[31]              ; 0.118             ;
-; pos[24]         ; pos[31]              ; 0.118             ;
-; pos[25]         ; pos[31]              ; 0.118             ;
-; pos[26]         ; pos[31]              ; 0.118             ;
-; pos[27]         ; pos[31]              ; 0.118             ;
-; pos[28]         ; pos[31]              ; 0.118             ;
-; pos[29]         ; pos[31]              ; 0.118             ;
-; pos[30]         ; pos[31]              ; 0.118             ;
-; pos[4]          ; pos[21]              ; 0.080             ;
-; pos[5]          ; pos[21]              ; 0.080             ;
-; pos[6]          ; pos[21]              ; 0.080             ;
-; pos[7]          ; pos[21]              ; 0.080             ;
-; pos[8]          ; pos[21]              ; 0.080             ;
-; pos[9]          ; pos[21]              ; 0.080             ;
-; pos[10]         ; pos[21]              ; 0.080             ;
-; pos[11]         ; pos[21]              ; 0.080             ;
-; pos[12]         ; pos[21]              ; 0.080             ;
-; pos[13]         ; pos[21]              ; 0.080             ;
-; pos[14]         ; pos[21]              ; 0.080             ;
-; pos[15]         ; pos[21]              ; 0.080             ;
-; pos[16]         ; pos[21]              ; 0.080             ;
-; pos[17]         ; pos[21]              ; 0.080             ;
-; pos[18]         ; pos[21]              ; 0.080             ;
-; pos[19]         ; pos[21]              ; 0.080             ;
-; pos[20]         ; pos[21]              ; 0.080             ;
-; pos[21]         ; pos[21]              ; 0.080             ;
+; pos[3]          ; pos[4]               ; 0.561             ;
+; pos[0]          ; pos[4]               ; 0.561             ;
+; move_y          ; pos[4]               ; 0.561             ;
+; pos[1]          ; pos[4]               ; 0.561             ;
+; pos[2]          ; pos[4]               ; 0.561             ;
+; pos[5]          ; pos[4]               ; 0.561             ;
+; pos[6]          ; pos[4]               ; 0.561             ;
+; pos[7]          ; pos[4]               ; 0.561             ;
+; pos[8]          ; pos[4]               ; 0.561             ;
+; pos[9]          ; pos[4]               ; 0.561             ;
+; pos[10]         ; pos[4]               ; 0.561             ;
+; pos[11]         ; pos[4]               ; 0.561             ;
+; pos[12]         ; pos[4]               ; 0.561             ;
+; pos[13]         ; pos[4]               ; 0.561             ;
+; pos[14]         ; pos[4]               ; 0.561             ;
+; pos[15]         ; pos[4]               ; 0.561             ;
+; pos[16]         ; pos[4]               ; 0.561             ;
+; pos[17]         ; pos[4]               ; 0.561             ;
+; pos[18]         ; pos[4]               ; 0.561             ;
+; pos[19]         ; pos[4]               ; 0.561             ;
+; pos[20]         ; pos[4]               ; 0.561             ;
+; pos[21]         ; pos[4]               ; 0.561             ;
+; pos[22]         ; pos[4]               ; 0.561             ;
+; pos[23]         ; pos[4]               ; 0.561             ;
+; pos[24]         ; pos[4]               ; 0.561             ;
+; pos[25]         ; pos[4]               ; 0.561             ;
+; pos[26]         ; pos[4]               ; 0.561             ;
+; pos[27]         ; pos[4]               ; 0.561             ;
+; pos[28]         ; pos[4]               ; 0.561             ;
+; pos[29]         ; pos[4]               ; 0.561             ;
+; pos[30]         ; pos[4]               ; 0.561             ;
+; pos[31]         ; pos[4]               ; 0.561             ;
+; pos[29]         ; pos[29]              ; 0.470             ;
+; pos[3]          ; pos[29]              ; 0.401             ;
+; pos[0]          ; pos[29]              ; 0.401             ;
+; move_y          ; pos[29]              ; 0.401             ;
+; pos[1]          ; pos[29]              ; 0.401             ;
+; pos[2]          ; pos[29]              ; 0.401             ;
+; pos[17]         ; pos[29]              ; 0.401             ;
+; pos[18]         ; pos[29]              ; 0.401             ;
+; pos[19]         ; pos[29]              ; 0.401             ;
+; pos[20]         ; pos[29]              ; 0.401             ;
+; pos[21]         ; pos[29]              ; 0.401             ;
+; pos[22]         ; pos[29]              ; 0.401             ;
+; pos[25]         ; pos[29]              ; 0.401             ;
+; pos[26]         ; pos[29]              ; 0.401             ;
+; pos[27]         ; pos[29]              ; 0.401             ;
+; pos[28]         ; pos[29]              ; 0.401             ;
+; pos[30]         ; pos[29]              ; 0.401             ;
+; pos[31]         ; pos[29]              ; 0.401             ;
+; pos[3]          ; pos[28]              ; 0.385             ;
+; pos[0]          ; pos[28]              ; 0.385             ;
+; move_y          ; pos[28]              ; 0.385             ;
+; pos[1]          ; pos[28]              ; 0.385             ;
+; pos[2]          ; pos[28]              ; 0.385             ;
+; pos[17]         ; pos[28]              ; 0.385             ;
+; pos[18]         ; pos[28]              ; 0.385             ;
+; pos[19]         ; pos[28]              ; 0.385             ;
+; pos[20]         ; pos[28]              ; 0.385             ;
+; pos[21]         ; pos[28]              ; 0.385             ;
+; pos[22]         ; pos[28]              ; 0.385             ;
+; pos[25]         ; pos[28]              ; 0.385             ;
+; pos[26]         ; pos[28]              ; 0.385             ;
+; pos[27]         ; pos[28]              ; 0.385             ;
+; pos[28]         ; pos[28]              ; 0.385             ;
+; pos[29]         ; pos[28]              ; 0.385             ;
+; pos[30]         ; pos[28]              ; 0.385             ;
+; pos[31]         ; pos[28]              ; 0.385             ;
+; pos[3]          ; pos[30]              ; 0.376             ;
+; pos[0]          ; pos[30]              ; 0.376             ;
+; move_y          ; pos[30]              ; 0.376             ;
+; pos[1]          ; pos[30]              ; 0.376             ;
+; pos[2]          ; pos[30]              ; 0.376             ;
+; pos[17]         ; pos[30]              ; 0.376             ;
+; pos[18]         ; pos[30]              ; 0.376             ;
+; pos[19]         ; pos[30]              ; 0.376             ;
+; pos[20]         ; pos[30]              ; 0.376             ;
+; pos[21]         ; pos[30]              ; 0.376             ;
+; pos[22]         ; pos[30]              ; 0.376             ;
+; pos[25]         ; pos[30]              ; 0.376             ;
+; pos[26]         ; pos[30]              ; 0.376             ;
+; pos[27]         ; pos[30]              ; 0.376             ;
+; pos[28]         ; pos[30]              ; 0.376             ;
+; pos[31]         ; pos[30]              ; 0.376             ;
+; pos[3]          ; pos[31]              ; 0.372             ;
+; pos[0]          ; pos[31]              ; 0.372             ;
+; pos[1]          ; pos[31]              ; 0.372             ;
+; pos[2]          ; pos[31]              ; 0.372             ;
+; pos[17]         ; pos[31]              ; 0.372             ;
+; pos[18]         ; pos[31]              ; 0.372             ;
+; pos[19]         ; pos[31]              ; 0.372             ;
+; pos[20]         ; pos[31]              ; 0.372             ;
+; pos[21]         ; pos[31]              ; 0.372             ;
+; pos[22]         ; pos[31]              ; 0.372             ;
+; pos[25]         ; pos[31]              ; 0.372             ;
+; pos[26]         ; pos[31]              ; 0.372             ;
+; pos[27]         ; pos[31]              ; 0.372             ;
+; pos[28]         ; pos[31]              ; 0.372             ;
+; pos[29]         ; pos[30]              ; 0.345             ;
+; pos[29]         ; pos[31]              ; 0.343             ;
 +-----------------+----------------------+-------------------+
 Note: This table only shows the top 100 paths that have the largest delay added for hold.
 
@@ -2363,7 +2614,7 @@ Note: This table only shows the top 100 paths that have the largest delay added 
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Fitter
     Info: Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Mon Aug 28 18:29:37 2023
+    Info: Processing started: Mon Aug 28 19:04:46 2023
 Info: Command: quartus_fit --read_settings_files=off --write_settings_files=off pepinosDigitais -c pepinosDigitais
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (119006): Selected device EP2C35F672C6 for design "pepinosDigitais"
@@ -2382,57 +2633,59 @@ Warning (335093): TimeQuest Timing Analyzer is analyzing 32 combinational loops 
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'pepinosDigitais.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
 Info (332144): No user constrained base clocks found in the design
 Info (332097): The following timing edges are non-unate.  TimeQuest will assume pos-unate behavior for these edges in the clock network.
-    Info (332098): Cell: pos~10  from: datab  to: combout
-    Info (332098): Cell: pos~12  from: datab  to: combout
-    Info (332098): Cell: pos~14  from: datab  to: combout
-    Info (332098): Cell: pos~16  from: datab  to: combout
-    Info (332098): Cell: pos~18  from: datab  to: combout
-    Info (332098): Cell: pos~20  from: datab  to: combout
-    Info (332098): Cell: pos~22  from: datab  to: combout
-    Info (332098): Cell: pos~24  from: datab  to: combout
-    Info (332098): Cell: pos~26  from: datab  to: combout
-    Info (332098): Cell: pos~28  from: datab  to: combout
-    Info (332098): Cell: pos~30  from: datab  to: combout
-    Info (332098): Cell: pos~32  from: datab  to: combout
-    Info (332098): Cell: pos~34  from: datab  to: combout
-    Info (332098): Cell: pos~36  from: datab  to: combout
-    Info (332098): Cell: pos~38  from: datab  to: combout
-    Info (332098): Cell: pos~3  from: datad  to: combout
-    Info (332098): Cell: pos~40  from: datab  to: combout
-    Info (332098): Cell: pos~42  from: datab  to: combout
-    Info (332098): Cell: pos~44  from: datab  to: combout
-    Info (332098): Cell: pos~46  from: datab  to: combout
-    Info (332098): Cell: pos~48  from: datab  to: combout
-    Info (332098): Cell: pos~50  from: datab  to: combout
-    Info (332098): Cell: pos~52  from: datab  to: combout
-    Info (332098): Cell: pos~54  from: datab  to: combout
-    Info (332098): Cell: pos~56  from: datab  to: combout
-    Info (332098): Cell: pos~58  from: datab  to: combout
-    Info (332098): Cell: pos~5  from: datad  to: combout
-    Info (332098): Cell: pos~60  from: datab  to: combout
-    Info (332098): Cell: pos~6  from: datab  to: combout
-    Info (332098): Cell: pos~8  from: datab  to: combout
+    Info (332098): Cell: LessThan36~0  from: dataa  to: combout
+    Info (332098): Cell: LessThan36~3  from: dataa  to: combout
+    Info (332098): Cell: pos~10  from: datad  to: combout
+    Info (332098): Cell: pos~11  from: datad  to: combout
+    Info (332098): Cell: pos~12  from: datad  to: combout
+    Info (332098): Cell: pos~13  from: datad  to: combout
+    Info (332098): Cell: pos~14  from: datad  to: combout
+    Info (332098): Cell: pos~15  from: datad  to: combout
+    Info (332098): Cell: pos~16  from: datad  to: combout
+    Info (332098): Cell: pos~17  from: datad  to: combout
+    Info (332098): Cell: pos~18  from: datad  to: combout
+    Info (332098): Cell: pos~19  from: datad  to: combout
+    Info (332098): Cell: pos~20  from: datad  to: combout
+    Info (332098): Cell: pos~21  from: datad  to: combout
+    Info (332098): Cell: pos~22  from: datad  to: combout
+    Info (332098): Cell: pos~23  from: datad  to: combout
+    Info (332098): Cell: pos~24  from: datad  to: combout
+    Info (332098): Cell: pos~25  from: datad  to: combout
+    Info (332098): Cell: pos~26  from: datad  to: combout
+    Info (332098): Cell: pos~27  from: datad  to: combout
+    Info (332098): Cell: pos~28  from: datad  to: combout
+    Info (332098): Cell: pos~29  from: datad  to: combout
+    Info (332098): Cell: pos~2  from: datad  to: combout
+    Info (332098): Cell: pos~30  from: datad  to: combout
+    Info (332098): Cell: pos~31  from: datad  to: combout
+    Info (332098): Cell: pos~32  from: datad  to: combout
+    Info (332098): Cell: pos~6  from: datad  to: combout
+    Info (332098): Cell: pos~7  from: datad  to: combout
+    Info (332098): Cell: pos~8  from: datad  to: combout
+    Info (332098): Cell: pos~9  from: datad  to: combout
 Info (332130): Timing requirements not specified -- quality metrics such as performance may be sacrificed to reduce compilation time.
+Info (176353): Automatically promoted node select (placed in PIN W26 (LVDS139p, CDPCLK4/DQS3R/CQ3R#))
+    Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G7
 Info (176353): Automatically promoted node clock_25M_divider:inst_clock_25M|clk_out 
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
     Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
         Info (176357): Destination node clock_25M_divider:inst_clock_25M|clk_out~0
         Info (176357): Destination node clock_25M
-Info (176353): Automatically promoted node pos[3]~65 
+Info (176353): Automatically promoted node pos[2]~36 
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
 Info (176233): Starting register packing
 Info (176235): Finished register packing
     Extra Info (176219): No registers were packed into other blocks
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:00
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:01
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
 Info (170192): Fitter placement operations ending: elapsed time is 00:00:02
 Info (170193): Fitter routing operations beginning
-Info (170195): Router estimated average interconnect usage is 0% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 4% of the available device resources in the region that extends from location X44_Y24 to location X54_Y36
-Info (170194): Fitter routing operations ending: elapsed time is 00:00:03
+Info (170195): Router estimated average interconnect usage is 1% of the available device resources
+    Info (170196): Router estimated peak interconnect usage is 8% of the available device resources in the region that extends from location X33_Y24 to location X43_Y36
+Info (170194): Fitter routing operations ending: elapsed time is 00:00:04
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
 Info (306004): Started post-fitting delay annotation
@@ -2478,10 +2731,10 @@ Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
 Warning (169174): The Reserve All Unused Pins setting has not been specified, and will default to 'As output driving ground'.
 Info (144001): Generated suppressed messages file C:/Users/brown/OneDrive/UFRGS/11º Semestre/PepinosDigitais/projetofinalagoravai/output_files/pepinosDigitais.fit.smsg
 Info: Quartus II 64-Bit Fitter was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 4866 megabytes
-    Info: Processing ended: Mon Aug 28 18:29:46 2023
-    Info: Elapsed time: 00:00:09
-    Info: Total CPU time (on all processors): 00:00:10
+    Info: Peak virtual memory: 4859 megabytes
+    Info: Processing ended: Mon Aug 28 19:04:58 2023
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:12
 
 
 +----------------------------+

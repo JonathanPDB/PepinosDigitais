@@ -1,5 +1,5 @@
 Analysis & Synthesis report for pepinosDigitais
-Mon Aug 28 18:29:36 2023
+Mon Aug 28 19:04:45 2023
 Quartus II 64-Bit Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Web Edition
 
 
@@ -48,15 +48,15 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                       ;
 +------------------------------------+-----------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Aug 28 18:29:36 2023         ;
+; Analysis & Synthesis Status        ; Successful - Mon Aug 28 19:04:45 2023         ;
 ; Quartus II 64-Bit Version          ; 12.1 Build 243 01/31/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; pepinosDigitais                               ;
 ; Top-level Entity Name              ; pepinosDigitais                               ;
 ; Family                             ; Cyclone II                                    ;
-; Total logic elements               ; 616                                           ;
-;     Total combinational functions  ; 596                                           ;
-;     Dedicated logic registers      ; 53                                            ;
-; Total registers                    ; 53                                            ;
+; Total logic elements               ; 1,125                                         ;
+;     Total combinational functions  ; 1,105                                         ;
+;     Dedicated logic registers      ; 93                                            ;
+; Total registers                    ; 93                                            ;
 ; Total pins                         ; 38                                            ;
 ; Total virtual pins                 ; 0                                             ;
 ; Total memory bits                  ; 0                                             ;
@@ -177,27 +177,27 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Estimated Total logic elements              ; 616   ;
+; Estimated Total logic elements              ; 1,125 ;
 ;                                             ;       ;
-; Total combinational functions               ; 596   ;
+; Total combinational functions               ; 1105  ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 313   ;
-;     -- 3 input functions                    ; 86    ;
-;     -- <=2 input functions                  ; 197   ;
+;     -- 4 input functions                    ; 589   ;
+;     -- 3 input functions                    ; 178   ;
+;     -- <=2 input functions                  ; 338   ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 460   ;
-;     -- arithmetic mode                      ; 136   ;
+;     -- normal mode                          ; 833   ;
+;     -- arithmetic mode                      ; 272   ;
 ;                                             ;       ;
-; Total registers                             ; 53    ;
-;     -- Dedicated logic registers            ; 53    ;
+; Total registers                             ; 93    ;
+;     -- Dedicated logic registers            ; 93    ;
 ;     -- I/O registers                        ; 0     ;
 ;                                             ;       ;
 ; I/O pins                                    ; 38    ;
 ; Embedded Multiplier 9-bit elements          ; 0     ;
-; Maximum fan-out                             ; 77    ;
-; Total fan-out                               ; 2052  ;
-; Average fan-out                             ; 2.99  ;
+; Maximum fan-out                             ; 60    ;
+; Total fan-out                               ; 3790  ;
+; Average fan-out                             ; 3.07  ;
 +---------------------------------------------+-------+
 
 
@@ -206,9 +206,9 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------+--------------+
 ; Compilation Hierarchy Node            ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                               ; Library Name ;
 +---------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------+--------------+
-; |pepinosDigitais                      ; 596 (554)         ; 53 (32)      ; 0           ; 0            ; 0       ; 0         ; 38   ; 0            ; |pepinosDigitais                                  ;              ;
+; |pepinosDigitais                      ; 1105 (1062)       ; 93 (72)      ; 0           ; 0            ; 0       ; 0         ; 38   ; 0            ; |pepinosDigitais                                  ;              ;
 ;    |clock_25M_divider:inst_clock_25M| ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|clock_25M_divider:inst_clock_25M ;              ;
-;    |vga:instancia_vga|                ; 41 (41)           ; 20 (20)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|vga:instancia_vga                ;              ;
+;    |vga:instancia_vga|                ; 42 (42)           ; 20 (20)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|vga:instancia_vga                ;              ;
 +---------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -236,19 +236,19 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; pos[17]                                             ; pos[31]             ; yes                    ;
 ; pos[16]                                             ; pos[31]             ; yes                    ;
 ; pos[15]                                             ; pos[31]             ; yes                    ;
-; pos[14]                                             ; pos[31]             ; yes                    ;
-; pos[13]                                             ; pos[31]             ; yes                    ;
-; pos[12]                                             ; pos[31]             ; yes                    ;
-; pos[11]                                             ; pos[31]             ; yes                    ;
-; pos[10]                                             ; pos[31]             ; yes                    ;
-; pos[9]                                              ; pos[31]             ; yes                    ;
-; pos[8]                                              ; pos[31]             ; yes                    ;
-; pos[7]                                              ; pos[31]             ; yes                    ;
-; pos[6]                                              ; pos[31]             ; yes                    ;
-; pos[5]                                              ; pos[31]             ; yes                    ;
+; pos[2]                                              ; pos[2]              ; yes                    ;
+; pos[3]                                              ; pos[2]              ; yes                    ;
 ; pos[4]                                              ; pos[31]             ; yes                    ;
-; pos[3]                                              ; pos[3]              ; yes                    ;
-; pos[2]                                              ; pos[3]              ; yes                    ;
+; pos[5]                                              ; pos[31]             ; yes                    ;
+; pos[6]                                              ; pos[31]             ; yes                    ;
+; pos[7]                                              ; pos[31]             ; yes                    ;
+; pos[8]                                              ; pos[31]             ; yes                    ;
+; pos[9]                                              ; pos[31]             ; yes                    ;
+; pos[10]                                             ; pos[31]             ; yes                    ;
+; pos[11]                                             ; pos[31]             ; yes                    ;
+; pos[12]                                             ; pos[31]             ; yes                    ;
+; pos[13]                                             ; pos[31]             ; yes                    ;
+; pos[14]                                             ; pos[31]             ; yes                    ;
 ; pos[1]                                              ; move_y              ; yes                    ;
 ; Number of user-specified and inferred latches = 32  ;                     ;                        ;
 +-----------------------------------------------------+---------------------+------------------------+
@@ -260,12 +260,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 53    ;
-; Number of registers using Synchronous Clear  ; 2     ;
-; Number of registers using Synchronous Load   ; 2     ;
+; Total registers                              ; 93    ;
+; Number of registers using Synchronous Clear  ; 4     ;
+; Number of registers using Synchronous Load   ; 4     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 10    ;
+; Number of registers using Clock Enable       ; 30    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -286,9 +286,16 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |pepinosDigitais|pos[2]    ;
-; 3:1                ; 28 bits   ; 56 LEs        ; 56 LEs               ; 0 LEs                  ; No         ; |pepinosDigitais|pos[4]    ;
-; 7:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |pepinosDigitais|vga_g     ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |pepinosDigitais|pos[3]    ;
+; 3:1                ; 28 bits   ; 56 LEs        ; 56 LEs               ; 0 LEs                  ; No         ; |pepinosDigitais|pos[9]    ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |pepinosDigitais|paint_g   ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |pepinosDigitais|paint_r   ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |pepinosDigitais|paint_r   ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |pepinosDigitais|paint_g   ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |pepinosDigitais|paint_r   ;
+; 20:1               ; 2 bits    ; 26 LEs        ; 26 LEs               ; 0 LEs                  ; No         ; |pepinosDigitais|Mux41     ;
+; 11:1               ; 2 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |pepinosDigitais|vga_g     ;
+; 19:1               ; 3 bits    ; 36 LEs        ; 36 LEs               ; 0 LEs                  ; No         ; |pepinosDigitais|vga_g     ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 
 
@@ -300,6 +307,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; SCREEN_WIDTH       ; 1010000000 ; Unsigned Binary                               ;
 ; SCREEN_HEIGHT      ; 0111100000 ; Unsigned Binary                               ;
 ; COLOR_WHITE        ; 1111111111 ; Unsigned Binary                               ;
+; COLOR_GRAY         ; 1000000000 ; Unsigned Binary                               ;
 ; COLOR_BLACK        ; 0000000000 ; Unsigned Binary                               ;
 ; COLOR_MAGENTA_r    ; 1111111111 ; Unsigned Binary                               ;
 ; COLOR_MAGENTA_g    ; 0000000000 ; Unsigned Binary                               ;
@@ -379,7 +387,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:02     ;
+; Top            ; 00:00:12     ;
 +----------------+--------------+
 
 
@@ -389,7 +397,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Mon Aug 28 18:29:32 2023
+    Info: Processing started: Mon Aug 28 19:04:31 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off pepinosDigitais -c pepinosDigitais
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 2 entities, in source file vga.sv
@@ -405,52 +413,52 @@ Info (12021): Found 1 design units, including 1 entities, in source file cardpai
 Info (12021): Found 1 design units, including 1 entities, in source file randomizer.sv
     Info (12023): Found entity 1: randomizer
 Info (12127): Elaborating entity "pepinosDigitais" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at pepinosDigitais.sv(69): object "PAR_CARTAS_1" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at pepinosDigitais.sv(70): object "PAR_CARTAS_2" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at pepinosDigitais.sv(71): object "PAR_CARTAS_3" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at pepinosDigitais.sv(72): object "PAR_CARTAS_4" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at pepinosDigitais.sv(73): object "PAR_CARTAS_5" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at pepinosDigitais.sv(74): object "PAR_CARTAS_6" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at pepinosDigitais.sv(75): object "PAR_CARTAS_7" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at pepinosDigitais.sv(76): object "PAR_CARTAS_8" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at pepinosDigitais.sv(77): object "PAR_CARTAS_9" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at pepinosDigitais.sv(78): object "PAR_CARTAS_10" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at pepinosDigitais.sv(81): object "PAINTING" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at pepinosDigitais.sv(113): object "frame" assigned a value but never read
-Warning (10762): Verilog HDL Case Statement warning at pepinosDigitais.sv(165): can't check case statement for completeness because the case expression has too many possible states
-Warning (10240): Verilog HDL Always Construct warning at pepinosDigitais.sv(238): inferring latch(es) for variable "pos", which holds its previous value in one or more paths through the always construct
-Info (10041): Inferred latch for "pos[2]" at pepinosDigitais.sv(246)
-Info (10041): Inferred latch for "pos[3]" at pepinosDigitais.sv(246)
-Info (10041): Inferred latch for "pos[4]" at pepinosDigitais.sv(246)
-Info (10041): Inferred latch for "pos[5]" at pepinosDigitais.sv(246)
-Info (10041): Inferred latch for "pos[6]" at pepinosDigitais.sv(246)
-Info (10041): Inferred latch for "pos[7]" at pepinosDigitais.sv(246)
-Info (10041): Inferred latch for "pos[8]" at pepinosDigitais.sv(246)
-Info (10041): Inferred latch for "pos[9]" at pepinosDigitais.sv(246)
-Info (10041): Inferred latch for "pos[10]" at pepinosDigitais.sv(246)
-Info (10041): Inferred latch for "pos[11]" at pepinosDigitais.sv(246)
-Info (10041): Inferred latch for "pos[12]" at pepinosDigitais.sv(246)
-Info (10041): Inferred latch for "pos[13]" at pepinosDigitais.sv(246)
-Info (10041): Inferred latch for "pos[14]" at pepinosDigitais.sv(246)
-Info (10041): Inferred latch for "pos[15]" at pepinosDigitais.sv(246)
-Info (10041): Inferred latch for "pos[16]" at pepinosDigitais.sv(246)
-Info (10041): Inferred latch for "pos[17]" at pepinosDigitais.sv(246)
-Info (10041): Inferred latch for "pos[18]" at pepinosDigitais.sv(246)
-Info (10041): Inferred latch for "pos[19]" at pepinosDigitais.sv(246)
-Info (10041): Inferred latch for "pos[20]" at pepinosDigitais.sv(246)
-Info (10041): Inferred latch for "pos[21]" at pepinosDigitais.sv(246)
-Info (10041): Inferred latch for "pos[22]" at pepinosDigitais.sv(246)
-Info (10041): Inferred latch for "pos[23]" at pepinosDigitais.sv(246)
-Info (10041): Inferred latch for "pos[24]" at pepinosDigitais.sv(246)
-Info (10041): Inferred latch for "pos[25]" at pepinosDigitais.sv(246)
-Info (10041): Inferred latch for "pos[26]" at pepinosDigitais.sv(246)
-Info (10041): Inferred latch for "pos[27]" at pepinosDigitais.sv(246)
-Info (10041): Inferred latch for "pos[28]" at pepinosDigitais.sv(246)
-Info (10041): Inferred latch for "pos[29]" at pepinosDigitais.sv(246)
-Info (10041): Inferred latch for "pos[30]" at pepinosDigitais.sv(246)
-Info (10041): Inferred latch for "pos[31]" at pepinosDigitais.sv(246)
-Info (10041): Inferred latch for "pos[0]" at pepinosDigitais.sv(239)
-Info (10041): Inferred latch for "pos[1]" at pepinosDigitais.sv(239)
+Warning (10036): Verilog HDL or VHDL warning at pepinosDigitais.sv(72): object "PAR_CARTAS_1" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at pepinosDigitais.sv(73): object "PAR_CARTAS_2" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at pepinosDigitais.sv(74): object "PAR_CARTAS_3" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at pepinosDigitais.sv(75): object "PAR_CARTAS_4" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at pepinosDigitais.sv(76): object "PAR_CARTAS_5" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at pepinosDigitais.sv(77): object "PAR_CARTAS_6" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at pepinosDigitais.sv(78): object "PAR_CARTAS_7" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at pepinosDigitais.sv(79): object "PAR_CARTAS_8" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at pepinosDigitais.sv(80): object "PAR_CARTAS_9" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at pepinosDigitais.sv(81): object "PAR_CARTAS_10" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at pepinosDigitais.sv(84): object "PAINTING" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at pepinosDigitais.sv(117): object "frame" assigned a value but never read
+Warning (10762): Verilog HDL Case Statement warning at pepinosDigitais.sv(180): can't check case statement for completeness because the case expression has too many possible states
+Warning (10240): Verilog HDL Always Construct warning at pepinosDigitais.sv(254): inferring latch(es) for variable "pos", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "pos[2]" at pepinosDigitais.sv(262)
+Info (10041): Inferred latch for "pos[3]" at pepinosDigitais.sv(262)
+Info (10041): Inferred latch for "pos[4]" at pepinosDigitais.sv(262)
+Info (10041): Inferred latch for "pos[5]" at pepinosDigitais.sv(262)
+Info (10041): Inferred latch for "pos[6]" at pepinosDigitais.sv(262)
+Info (10041): Inferred latch for "pos[7]" at pepinosDigitais.sv(262)
+Info (10041): Inferred latch for "pos[8]" at pepinosDigitais.sv(262)
+Info (10041): Inferred latch for "pos[9]" at pepinosDigitais.sv(262)
+Info (10041): Inferred latch for "pos[10]" at pepinosDigitais.sv(262)
+Info (10041): Inferred latch for "pos[11]" at pepinosDigitais.sv(262)
+Info (10041): Inferred latch for "pos[12]" at pepinosDigitais.sv(262)
+Info (10041): Inferred latch for "pos[13]" at pepinosDigitais.sv(262)
+Info (10041): Inferred latch for "pos[14]" at pepinosDigitais.sv(262)
+Info (10041): Inferred latch for "pos[15]" at pepinosDigitais.sv(262)
+Info (10041): Inferred latch for "pos[16]" at pepinosDigitais.sv(262)
+Info (10041): Inferred latch for "pos[17]" at pepinosDigitais.sv(262)
+Info (10041): Inferred latch for "pos[18]" at pepinosDigitais.sv(262)
+Info (10041): Inferred latch for "pos[19]" at pepinosDigitais.sv(262)
+Info (10041): Inferred latch for "pos[20]" at pepinosDigitais.sv(262)
+Info (10041): Inferred latch for "pos[21]" at pepinosDigitais.sv(262)
+Info (10041): Inferred latch for "pos[22]" at pepinosDigitais.sv(262)
+Info (10041): Inferred latch for "pos[23]" at pepinosDigitais.sv(262)
+Info (10041): Inferred latch for "pos[24]" at pepinosDigitais.sv(262)
+Info (10041): Inferred latch for "pos[25]" at pepinosDigitais.sv(262)
+Info (10041): Inferred latch for "pos[26]" at pepinosDigitais.sv(262)
+Info (10041): Inferred latch for "pos[27]" at pepinosDigitais.sv(262)
+Info (10041): Inferred latch for "pos[28]" at pepinosDigitais.sv(262)
+Info (10041): Inferred latch for "pos[29]" at pepinosDigitais.sv(262)
+Info (10041): Inferred latch for "pos[30]" at pepinosDigitais.sv(262)
+Info (10041): Inferred latch for "pos[31]" at pepinosDigitais.sv(262)
+Info (10041): Inferred latch for "pos[0]" at pepinosDigitais.sv(255)
+Info (10041): Inferred latch for "pos[1]" at pepinosDigitais.sv(255)
 Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "CARTAS" into its bus
 Info (12128): Elaborating entity "clock_25M_divider" for hierarchy "clock_25M_divider:inst_clock_25M"
 Info (12128): Elaborating entity "vga" for hierarchy "vga:instancia_vga"
@@ -489,46 +497,44 @@ Warning (13012): Latch pos[16] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal move_x
 Warning (13012): Latch pos[15] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal move_x
-Warning (13012): Latch pos[14] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal move_x
-Warning (13012): Latch pos[13] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal move_x
-Warning (13012): Latch pos[12] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal move_x
-Warning (13012): Latch pos[11] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal move_x
-Warning (13012): Latch pos[10] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal move_x
-Warning (13012): Latch pos[9] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal move_x
-Warning (13012): Latch pos[8] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal move_x
-Warning (13012): Latch pos[7] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal move_x
-Warning (13012): Latch pos[6] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal move_x
-Warning (13012): Latch pos[5] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal move_x
-Warning (13012): Latch pos[4] has unsafe behavior
+Warning (13012): Latch pos[2] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal move_x
 Warning (13012): Latch pos[3] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal move_x
-Warning (13012): Latch pos[2] has unsafe behavior
+Warning (13012): Latch pos[4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal move_x
+Warning (13012): Latch pos[5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal move_x
+Warning (13012): Latch pos[6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal move_x
+Warning (13012): Latch pos[7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal move_x
+Warning (13012): Latch pos[8] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal move_x
+Warning (13012): Latch pos[9] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal move_x
+Warning (13012): Latch pos[10] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal move_x
+Warning (13012): Latch pos[11] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal move_x
+Warning (13012): Latch pos[12] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal move_x
+Warning (13012): Latch pos[13] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal move_x
+Warning (13012): Latch pos[14] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal move_x
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "vga_blank" is stuck at VCC
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 1 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "select"
-Info (21057): Implemented 660 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1169 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 4 input pins
     Info (21059): Implemented 34 output pins
-    Info (21061): Implemented 622 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 80 warnings
-    Info: Peak virtual memory: 4582 megabytes
-    Info: Processing ended: Mon Aug 28 18:29:36 2023
-    Info: Elapsed time: 00:00:04
-    Info: Total CPU time (on all processors): 00:00:04
+    Info (21061): Implemented 1131 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 78 warnings
+    Info: Peak virtual memory: 4586 megabytes
+    Info: Processing ended: Mon Aug 28 19:04:45 2023
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:14
 
 

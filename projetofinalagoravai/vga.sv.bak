@@ -1,13 +1,13 @@
 `default_nettype none `timescale 10ns / 10ns
 
 module vga (
-  input  wire logic       clk,        // pixel clock
-  input  wire logic       reset,      // reset in pixel clock domain
-  output logic      [9:0] sx = 0,     // horizontal screen position
-  output logic      [9:0] sy = 0,     // vertical screen position
-  output logic            hsync = 1,  // horizontal sync
-  output logic            vsync = 1,  // vertical sync
-  output logic            de = 1      // data enable (low in blanking interval)
+    input  wire logic       clk,        // pixel clock
+    input  wire logic       reset,      // reset in pixel clock domain
+    output logic      [9:0] sx = 0,     // horizontal screen position
+    output logic      [9:0] sy = 0,     // vertical screen position
+    output logic            hsync = 1,  // horizontal sync
+    output logic            vsync = 1,  // vertical sync
+    output logic            de = 1      // data enable (low in blanking interval)
 );
 
   // horizontal timings
@@ -52,13 +52,13 @@ module vga_tb;
   parameter stimDelay = 2;
 
   vga controlador_VGA (
-    clk,
-    reset,
-    sx,
-    sy,
-    hsync,
-    vsync,
-    de
+      clk,
+      reset,
+      sx,
+      sy,
+      hsync,
+      vsync,
+      de
   );
 
   initial begin
