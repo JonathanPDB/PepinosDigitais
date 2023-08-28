@@ -16,9 +16,10 @@ module pepinosDigitais (
   parameter SCREEN_WIDTH = 10'd640;
   parameter SCREEN_HEIGHT = 10'd480;
 
-  parameter COLOR_WHITE = 10'd1023;
-  parameter COLOR_BLACK = 10'd0;
-  parameter COLOR_MAGENTA_r = 10'd1023;
+	parameter COLOR_WHITE = 10'd1023;
+	parameter COLOR_BLACK = 10'd0;
+	
+	parameter COLOR_MAGENTA_r = 10'd1023;
 	parameter COLOR_MAGENTA_g = 10'd0;
 	parameter COLOR_MAGENTA_b = 10'd1023;
 	
@@ -41,6 +42,22 @@ module pepinosDigitais (
 	parameter COLOR_BLUE_r = 10'd0;
 	parameter COLOR_BLUE_g = 10'd0;
 	parameter COLOR_BLUE_b = 10'd1023;
+	
+	parameter COLOR_ORANGE_r = 10'd1023;
+	parameter COLOR_ORANGE_g = 10'd700;
+	parameter COLOR_ORANGE_b = 10'd0;
+	
+	parameter COLOR_OLIVE_r = 10'd512;
+	parameter COLOR_OLIVE_g = 10'd512;
+	parameter COLOR_OLIVE_b = 10'd0;
+	
+	parameter COLOR_PURPLE_r = 10'd512;
+	parameter COLOR_PURPLE_g = 10'd0;
+	parameter COLOR_PURPLE_b = 10'd512;
+	
+	parameter COLOR_BROWN_r = 10'd680;
+	parameter COLOR_BROWN_g = 10'd341;
+	parameter COLOR_BROWN_b = 10'd0;
 	
 	parameter LARGURA_CARTA = 104;
 	parameter ALTURA_CARTA = 95;
@@ -83,10 +100,10 @@ module pepinosDigitais (
 		de
 	);
   
-	int cardOrder[20];
-	randomizer instancia_randomizer (
-		cardOrder
-	);
+	int cardOrder[20] = '{7, 4, 16, 6, 18, 19, 5, 17, 2, 0, 10, 9, 12, 8,	11, 3, 1, 13, 15, 14};
+//	randomizer instancia_randomizer (
+//		cardOrder
+//	);
   
 	
 	
@@ -142,19 +159,65 @@ module pepinosDigitais (
 	for(int j=0;j<2;j++) begin
 		if (sx > POSX_CARTA[i] && sx < (POSX_CARTA[i]+LARGURA_CARTA) && sy > POSY_CARTA[j] && sy < (POSY_CARTA[j]+ALTURA_CARTA)) begin
 			pos = i + j*5;
+
 			
-			if(cardOrder[pos] == 9) begin
-				paint_r = COLOR_LIME_r;
-				paint_g = COLOR_LIME_g;
-				paint_b = COLOR_LIME_b;
-			end else begin 
-				paint_r = COLOR_MAGENTA_r;
-				paint_g = COLOR_MAGENTA_g;
-				paint_b = COLOR_MAGENTA_b;
-			end
-//			paint_r = CARTAS[i+j][0];
-//			paint_g = CARTAS[i+j][1];
-//			paint_b = CARTAS[i+j][2];
+			case(cardOrder[pos])
+				0, 1: begin
+						paint_r = COLOR_LIME_r;
+						paint_g = COLOR_LIME_g;
+						paint_b = COLOR_LIME_b;
+					end 
+				2, 3: begin
+						paint_r = COLOR_MAGENTA_r;
+						paint_g = COLOR_MAGENTA_g;
+						paint_b = COLOR_MAGENTA_b;
+					end 
+				4, 5: begin
+						paint_r = COLOR_RED_r;
+						paint_g = COLOR_RED_g;
+						paint_b = COLOR_RED_b;
+					end 
+				6, 7: begin
+						paint_r = COLOR_BLUE_r;
+						paint_g = COLOR_BLUE_g;
+						paint_b = COLOR_BLUE_b;
+					end 
+				8, 9: begin
+						paint_r = COLOR_CYAN_r;
+						paint_g = COLOR_CYAN_g;
+						paint_b = COLOR_CYAN_b;
+					end 
+				10, 11: begin
+						paint_r = COLOR_YELLOW_r;
+						paint_g = COLOR_YELLOW_g;
+						paint_b = COLOR_YELLOW_b;
+					end 
+				12, 13: begin
+						paint_r = COLOR_ORANGE_r;
+						paint_g = COLOR_ORANGE_g;
+						paint_b = COLOR_ORANGE_b;
+					end 
+				14, 15: begin
+						paint_r = COLOR_OLIVE_r;
+						paint_g = COLOR_OLIVE_g;
+						paint_b = COLOR_OLIVE_b;
+					end 
+				16, 17: begin
+						paint_r = COLOR_PURPLE_r;
+						paint_g = COLOR_PURPLE_g;
+						paint_b = COLOR_PURPLE_b;
+					end 
+				18, 19: begin
+						paint_r = COLOR_BROWN_r;
+						paint_g = COLOR_BROWN_g;
+						paint_b = COLOR_BROWN_b;
+					end 
+				default: begin
+						paint_r = COLOR_BLACK;
+						paint_g = COLOR_BLACK;
+						paint_b = COLOR_BLACK;
+					end 
+			endcase
 		end
 	end
 	//PAINTING = PAINTING+4;
