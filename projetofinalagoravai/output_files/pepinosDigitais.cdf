@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP2C35F672) Path("C:/Users/mayar/Desktop/UFRGS/sistemas digitais/projetofinalagoravai/projetofinalagoravai/output_files/") File("pepinosDigitais.sof") MfrSpec(OpMask(1));
+		Device PartName(EP2C35F672) Path("C:/Users/mayar/dev/pepinosDigitais/PepinosDigitais/projetofinalagoravai/output_files/") File("pepinosDigitais.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

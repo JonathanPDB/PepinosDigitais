@@ -9,7 +9,7 @@ module pepinosDigitais (
   output logic      [9:0] vga_b,      // 10-bit VGA blue
   output logic            clock_25M,  // 25 MHz clock for the VGA DAC
   output logic            vga_blank,  // VGA DAC blank pin
-  input logic				select,		 // botões
+  input logic				select,		 // botÃµes
   input wire logic				move_x,
   input wire logic				move_y
 );
@@ -65,7 +65,8 @@ module pepinosDigitais (
   parameter OFFSET = 26;
 
   int pos = 0;
-
+  logic clock_1Hz = 0;
+  
   integer PAR_CARTAS_1[2:0] = '{COLOR_CYAN_r, COLOR_CYAN_g, COLOR_CYAN_b};
   integer PAR_CARTAS_2[2:0] = '{COLOR_YELLOW_r, COLOR_YELLOW_g, COLOR_YELLOW_b};
   integer PAR_CARTAS_3[2:0] = '{COLOR_MAGENTA_r, COLOR_MAGENTA_g, COLOR_MAGENTA_b};
@@ -78,7 +79,6 @@ module pepinosDigitais (
   integer PAR_CARTAS_10[2:0] = '{COLOR_CYAN_r, COLOR_CYAN_g, COLOR_CYAN_b};
 
   integer CARTAS[9:0][2:0];
-  integer PAINTING;
 
   integer POSX_CARTA[4:0] = '{20,144,268,392,516};
   integer POSY_CARTA[3:0] = '{20,135,250,365};
@@ -87,6 +87,11 @@ module pepinosDigitais (
     clock_50M,
     1'b0,
     clock_25M
+  );
+  
+  clock_1Hz_divider inst_clock_1Hz (
+    clock_50M,
+    clock_1Hz
   );
 
   logic [9:0] sx;
@@ -143,18 +148,6 @@ module pepinosDigitais (
     //	CARTAS[7][2:0] = '{COLOR_RED_r, COLOR_RED_g, COLOR_RED_b};
     //	CARTAS[8][2:0] = '{COLOR_RED_r, COLOR_RED_g, COLOR_RED_b};
     //	CARTAS[9][2:0] = '{COLOR_RED_r, COLOR_RED_g, COLOR_RED_b};
-
-    PAINTING = 0;
-    //  for(int i=0;i<5;i++) begin
-    //	for(int j=0;j<4;j++) begin
-    //		if (sx > POSX_CARTA[i] && sx < (POSX_CARTA[i]+LARGURA_CARTA) && sy > POSY_CARTA[j] && sy < (POSY_CARTA[j]+ALTURA_CARTA)) begin
-    //			paint_r = COLOR_WHITE;
-    //			paint_g = COLOR_WHITE;
-    //			paint_b = COLOR_WHITE;
-    //			
-    //		end 
-    //	end
-    //  end
 
     cardPos = 0;
     for(int i=0;i<5;i++) begin
@@ -235,7 +228,7 @@ module pepinosDigitais (
     end
   end
 
-  always_ff @ (negedge move_x or negedge move_y) begin
+  always_ff @ (posedge clock_1Hz) begin
     if (!move_y) begin
       if(((pos+1) % 4) == 0)
         pos = pos - 3;
