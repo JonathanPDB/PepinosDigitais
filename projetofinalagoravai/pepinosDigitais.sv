@@ -9,7 +9,7 @@ module pepinosDigitais (
   output logic      [9:0] vga_b,      // 10-bit VGA blue
   output logic            clock_25M,  // 25 MHz clock for the VGA DAC
   output logic            vga_blank,  // VGA DAC blank pin
-  input logic				select,		 // botÃµes
+  input logic				select,		 // botÃƒÂµes
   input wire logic				move_x,
   input wire logic				move_y
 );
@@ -17,6 +17,7 @@ module pepinosDigitais (
   parameter SCREEN_HEIGHT = 10'd480;
 
   parameter COLOR_WHITE = 10'd1023;
+  parameter COLOR_GRAY = 10'd512;
   parameter COLOR_BLACK = 10'd0;
 
   parameter COLOR_MAGENTA_r = 10'd1023;
@@ -50,7 +51,7 @@ module pepinosDigitais (
   parameter COLOR_OLIVE_r = 10'd512;
   parameter COLOR_OLIVE_g = 10'd512;
   parameter COLOR_OLIVE_b = 10'd0;
-
+  
   parameter COLOR_PURPLE_r = 10'd512;
   parameter COLOR_PURPLE_g = 10'd0;
   parameter COLOR_PURPLE_b = 10'd512;
@@ -64,8 +65,11 @@ module pepinosDigitais (
   parameter ESPACAMENTO_CARTAS = 20;
   parameter OFFSET = 26;
 
+  logic isFlipped[20] = '{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+  logic isOut[20] = '{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
   int pos = 0;
   logic clock_1Hz = 0;
+  logic gameOver = 0;
   
   integer PAR_CARTAS_1[2:0] = '{COLOR_CYAN_r, COLOR_CYAN_g, COLOR_CYAN_b};
   integer PAR_CARTAS_2[2:0] = '{COLOR_YELLOW_r, COLOR_YELLOW_g, COLOR_YELLOW_b};
@@ -108,10 +112,11 @@ module pepinosDigitais (
     de
   );
 
-  int cardOrder[20] = '{7, 4, 16, 6, 18, 19, 5, 17, 2, 0, 10, 9, 12, 8, 11, 3, 1, 13, 15, 14};
-  //	randomizer instancia_randomizer (
-  //		cardOrder
-  //	);
+  int cardOrder[20] = '{-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1};//'{7, 4, 16, 6, 18, 19, 5, 17, 2, 0, 10, 9, 12, 8, 11, 3, 1, 13, 15, 14};
+  	
+	randomizer instancia_randomizer (
+  		cardOrder
+  	);
 
 
 
@@ -128,26 +133,13 @@ module pepinosDigitais (
   end
 
 
-
   logic [9:0] paint_r, paint_g, paint_b;
   int cardPos;
-
   always_comb begin
 
     paint_r = COLOR_BLACK;
     paint_g = COLOR_BLACK;
     paint_b = COLOR_BLACK;
-
-    //	CARTAS[0][2:0] = '{COLOR_CYAN_r, COLOR_CYAN_g, COLOR_CYAN_b};
-    //	CARTAS[1][2:0] = '{COLOR_YELLOW_r, COLOR_YELLOW_g, COLOR_YELLOW_b};
-    //	CARTAS[2][2:0] = '{COLOR_MAGENTA_r, COLOR_MAGENTA_g, COLOR_MAGENTA_b};
-    //	CARTAS[3][2:0] = '{COLOR_BLUE_r, COLOR_BLUE_g, COLOR_BLUE_b};
-    //	CARTAS[4][2:0] = '{COLOR_LIME_r, COLOR_LIME_g, COLOR_LIME_b};
-    //	CARTAS[5][2:0] = '{COLOR_RED_r, COLOR_RED_g, COLOR_RED_b};
-    //	CARTAS[6][2:0] = '{COLOR_RED_r, COLOR_RED_g, COLOR_RED_b};
-    //	CARTAS[7][2:0] = '{COLOR_RED_r, COLOR_RED_g, COLOR_RED_b};
-    //	CARTAS[8][2:0] = '{COLOR_RED_r, COLOR_RED_g, COLOR_RED_b};
-    //	CARTAS[9][2:0] = '{COLOR_RED_r, COLOR_RED_g, COLOR_RED_b};
 
     cardPos = 0;
     for(int i=0;i<5;i++) begin
@@ -155,63 +147,74 @@ module pepinosDigitais (
         if (sx > POSX_CARTA[i] && sx < (POSX_CARTA[i]+LARGURA_CARTA) && sy > POSY_CARTA[j] && sy < (POSY_CARTA[j]+ALTURA_CARTA)) begin
           cardPos = 4*i +j;
 
-          case(cardOrder[cardPos])
-            0, 1: begin
-              paint_r = COLOR_LIME_r;
-              paint_g = COLOR_LIME_g;
-              paint_b = COLOR_LIME_b;
-            end 
-            2, 3: begin
-              paint_r = COLOR_MAGENTA_r;
-              paint_g = COLOR_MAGENTA_g;
-              paint_b = COLOR_MAGENTA_b;
-            end 
-            4, 5: begin
-              paint_r = COLOR_RED_r;
-              paint_g = COLOR_RED_g;
-              paint_b = COLOR_RED_b;
-            end 
-            6, 7: begin
-              paint_r = COLOR_BLUE_r;
-              paint_g = COLOR_BLUE_g;
-              paint_b = COLOR_BLUE_b;
-            end 
-            8, 9: begin
-              paint_r = COLOR_CYAN_r;
-              paint_g = COLOR_CYAN_g;
-              paint_b = COLOR_CYAN_b;
-            end 
-            10, 11: begin
-              paint_r = COLOR_YELLOW_r;
-              paint_g = COLOR_YELLOW_g;
-              paint_b = COLOR_YELLOW_b;
-            end 
-            12, 13: begin
-              paint_r = COLOR_ORANGE_r;
-              paint_g = COLOR_ORANGE_g;
-              paint_b = COLOR_ORANGE_b;
-            end 
-            14, 15: begin
-              paint_r = COLOR_OLIVE_r;
-              paint_g = COLOR_OLIVE_g;
-              paint_b = COLOR_OLIVE_b;
-            end 
-            16, 17: begin
-              paint_r = COLOR_PURPLE_r;
-              paint_g = COLOR_PURPLE_g;
-              paint_b = COLOR_PURPLE_b;
-            end 
-            18, 19: begin
-              paint_r = COLOR_BROWN_r;
-              paint_g = COLOR_BROWN_g;
-              paint_b = COLOR_BROWN_b;
-            end 
-            default: begin
-              paint_r = COLOR_BLACK;
-              paint_g = COLOR_BLACK;
-              paint_b = COLOR_BLACK;
-            end 
-          endcase
+          if(isOut[cardPos]) begin
+            paint_r = COLOR_BLACK;
+            paint_g = COLOR_BLACK;
+            paint_b = COLOR_BLACK;
+          end
+          else if(!isFlipped[cardPos]) begin
+            paint_r = COLOR_GRAY;
+            paint_g = COLOR_GRAY;
+            paint_b = COLOR_GRAY;
+          end else begin 
+            case(cardOrder[cardPos])
+              0, 1: begin
+                paint_r = COLOR_LIME_r;
+                paint_g = COLOR_LIME_g;
+                paint_b = COLOR_LIME_b;
+              end 
+              2, 3: begin
+                paint_r = COLOR_MAGENTA_r;
+                paint_g = COLOR_MAGENTA_g;
+                paint_b = COLOR_MAGENTA_b;
+              end 
+              4, 5: begin
+                paint_r = COLOR_RED_r;
+                paint_g = COLOR_RED_g;
+                paint_b = COLOR_RED_b;
+              end 
+              6, 7: begin
+                paint_r = COLOR_BLUE_r;
+                paint_g = COLOR_BLUE_g;
+                paint_b = COLOR_BLUE_b;
+              end 
+              8, 9: begin
+                paint_r = COLOR_CYAN_r;
+                paint_g = COLOR_CYAN_g;
+                paint_b = COLOR_CYAN_b;
+              end 
+              10, 11: begin
+                paint_r = COLOR_YELLOW_r;
+                paint_g = COLOR_YELLOW_g;
+                paint_b = COLOR_YELLOW_b;
+              end 
+              12, 13: begin
+                paint_r = COLOR_ORANGE_r;
+                paint_g = COLOR_ORANGE_g;
+                paint_b = COLOR_ORANGE_b;
+              end 
+              14, 15: begin
+                paint_r = COLOR_OLIVE_r;
+                paint_g = COLOR_OLIVE_g;
+                paint_b = COLOR_OLIVE_b;
+              end 
+              16, 17: begin
+                paint_r = COLOR_PURPLE_r;
+                paint_g = COLOR_PURPLE_g;
+                paint_b = COLOR_PURPLE_b;
+              end 
+              18, 19: begin
+                paint_r = COLOR_BROWN_r;
+                paint_g = COLOR_BROWN_g;
+                paint_b = COLOR_BROWN_b;
+              end 
+              default: begin
+                paint_r = COLOR_BLACK;
+                paint_g = COLOR_BLACK;
+                paint_b = COLOR_BLACK;
+              end 
+            endcase
+          end	
 
           if(cardPos == pos) begin
             if (sx > (POSX_CARTA[i]+OFFSET) && sx < (POSX_CARTA[i]+LARGURA_CARTA-OFFSET) && sy > (POSY_CARTA[j]+OFFSET) && sy < (POSY_CARTA[j]+ALTURA_CARTA-OFFSET)) begin
@@ -223,10 +226,9 @@ module pepinosDigitais (
 
         end
       end
-      //PAINTING = PAINTING+4;
-
     end
   end
+
 
   always_ff @ (posedge clock_1Hz) begin
     if (!move_y) begin
@@ -244,6 +246,56 @@ module pepinosDigitais (
     end
   end
 
+  int cardsFlipped[2];
+  int numberOfCardsFlipped = 0;
+  logic gameOverFlag = 0;
+  
+  always_ff @ (negedge select) begin
+    if(numberOfCardsFlipped == 2) begin
+	   isFlipped = '{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+		if(cardOrder[cardsFlipped[0]] % 2) begin
+		    if((cardOrder[cardsFlipped[0]] - 1) == cardOrder[cardsFlipped[1]]) begin
+				 isOut[cardsFlipped[0]] = 1;
+				 isOut[cardsFlipped[1]] = 1;
+			 end
+		  end
+		  else begin
+		    if((cardOrder[cardsFlipped[0]] + 1) == cardOrder[cardsFlipped[1]]) begin
+				 isOut[cardsFlipped[0]] = 1;
+				 isOut[cardsFlipped[1]] = 1;
+			 end
+		  end
+	 end
+	 
+	 numberOfCardsFlipped = 0;
+	 cardsFlipped = '{0,0};
+  
+    if(!isFlipped[pos] && !isOut[pos]) begin 
+      isFlipped[pos] = 1;
+
+      for(int i=0; i<20; i++) begin
+        if(isFlipped[i]) begin 
+          cardsFlipped[numberOfCardsFlipped] = i;//[0] = 0    [1] = 3
+          numberOfCardsFlipped ++;
+        end
+      end
+    end
+	 
+	 gameOverFlag = 1;
+	 for(int i=0; i<20; i++) begin
+	   if(!isOut[i]) begin
+			gameOverFlag = 0;
+			break;
+		end
+	 end
+			
+	 if(gameOverFlag) begin
+	   isOut =  '{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+	   isFlipped = '{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+	 end
+
+  end
+
 
   // VGA signal output
   always_ff @(posedge clock_25M) begin
@@ -259,8 +311,7 @@ module pepinosDigitais (
       vga_g = 10'h0;
       vga_b = 10'h0;
     end
-
-
   end
-endmodule
 
+  
+endmodule

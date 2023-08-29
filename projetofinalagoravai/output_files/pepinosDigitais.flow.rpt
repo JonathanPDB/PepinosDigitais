@@ -1,5 +1,5 @@
 Flow report for pepinosDigitais
-Tue Aug 29 18:11:22 2023
+Tue Aug 29 20:19:30 2023
 Quartus II 32-bit Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Web Edition
 
 
@@ -38,17 +38,17 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------------+
 ; Flow Summary                                                                       ;
 +------------------------------------+-----------------------------------------------+
-; Flow Status                        ; Successful - Tue Aug 29 18:11:20 2023         ;
+; Flow Status                        ; Successful - Tue Aug 29 20:19:28 2023         ;
 ; Quartus II 32-bit Version          ; 12.1 Build 243 01/31/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; pepinosDigitais                               ;
 ; Top-level Entity Name              ; pepinosDigitais                               ;
 ; Family                             ; Cyclone II                                    ;
 ; Device                             ; EP2C35F672C6                                  ;
 ; Timing Models                      ; Final                                         ;
-; Total logic elements               ; 618 / 33,216 ( 2 % )                          ;
-;     Total combinational functions  ; 602 / 33,216 ( 2 % )                          ;
-;     Dedicated logic registers      ; 150 / 33,216 ( < 1 % )                        ;
-; Total registers                    ; 150                                           ;
+; Total logic elements               ; 869 / 33,216 ( 3 % )                          ;
+;     Total combinational functions  ; 844 / 33,216 ( 3 % )                          ;
+;     Dedicated logic registers      ; 187 / 33,216 ( < 1 % )                        ;
+; Total registers                    ; 187                                           ;
 ; Total pins                         ; 38 / 475 ( 8 % )                              ;
 ; Total virtual pins                 ; 0                                             ;
 ; Total memory bits                  ; 0 / 483,840 ( 0 % )                           ;
@@ -62,7 +62,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 08/29/2023 18:11:05 ;
+; Start date & time ; 08/29/2023 20:18:34 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; pepinosDigitais     ;
 +-------------------+---------------------+
@@ -73,7 +73,7 @@ applicable agreement for further details.
 +-------------------------------------+-------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                         ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+-------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 1098994273295.169334346518788 ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 1098994273295.169335111418024 ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                            ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                             ; --            ; --          ; --         ;
 ; PARTITION_COLOR                     ; 16764057                      ; --            ; --          ; Top        ;
@@ -88,11 +88,11 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:03     ; 1.0                     ; 352 MB              ; 00:00:03                           ;
-; Fitter                    ; 00:00:08     ; 1.0                     ; 476 MB              ; 00:00:08                           ;
-; Assembler                 ; 00:00:02     ; 1.0                     ; 355 MB              ; 00:00:02                           ;
-; TimeQuest Timing Analyzer ; 00:00:01     ; 1.0                     ; 331 MB              ; 00:00:01                           ;
-; Total                     ; 00:00:14     ; --                      ; --                  ; 00:00:14                           ;
+; Analysis & Synthesis      ; 00:00:40     ; 1.0                     ; 1175 MB             ; 00:00:41                           ;
+; Fitter                    ; 00:00:08     ; 1.0                     ; 480 MB              ; 00:00:09                           ;
+; Assembler                 ; 00:00:02     ; 1.0                     ; 359 MB              ; 00:00:02                           ;
+; TimeQuest Timing Analyzer ; 00:00:01     ; 1.0                     ; 320 MB              ; 00:00:01                           ;
+; Total                     ; 00:00:51     ; --                      ; --                  ; 00:00:53                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
