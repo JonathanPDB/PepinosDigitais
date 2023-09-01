@@ -1,5 +1,3 @@
-`default_nettype none `timescale 10ns / 10ns
-
 module vga (
     input  wire logic       clk,        // pixel clock
     input  wire logic       reset,      // reset in pixel clock domain
@@ -41,36 +39,4 @@ module vga (
       sy <= 0;
     end
   end
-endmodule
-
-module vga_tb;
-  reg clk, reset;
-  logic [9:0] sy;
-  logic [9:0] sx;
-  wire hsync, vsync, de;
-
-  parameter stimDelay = 2;
-
-  vga controlador_VGA (
-      clk,
-      reset,
-      sx,
-      sy,
-      hsync,
-      vsync,
-      de
-  );
-
-  initial begin
-    clk   = 0;
-    reset = 1;
-    forever begin
-      #(stimDelay) clk = ~clk;
-    end
-  end
-
-  initial begin
-    #5 reset = 0;
-  end
-
 endmodule

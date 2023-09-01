@@ -1,5 +1,20 @@
 <?xml version="1.0" ?>
 <LOG_ROOT>
 	<PROJECT NAME="pepinosDigitais">
+		<CBX_INST_ENTRY INSTANCE_NAME="|pepinosDigitais|lpm_divide:Mod1" CBX_FILE_NAME="lpm_divide_bko.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|pepinosDigitais|lpm_divide:Mod10" CBX_FILE_NAME="lpm_divide_ako.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|pepinosDigitais|lpm_divide:Mod14" CBX_FILE_NAME="lpm_divide_8ko.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|pepinosDigitais|lpm_divide:Mod5" CBX_FILE_NAME="lpm_divide_ako.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|pepinosDigitais|lpm_divide:Mod9" CBX_FILE_NAME="lpm_divide_ako.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|pepinosDigitais|lpm_divide:Mod11" CBX_FILE_NAME="lpm_divide_9ko.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|pepinosDigitais|lpm_divide:Mod2" CBX_FILE_NAME="lpm_divide_bko.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|pepinosDigitais|lpm_divide:Mod6" CBX_FILE_NAME="lpm_divide_ako.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|pepinosDigitais|lpm_divide:Mod12" CBX_FILE_NAME="lpm_divide_9ko.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|pepinosDigitais|lpm_divide:Mod3" CBX_FILE_NAME="lpm_divide_bko.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|pepinosDigitais|lpm_divide:Mod7" CBX_FILE_NAME="lpm_divide_ako.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|pepinosDigitais|lpm_divide:Mod0" CBX_FILE_NAME="lpm_divide_bko.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|pepinosDigitais|lpm_divide:Mod13" CBX_FILE_NAME="lpm_divide_9ko.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|pepinosDigitais|lpm_divide:Mod4" CBX_FILE_NAME="lpm_divide_ako.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|pepinosDigitais|lpm_divide:Mod8" CBX_FILE_NAME="lpm_divide_ako.tdf"/>
 	</PROJECT>
 </LOG_ROOT>

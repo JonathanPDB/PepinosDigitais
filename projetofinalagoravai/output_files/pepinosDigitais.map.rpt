@@ -1,5 +1,5 @@
 Analysis & Synthesis report for pepinosDigitais
-Tue Aug 29 20:19:15 2023
+Thu Aug 31 21:01:27 2023
 Quartus II 32-bit Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Web Edition
 
 
@@ -20,11 +20,25 @@ Quartus II 32-bit Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Web Editio
  12. Multiplexer Restructuring Statistics (Restructuring Performed)
  13. Parameter Settings for User Entity Instance: Top-level Entity: |pepinosDigitais
  14. Parameter Settings for User Entity Instance: vga:instancia_vga
- 15. Parameter Settings for User Entity Instance: randomizer:instancia_randomizer
- 16. Port Connectivity Checks: "vga:instancia_vga"
- 17. Port Connectivity Checks: "clock_25M_divider:inst_clock_25M"
- 18. Elapsed Time Per Partition
- 19. Analysis & Synthesis Messages
+ 15. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod1
+ 16. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod2
+ 17. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod3
+ 18. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0
+ 19. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod6
+ 20. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod4
+ 21. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod5
+ 22. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod7
+ 23. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod8
+ 24. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod10
+ 25. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod9
+ 26. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod11
+ 27. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod12
+ 28. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod13
+ 29. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod14
+ 30. Port Connectivity Checks: "vga:instancia_vga"
+ 31. Port Connectivity Checks: "clock_25M_divider:inst_clock_25M"
+ 32. Elapsed Time Per Partition
+ 33. Analysis & Synthesis Messages
 
 
 
@@ -50,15 +64,15 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                       ;
 +------------------------------------+-----------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Aug 29 20:19:15 2023         ;
+; Analysis & Synthesis Status        ; Successful - Thu Aug 31 21:01:27 2023         ;
 ; Quartus II 32-bit Version          ; 12.1 Build 243 01/31/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; pepinosDigitais                               ;
 ; Top-level Entity Name              ; pepinosDigitais                               ;
 ; Family                             ; Cyclone II                                    ;
-; Total logic elements               ; 870                                           ;
-;     Total combinational functions  ; 844                                           ;
-;     Dedicated logic registers      ; 187                                           ;
-; Total registers                    ; 187                                           ;
+; Total logic elements               ; 24,247                                        ;
+;     Total combinational functions  ; 24,226                                        ;
+;     Dedicated logic registers      ; 350                                           ;
+; Total registers                    ; 350                                           ;
 ; Total pins                         ; 38                                            ;
 ; Total virtual pins                 ; 0                                             ;
 ; Total memory bits                  ; 0                                             ;
@@ -163,151 +177,771 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                     ;
-+----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                 ; Library ;
-+----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------+---------+
-; vga.sv                           ; yes             ; User SystemVerilog HDL File  ; C:/Users/mayar/dev/pepinosDigitais/PepinosDigitais/projetofinalagoravai/vga.sv               ;         ;
-; pepinosDigitais.sv               ; yes             ; User SystemVerilog HDL File  ; C:/Users/mayar/dev/pepinosDigitais/PepinosDigitais/projetofinalagoravai/pepinosDigitais.sv   ;         ;
-; clock_25M_divider.sv             ; yes             ; User SystemVerilog HDL File  ; C:/Users/mayar/dev/pepinosDigitais/PepinosDigitais/projetofinalagoravai/clock_25M_divider.sv ;         ;
-; randomizer.sv                    ; yes             ; User SystemVerilog HDL File  ; C:/Users/mayar/dev/pepinosDigitais/PepinosDigitais/projetofinalagoravai/randomizer.sv        ;         ;
-; clock_1Hz_divider.sv             ; yes             ; User SystemVerilog HDL File  ; C:/Users/mayar/dev/pepinosDigitais/PepinosDigitais/projetofinalagoravai/clock_1Hz_divider.sv ;         ;
-+----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                       ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                   ; Library ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------------------+---------+
+; vga.sv                           ; yes             ; User SystemVerilog HDL File  ; C:/Users/mayar/dev/pepinosDigitais/PepinosDigitais/projetofinalagoravai/vga.sv                 ;         ;
+; pepinosDigitais.sv               ; yes             ; User SystemVerilog HDL File  ; C:/Users/mayar/dev/pepinosDigitais/PepinosDigitais/projetofinalagoravai/pepinosDigitais.sv     ;         ;
+; clock_25M_divider.sv             ; yes             ; User SystemVerilog HDL File  ; C:/Users/mayar/dev/pepinosDigitais/PepinosDigitais/projetofinalagoravai/clock_25M_divider.sv   ;         ;
+; clock_1Hz_divider.sv             ; yes             ; User SystemVerilog HDL File  ; C:/Users/mayar/dev/pepinosDigitais/PepinosDigitais/projetofinalagoravai/clock_1Hz_divider.sv   ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/altera/12.1sp1/quartus/libraries/megafunctions/lpm_divide.tdf                               ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/altera/12.1sp1/quartus/libraries/megafunctions/abs_divider.inc                              ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/altera/12.1sp1/quartus/libraries/megafunctions/sign_div_unsign.inc                          ;         ;
+; aglobal121.inc                   ; yes             ; Megafunction                 ; c:/altera/12.1sp1/quartus/libraries/megafunctions/aglobal121.inc                               ;         ;
+; db/lpm_divide_bko.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/mayar/dev/pepinosDigitais/PepinosDigitais/projetofinalagoravai/db/lpm_divide_bko.tdf  ;         ;
+; db/abs_divider_lbg.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/mayar/dev/pepinosDigitais/PepinosDigitais/projetofinalagoravai/db/abs_divider_lbg.tdf ;         ;
+; db/alt_u_div_m2f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/mayar/dev/pepinosDigitais/PepinosDigitais/projetofinalagoravai/db/alt_u_div_m2f.tdf   ;         ;
+; db/add_sub_lkc.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/mayar/dev/pepinosDigitais/PepinosDigitais/projetofinalagoravai/db/add_sub_lkc.tdf     ;         ;
+; db/add_sub_mkc.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/mayar/dev/pepinosDigitais/PepinosDigitais/projetofinalagoravai/db/add_sub_mkc.tdf     ;         ;
+; db/lpm_abs_hq9.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/mayar/dev/pepinosDigitais/PepinosDigitais/projetofinalagoravai/db/lpm_abs_hq9.tdf     ;         ;
+; db/lpm_abs_0s9.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/mayar/dev/pepinosDigitais/PepinosDigitais/projetofinalagoravai/db/lpm_abs_0s9.tdf     ;         ;
+; db/lpm_divide_ako.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/mayar/dev/pepinosDigitais/PepinosDigitais/projetofinalagoravai/db/lpm_divide_ako.tdf  ;         ;
+; db/abs_divider_kbg.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/mayar/dev/pepinosDigitais/PepinosDigitais/projetofinalagoravai/db/abs_divider_kbg.tdf ;         ;
+; db/alt_u_div_k2f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/mayar/dev/pepinosDigitais/PepinosDigitais/projetofinalagoravai/db/alt_u_div_k2f.tdf   ;         ;
+; db/lpm_abs_gq9.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/mayar/dev/pepinosDigitais/PepinosDigitais/projetofinalagoravai/db/lpm_abs_gq9.tdf     ;         ;
+; db/lpm_divide_9ko.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/mayar/dev/pepinosDigitais/PepinosDigitais/projetofinalagoravai/db/lpm_divide_9ko.tdf  ;         ;
+; db/abs_divider_jbg.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/mayar/dev/pepinosDigitais/PepinosDigitais/projetofinalagoravai/db/abs_divider_jbg.tdf ;         ;
+; db/alt_u_div_i2f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/mayar/dev/pepinosDigitais/PepinosDigitais/projetofinalagoravai/db/alt_u_div_i2f.tdf   ;         ;
+; db/lpm_abs_fq9.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/mayar/dev/pepinosDigitais/PepinosDigitais/projetofinalagoravai/db/lpm_abs_fq9.tdf     ;         ;
+; db/lpm_divide_8ko.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/mayar/dev/pepinosDigitais/PepinosDigitais/projetofinalagoravai/db/lpm_divide_8ko.tdf  ;         ;
+; db/abs_divider_ibg.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/mayar/dev/pepinosDigitais/PepinosDigitais/projetofinalagoravai/db/abs_divider_ibg.tdf ;         ;
+; db/alt_u_div_g2f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/mayar/dev/pepinosDigitais/PepinosDigitais/projetofinalagoravai/db/alt_u_div_g2f.tdf   ;         ;
+; db/lpm_abs_eq9.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/mayar/dev/pepinosDigitais/PepinosDigitais/projetofinalagoravai/db/lpm_abs_eq9.tdf     ;         ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary         ;
-+---------------------------------------------+-------+
-; Resource                                    ; Usage ;
-+---------------------------------------------+-------+
-; Estimated Total logic elements              ; 870   ;
-;                                             ;       ;
-; Total combinational functions               ; 844   ;
-; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 316   ;
-;     -- 3 input functions                    ; 141   ;
-;     -- <=2 input functions                  ; 387   ;
-;                                             ;       ;
-; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 512   ;
-;     -- arithmetic mode                      ; 332   ;
-;                                             ;       ;
-; Total registers                             ; 187   ;
-;     -- Dedicated logic registers            ; 187   ;
-;     -- I/O registers                        ; 0     ;
-;                                             ;       ;
-; I/O pins                                    ; 38    ;
-; Embedded Multiplier 9-bit elements          ; 0     ;
-; Maximum fan-out                             ; 66    ;
-; Total fan-out                               ; 2900  ;
-; Average fan-out                             ; 2.71  ;
-+---------------------------------------------+-------+
++------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary          ;
++---------------------------------------------+--------+
+; Resource                                    ; Usage  ;
++---------------------------------------------+--------+
+; Estimated Total logic elements              ; 24,247 ;
+;                                             ;        ;
+; Total combinational functions               ; 24226  ;
+; Logic element usage by number of LUT inputs ;        ;
+;     -- 4 input functions                    ; 13002  ;
+;     -- 3 input functions                    ; 7035   ;
+;     -- <=2 input functions                  ; 4189   ;
+;                                             ;        ;
+; Logic elements by mode                      ;        ;
+;     -- normal mode                          ; 21046  ;
+;     -- arithmetic mode                      ; 3180   ;
+;                                             ;        ;
+; Total registers                             ; 350    ;
+;     -- Dedicated logic registers            ; 350    ;
+;     -- I/O registers                        ; 0      ;
+;                                             ;        ;
+; I/O pins                                    ; 38     ;
+; Embedded Multiplier 9-bit elements          ; 0      ;
+; Maximum fan-out                             ; 724    ;
+; Total fan-out                               ; 81362  ;
+; Average fan-out                             ; 3.31   ;
++---------------------------------------------+--------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                  ;
-+---------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------+--------------+
-; Compilation Hierarchy Node            ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                               ; Library Name ;
-+---------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------+--------------+
-; |pepinosDigitais                      ; 844 (707)         ; 187 (101)    ; 0           ; 0            ; 0       ; 0         ; 38   ; 0            ; |pepinosDigitais                                  ;              ;
-;    |clock_1Hz_divider:inst_clock_1Hz| ; 94 (94)           ; 65 (65)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|clock_1Hz_divider:inst_clock_1Hz ;              ;
-;    |clock_25M_divider:inst_clock_25M| ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|clock_25M_divider:inst_clock_25M ;              ;
-;    |vga:instancia_vga|                ; 42 (42)           ; 20 (20)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|vga:instancia_vga                ;              ;
-+---------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------+--------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                               ;
++---------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node            ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                            ; Library Name ;
++---------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------+--------------+
+; |pepinosDigitais                      ; 24226 (16515)     ; 350 (264)    ; 0           ; 0            ; 0       ; 0         ; 38   ; 0            ; |pepinosDigitais                                                                                               ;              ;
+;    |clock_1Hz_divider:inst_clock_1Hz| ; 94 (94)           ; 65 (65)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|clock_1Hz_divider:inst_clock_1Hz                                                              ;              ;
+;    |clock_25M_divider:inst_clock_25M| ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|clock_25M_divider:inst_clock_25M                                                              ;              ;
+;    |lpm_divide:Mod0|                  ; 488 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|lpm_divide:Mod0                                                                               ;              ;
+;       |lpm_divide_bko:auto_generated| ; 488 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|lpm_divide:Mod0|lpm_divide_bko:auto_generated                                                 ;              ;
+;          |abs_divider_lbg:divider|    ; 488 (12)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|lpm_divide:Mod0|lpm_divide_bko:auto_generated|abs_divider_lbg:divider                         ;              ;
+;             |alt_u_div_m2f:divider|   ; 445 (445)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|lpm_divide:Mod0|lpm_divide_bko:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider   ;              ;
+;             |lpm_abs_0s9:my_abs_num|  ; 31 (31)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|lpm_divide:Mod0|lpm_divide_bko:auto_generated|abs_divider_lbg:divider|lpm_abs_0s9:my_abs_num  ;              ;
+;    |lpm_divide:Mod10|                 ; 529 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|lpm_divide:Mod10                                                                              ;              ;
+;       |lpm_divide_ako:auto_generated| ; 529 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|lpm_divide:Mod10|lpm_divide_ako:auto_generated                                                ;              ;
+;          |abs_divider_kbg:divider|    ; 529 (10)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|lpm_divide:Mod10|lpm_divide_ako:auto_generated|abs_divider_kbg:divider                        ;              ;
+;             |alt_u_div_k2f:divider|   ; 488 (488)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|lpm_divide:Mod10|lpm_divide_ako:auto_generated|abs_divider_kbg:divider|alt_u_div_k2f:divider  ;              ;
+;             |lpm_abs_0s9:my_abs_num|  ; 31 (31)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|lpm_divide:Mod10|lpm_divide_ako:auto_generated|abs_divider_kbg:divider|lpm_abs_0s9:my_abs_num ;              ;
+;    |lpm_divide:Mod11|                 ; 454 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|lpm_divide:Mod11                                                                              ;              ;
+;       |lpm_divide_9ko:auto_generated| ; 454 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|lpm_divide:Mod11|lpm_divide_9ko:auto_generated                                                ;              ;
+;          |abs_divider_jbg:divider|    ; 454 (8)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|lpm_divide:Mod11|lpm_divide_9ko:auto_generated|abs_divider_jbg:divider                        ;              ;
+;             |alt_u_div_i2f:divider|   ; 415 (415)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|lpm_divide:Mod11|lpm_divide_9ko:auto_generated|abs_divider_jbg:divider|alt_u_div_i2f:divider  ;              ;
+;             |lpm_abs_0s9:my_abs_num|  ; 31 (31)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|lpm_divide:Mod11|lpm_divide_9ko:auto_generated|abs_divider_jbg:divider|lpm_abs_0s9:my_abs_num ;              ;
+;    |lpm_divide:Mod12|                 ; 424 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|lpm_divide:Mod12                                                                              ;              ;
+;       |lpm_divide_9ko:auto_generated| ; 424 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|lpm_divide:Mod12|lpm_divide_9ko:auto_generated                                                ;              ;
+;          |abs_divider_jbg:divider|    ; 424 (8)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|lpm_divide:Mod12|lpm_divide_9ko:auto_generated|abs_divider_jbg:divider                        ;              ;
+;             |alt_u_div_i2f:divider|   ; 385 (385)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|lpm_divide:Mod12|lpm_divide_9ko:auto_generated|abs_divider_jbg:divider|alt_u_div_i2f:divider  ;              ;
+;             |lpm_abs_0s9:my_abs_num|  ; 31 (31)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|lpm_divide:Mod12|lpm_divide_9ko:auto_generated|abs_divider_jbg:divider|lpm_abs_0s9:my_abs_num ;              ;
+;    |lpm_divide:Mod13|                 ; 454 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|lpm_divide:Mod13                                                                              ;              ;
+;       |lpm_divide_9ko:auto_generated| ; 454 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|lpm_divide:Mod13|lpm_divide_9ko:auto_generated                                                ;              ;
+;          |abs_divider_jbg:divider|    ; 454 (8)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|lpm_divide:Mod13|lpm_divide_9ko:auto_generated|abs_divider_jbg:divider                        ;              ;
+;             |alt_u_div_i2f:divider|   ; 415 (415)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|lpm_divide:Mod13|lpm_divide_9ko:auto_generated|abs_divider_jbg:divider|alt_u_div_i2f:divider  ;              ;
+;             |lpm_abs_0s9:my_abs_num|  ; 31 (31)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|lpm_divide:Mod13|lpm_divide_9ko:auto_generated|abs_divider_jbg:divider|lpm_abs_0s9:my_abs_num ;              ;
+;    |lpm_divide:Mod14|                 ; 368 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|lpm_divide:Mod14                                                                              ;              ;
+;       |lpm_divide_8ko:auto_generated| ; 368 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|lpm_divide:Mod14|lpm_divide_8ko:auto_generated                                                ;              ;
+;          |abs_divider_ibg:divider|    ; 368 (6)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|lpm_divide:Mod14|lpm_divide_8ko:auto_generated|abs_divider_ibg:divider                        ;              ;
+;             |alt_u_div_g2f:divider|   ; 331 (331)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|lpm_divide:Mod14|lpm_divide_8ko:auto_generated|abs_divider_ibg:divider|alt_u_div_g2f:divider  ;              ;
+;             |lpm_abs_0s9:my_abs_num|  ; 31 (31)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|lpm_divide:Mod14|lpm_divide_8ko:auto_generated|abs_divider_ibg:divider|lpm_abs_0s9:my_abs_num ;              ;
+;    |lpm_divide:Mod1|                  ; 601 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|lpm_divide:Mod1                                                                               ;              ;
+;       |lpm_divide_bko:auto_generated| ; 601 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|lpm_divide:Mod1|lpm_divide_bko:auto_generated                                                 ;              ;
+;          |abs_divider_lbg:divider|    ; 601 (13)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|lpm_divide:Mod1|lpm_divide_bko:auto_generated|abs_divider_lbg:divider                         ;              ;
+;             |alt_u_div_m2f:divider|   ; 555 (555)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|lpm_divide:Mod1|lpm_divide_bko:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider   ;              ;
+;             |lpm_abs_0s9:my_abs_num|  ; 33 (33)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|lpm_divide:Mod1|lpm_divide_bko:auto_generated|abs_divider_lbg:divider|lpm_abs_0s9:my_abs_num  ;              ;
+;    |lpm_divide:Mod2|                  ; 570 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|lpm_divide:Mod2                                                                               ;              ;
+;       |lpm_divide_bko:auto_generated| ; 570 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|lpm_divide:Mod2|lpm_divide_bko:auto_generated                                                 ;              ;
+;          |abs_divider_lbg:divider|    ; 570 (12)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|lpm_divide:Mod2|lpm_divide_bko:auto_generated|abs_divider_lbg:divider                         ;              ;
+;             |alt_u_div_m2f:divider|   ; 527 (527)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|lpm_divide:Mod2|lpm_divide_bko:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider   ;              ;
+;             |lpm_abs_0s9:my_abs_num|  ; 31 (31)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|lpm_divide:Mod2|lpm_divide_bko:auto_generated|abs_divider_lbg:divider|lpm_abs_0s9:my_abs_num  ;              ;
+;    |lpm_divide:Mod3|                  ; 598 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|lpm_divide:Mod3                                                                               ;              ;
+;       |lpm_divide_bko:auto_generated| ; 598 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|lpm_divide:Mod3|lpm_divide_bko:auto_generated                                                 ;              ;
+;          |abs_divider_lbg:divider|    ; 598 (12)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|lpm_divide:Mod3|lpm_divide_bko:auto_generated|abs_divider_lbg:divider                         ;              ;
+;             |alt_u_div_m2f:divider|   ; 555 (555)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|lpm_divide:Mod3|lpm_divide_bko:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider   ;              ;
+;             |lpm_abs_0s9:my_abs_num|  ; 31 (31)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|lpm_divide:Mod3|lpm_divide_bko:auto_generated|abs_divider_lbg:divider|lpm_abs_0s9:my_abs_num  ;              ;
+;    |lpm_divide:Mod4|                  ; 529 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|lpm_divide:Mod4                                                                               ;              ;
+;       |lpm_divide_ako:auto_generated| ; 529 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|lpm_divide:Mod4|lpm_divide_ako:auto_generated                                                 ;              ;
+;          |abs_divider_kbg:divider|    ; 529 (10)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|lpm_divide:Mod4|lpm_divide_ako:auto_generated|abs_divider_kbg:divider                         ;              ;
+;             |alt_u_div_k2f:divider|   ; 488 (488)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|lpm_divide:Mod4|lpm_divide_ako:auto_generated|abs_divider_kbg:divider|alt_u_div_k2f:divider   ;              ;
+;             |lpm_abs_0s9:my_abs_num|  ; 31 (31)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|lpm_divide:Mod4|lpm_divide_ako:auto_generated|abs_divider_kbg:divider|lpm_abs_0s9:my_abs_num  ;              ;
+;    |lpm_divide:Mod5|                  ; 500 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|lpm_divide:Mod5                                                                               ;              ;
+;       |lpm_divide_ako:auto_generated| ; 500 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|lpm_divide:Mod5|lpm_divide_ako:auto_generated                                                 ;              ;
+;          |abs_divider_kbg:divider|    ; 500 (10)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|lpm_divide:Mod5|lpm_divide_ako:auto_generated|abs_divider_kbg:divider                         ;              ;
+;             |alt_u_div_k2f:divider|   ; 459 (459)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|lpm_divide:Mod5|lpm_divide_ako:auto_generated|abs_divider_kbg:divider|alt_u_div_k2f:divider   ;              ;
+;             |lpm_abs_0s9:my_abs_num|  ; 31 (31)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|lpm_divide:Mod5|lpm_divide_ako:auto_generated|abs_divider_kbg:divider|lpm_abs_0s9:my_abs_num  ;              ;
+;    |lpm_divide:Mod6|                  ; 529 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|lpm_divide:Mod6                                                                               ;              ;
+;       |lpm_divide_ako:auto_generated| ; 529 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|lpm_divide:Mod6|lpm_divide_ako:auto_generated                                                 ;              ;
+;          |abs_divider_kbg:divider|    ; 529 (10)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|lpm_divide:Mod6|lpm_divide_ako:auto_generated|abs_divider_kbg:divider                         ;              ;
+;             |alt_u_div_k2f:divider|   ; 488 (488)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|lpm_divide:Mod6|lpm_divide_ako:auto_generated|abs_divider_kbg:divider|alt_u_div_k2f:divider   ;              ;
+;             |lpm_abs_0s9:my_abs_num|  ; 31 (31)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|lpm_divide:Mod6|lpm_divide_ako:auto_generated|abs_divider_kbg:divider|lpm_abs_0s9:my_abs_num  ;              ;
+;    |lpm_divide:Mod7|                  ; 499 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|lpm_divide:Mod7                                                                               ;              ;
+;       |lpm_divide_ako:auto_generated| ; 499 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|lpm_divide:Mod7|lpm_divide_ako:auto_generated                                                 ;              ;
+;          |abs_divider_kbg:divider|    ; 499 (10)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|lpm_divide:Mod7|lpm_divide_ako:auto_generated|abs_divider_kbg:divider                         ;              ;
+;             |alt_u_div_k2f:divider|   ; 458 (458)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|lpm_divide:Mod7|lpm_divide_ako:auto_generated|abs_divider_kbg:divider|alt_u_div_k2f:divider   ;              ;
+;             |lpm_abs_0s9:my_abs_num|  ; 31 (31)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|lpm_divide:Mod7|lpm_divide_ako:auto_generated|abs_divider_kbg:divider|lpm_abs_0s9:my_abs_num  ;              ;
+;    |lpm_divide:Mod8|                  ; 529 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|lpm_divide:Mod8                                                                               ;              ;
+;       |lpm_divide_ako:auto_generated| ; 529 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|lpm_divide:Mod8|lpm_divide_ako:auto_generated                                                 ;              ;
+;          |abs_divider_kbg:divider|    ; 529 (10)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|lpm_divide:Mod8|lpm_divide_ako:auto_generated|abs_divider_kbg:divider                         ;              ;
+;             |alt_u_div_k2f:divider|   ; 488 (488)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|lpm_divide:Mod8|lpm_divide_ako:auto_generated|abs_divider_kbg:divider|alt_u_div_k2f:divider   ;              ;
+;             |lpm_abs_0s9:my_abs_num|  ; 31 (31)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|lpm_divide:Mod8|lpm_divide_ako:auto_generated|abs_divider_kbg:divider|lpm_abs_0s9:my_abs_num  ;              ;
+;    |lpm_divide:Mod9|                  ; 500 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|lpm_divide:Mod9                                                                               ;              ;
+;       |lpm_divide_ako:auto_generated| ; 500 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|lpm_divide:Mod9|lpm_divide_ako:auto_generated                                                 ;              ;
+;          |abs_divider_kbg:divider|    ; 500 (10)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|lpm_divide:Mod9|lpm_divide_ako:auto_generated|abs_divider_kbg:divider                         ;              ;
+;             |alt_u_div_k2f:divider|   ; 459 (459)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|lpm_divide:Mod9|lpm_divide_ako:auto_generated|abs_divider_kbg:divider|alt_u_div_k2f:divider   ;              ;
+;             |lpm_abs_0s9:my_abs_num|  ; 31 (31)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|lpm_divide:Mod9|lpm_divide_ako:auto_generated|abs_divider_kbg:divider|lpm_abs_0s9:my_abs_num  ;              ;
+;    |vga:instancia_vga|                ; 44 (44)           ; 20 (20)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pepinosDigitais|vga:instancia_vga                                                                             ;              ;
++---------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+---------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                              ;
-+----------------------------------------+----------------------------------------+
-; Register name                          ; Reason for Removal                     ;
-+----------------------------------------+----------------------------------------+
-; cardsFlipped[1][31]                    ; Stuck at GND due to stuck port data_in ;
-; cardsFlipped[1][30]                    ; Stuck at GND due to stuck port data_in ;
-; cardsFlipped[1][29]                    ; Stuck at GND due to stuck port data_in ;
-; cardsFlipped[1][28]                    ; Stuck at GND due to stuck port data_in ;
-; cardsFlipped[1][27]                    ; Stuck at GND due to stuck port data_in ;
-; cardsFlipped[1][26]                    ; Stuck at GND due to stuck port data_in ;
-; cardsFlipped[1][25]                    ; Stuck at GND due to stuck port data_in ;
-; cardsFlipped[1][24]                    ; Stuck at GND due to stuck port data_in ;
-; cardsFlipped[1][23]                    ; Stuck at GND due to stuck port data_in ;
-; cardsFlipped[1][22]                    ; Stuck at GND due to stuck port data_in ;
-; cardsFlipped[1][21]                    ; Stuck at GND due to stuck port data_in ;
-; cardsFlipped[1][20]                    ; Stuck at GND due to stuck port data_in ;
-; cardsFlipped[1][19]                    ; Stuck at GND due to stuck port data_in ;
-; cardsFlipped[1][18]                    ; Stuck at GND due to stuck port data_in ;
-; cardsFlipped[1][17]                    ; Stuck at GND due to stuck port data_in ;
-; cardsFlipped[1][16]                    ; Stuck at GND due to stuck port data_in ;
-; cardsFlipped[1][15]                    ; Stuck at GND due to stuck port data_in ;
-; cardsFlipped[1][14]                    ; Stuck at GND due to stuck port data_in ;
-; cardsFlipped[1][13]                    ; Stuck at GND due to stuck port data_in ;
-; cardsFlipped[1][12]                    ; Stuck at GND due to stuck port data_in ;
-; cardsFlipped[1][11]                    ; Stuck at GND due to stuck port data_in ;
-; cardsFlipped[1][10]                    ; Stuck at GND due to stuck port data_in ;
-; cardsFlipped[1][9]                     ; Stuck at GND due to stuck port data_in ;
-; cardsFlipped[1][8]                     ; Stuck at GND due to stuck port data_in ;
-; cardsFlipped[1][7]                     ; Stuck at GND due to stuck port data_in ;
-; cardsFlipped[1][6]                     ; Stuck at GND due to stuck port data_in ;
-; cardsFlipped[1][5]                     ; Stuck at GND due to stuck port data_in ;
-; numberOfCardsFlipped[20..31]           ; Stuck at GND due to stuck port data_in ;
-; cardsFlipped[0][31]                    ; Stuck at GND due to stuck port data_in ;
-; cardsFlipped[0][30]                    ; Stuck at GND due to stuck port data_in ;
-; cardsFlipped[0][29]                    ; Stuck at GND due to stuck port data_in ;
-; cardsFlipped[0][28]                    ; Stuck at GND due to stuck port data_in ;
-; cardsFlipped[0][27]                    ; Stuck at GND due to stuck port data_in ;
-; cardsFlipped[0][26]                    ; Stuck at GND due to stuck port data_in ;
-; cardsFlipped[0][25]                    ; Stuck at GND due to stuck port data_in ;
-; cardsFlipped[0][24]                    ; Stuck at GND due to stuck port data_in ;
-; cardsFlipped[0][23]                    ; Stuck at GND due to stuck port data_in ;
-; cardsFlipped[0][22]                    ; Stuck at GND due to stuck port data_in ;
-; cardsFlipped[0][21]                    ; Stuck at GND due to stuck port data_in ;
-; cardsFlipped[0][20]                    ; Stuck at GND due to stuck port data_in ;
-; cardsFlipped[0][19]                    ; Stuck at GND due to stuck port data_in ;
-; cardsFlipped[0][18]                    ; Stuck at GND due to stuck port data_in ;
-; cardsFlipped[0][17]                    ; Stuck at GND due to stuck port data_in ;
-; cardsFlipped[0][16]                    ; Stuck at GND due to stuck port data_in ;
-; cardsFlipped[0][15]                    ; Stuck at GND due to stuck port data_in ;
-; cardsFlipped[0][14]                    ; Stuck at GND due to stuck port data_in ;
-; cardsFlipped[0][13]                    ; Stuck at GND due to stuck port data_in ;
-; cardsFlipped[0][12]                    ; Stuck at GND due to stuck port data_in ;
-; cardsFlipped[0][11]                    ; Stuck at GND due to stuck port data_in ;
-; cardsFlipped[0][10]                    ; Stuck at GND due to stuck port data_in ;
-; cardsFlipped[0][9]                     ; Stuck at GND due to stuck port data_in ;
-; cardsFlipped[0][8]                     ; Stuck at GND due to stuck port data_in ;
-; cardsFlipped[0][7]                     ; Stuck at GND due to stuck port data_in ;
-; cardsFlipped[0][6]                     ; Stuck at GND due to stuck port data_in ;
-; cardsFlipped[0][5]                     ; Stuck at GND due to stuck port data_in ;
-; isOut[0..19]                           ; Stuck at GND due to stuck port data_in ;
-; cardsFlipped[0][0]                     ; Lost fanout                            ;
-; cardsFlipped[0][1]                     ; Lost fanout                            ;
-; cardsFlipped[0][2]                     ; Lost fanout                            ;
-; cardsFlipped[0][3]                     ; Lost fanout                            ;
-; cardsFlipped[0][4]                     ; Lost fanout                            ;
-; cardsFlipped[1][0]                     ; Lost fanout                            ;
-; cardsFlipped[1][1]                     ; Lost fanout                            ;
-; cardsFlipped[1][2]                     ; Lost fanout                            ;
-; cardsFlipped[1][3]                     ; Lost fanout                            ;
-; cardsFlipped[1][4]                     ; Lost fanout                            ;
-; numberOfCardsFlipped[17..19]           ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 99 ;                                        ;
-+----------------------------------------+----------------------------------------+
++----------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                               ;
++-----------------------------------------+----------------------------------------+
+; Register name                           ; Reason for Removal                     ;
++-----------------------------------------+----------------------------------------+
+; cardsFlipped[0][5]                      ; Stuck at GND due to stuck port data_in ;
+; cardsFlipped[1][31]                     ; Stuck at GND due to stuck port data_in ;
+; cardsFlipped[1][30]                     ; Stuck at GND due to stuck port data_in ;
+; cardsFlipped[1][29]                     ; Stuck at GND due to stuck port data_in ;
+; cardsFlipped[1][28]                     ; Stuck at GND due to stuck port data_in ;
+; cardsFlipped[1][27]                     ; Stuck at GND due to stuck port data_in ;
+; cardsFlipped[1][26]                     ; Stuck at GND due to stuck port data_in ;
+; cardsFlipped[1][25]                     ; Stuck at GND due to stuck port data_in ;
+; cardsFlipped[1][24]                     ; Stuck at GND due to stuck port data_in ;
+; cardsFlipped[1][23]                     ; Stuck at GND due to stuck port data_in ;
+; cardsFlipped[1][22]                     ; Stuck at GND due to stuck port data_in ;
+; cardsFlipped[1][21]                     ; Stuck at GND due to stuck port data_in ;
+; cardsFlipped[1][20]                     ; Stuck at GND due to stuck port data_in ;
+; cardsFlipped[1][19]                     ; Stuck at GND due to stuck port data_in ;
+; cardsFlipped[1][18]                     ; Stuck at GND due to stuck port data_in ;
+; cardsFlipped[1][17]                     ; Stuck at GND due to stuck port data_in ;
+; cardsFlipped[1][16]                     ; Stuck at GND due to stuck port data_in ;
+; cardsFlipped[1][15]                     ; Stuck at GND due to stuck port data_in ;
+; cardsFlipped[1][14]                     ; Stuck at GND due to stuck port data_in ;
+; cardsFlipped[1][13]                     ; Stuck at GND due to stuck port data_in ;
+; cardsFlipped[1][12]                     ; Stuck at GND due to stuck port data_in ;
+; cardsFlipped[1][11]                     ; Stuck at GND due to stuck port data_in ;
+; cardsFlipped[1][10]                     ; Stuck at GND due to stuck port data_in ;
+; cardsFlipped[1][9]                      ; Stuck at GND due to stuck port data_in ;
+; cardsFlipped[1][8]                      ; Stuck at GND due to stuck port data_in ;
+; cardsFlipped[1][7]                      ; Stuck at GND due to stuck port data_in ;
+; cardsFlipped[1][6]                      ; Stuck at GND due to stuck port data_in ;
+; cardsFlipped[1][5]                      ; Stuck at GND due to stuck port data_in ;
+; numberOfCardsFlipped[20..31]            ; Stuck at GND due to stuck port data_in ;
+; cardsFlipped[0][31]                     ; Stuck at GND due to stuck port data_in ;
+; cardsFlipped[0][30]                     ; Stuck at GND due to stuck port data_in ;
+; cardsFlipped[0][29]                     ; Stuck at GND due to stuck port data_in ;
+; cardsFlipped[0][28]                     ; Stuck at GND due to stuck port data_in ;
+; cardsFlipped[0][27]                     ; Stuck at GND due to stuck port data_in ;
+; cardsFlipped[0][26]                     ; Stuck at GND due to stuck port data_in ;
+; cardsFlipped[0][25]                     ; Stuck at GND due to stuck port data_in ;
+; cardsFlipped[0][24]                     ; Stuck at GND due to stuck port data_in ;
+; cardsFlipped[0][23]                     ; Stuck at GND due to stuck port data_in ;
+; cardsFlipped[0][22]                     ; Stuck at GND due to stuck port data_in ;
+; cardsFlipped[0][21]                     ; Stuck at GND due to stuck port data_in ;
+; cardsFlipped[0][20]                     ; Stuck at GND due to stuck port data_in ;
+; cardsFlipped[0][19]                     ; Stuck at GND due to stuck port data_in ;
+; cardsFlipped[0][18]                     ; Stuck at GND due to stuck port data_in ;
+; cardsFlipped[0][17]                     ; Stuck at GND due to stuck port data_in ;
+; cardsFlipped[0][16]                     ; Stuck at GND due to stuck port data_in ;
+; cardsFlipped[0][15]                     ; Stuck at GND due to stuck port data_in ;
+; cardsFlipped[0][14]                     ; Stuck at GND due to stuck port data_in ;
+; cardsFlipped[0][13]                     ; Stuck at GND due to stuck port data_in ;
+; cardsFlipped[0][12]                     ; Stuck at GND due to stuck port data_in ;
+; cardsFlipped[0][11]                     ; Stuck at GND due to stuck port data_in ;
+; cardsFlipped[0][10]                     ; Stuck at GND due to stuck port data_in ;
+; cardsFlipped[0][9]                      ; Stuck at GND due to stuck port data_in ;
+; cardsFlipped[0][8]                      ; Stuck at GND due to stuck port data_in ;
+; cardsFlipped[0][7]                      ; Stuck at GND due to stuck port data_in ;
+; cardsFlipped[0][6]                      ; Stuck at GND due to stuck port data_in ;
+; cardOrder[2][22]                        ; Merged with cardOrder[6][12]           ;
+; cardOrder[12][14]                       ; Merged with cardOrder[6][12]           ;
+; cardOrder[18][14]                       ; Merged with cardOrder[6][12]           ;
+; cardOrder[4][22]                        ; Merged with cardOrder[6][12]           ;
+; cardOrder[16][14]                       ; Merged with cardOrder[6][12]           ;
+; cardOrder[0][22]                        ; Merged with cardOrder[6][12]           ;
+; cardOrder[9][14]                        ; Merged with cardOrder[6][12]           ;
+; cardOrder[13][30]                       ; Merged with cardOrder[6][12]           ;
+; cardOrder[13][14]                       ; Merged with cardOrder[6][12]           ;
+; cardOrder[19][14]                       ; Merged with cardOrder[6][12]           ;
+; cardOrder[5][22]                        ; Merged with cardOrder[6][12]           ;
+; cardOrder[15][14]                       ; Merged with cardOrder[6][12]           ;
+; cardOrder[3][22]                        ; Merged with cardOrder[6][12]           ;
+; cardOrder[11][14]                       ; Merged with cardOrder[6][12]           ;
+; cardOrder[1][22]                        ; Merged with cardOrder[6][12]           ;
+; cardOrder[17][14]                       ; Merged with cardOrder[6][12]           ;
+; cardOrder[18][30]                       ; Merged with cardOrder[6][12]           ;
+; cardOrder[8][30]                        ; Merged with cardOrder[6][12]           ;
+; cardOrder[19][30]                       ; Merged with cardOrder[6][12]           ;
+; cardOrder[8][26]                        ; Merged with cardOrder[6][12]           ;
+; cardOrder[13][22]                       ; Merged with cardOrder[6][12]           ;
+; cardOrder[10][30]                       ; Merged with cardOrder[6][12]           ;
+; cardOrder[13][6]                        ; Merged with cardOrder[6][12]           ;
+; cardOrder[8][18]                        ; Merged with cardOrder[6][12]           ;
+; cardOrder[14][30]                       ; Merged with cardOrder[6][12]           ;
+; cardOrder[5][6]                         ; Merged with cardOrder[6][12]           ;
+; cardOrder[15][30]                       ; Merged with cardOrder[6][12]           ;
+; cardOrder[4][6]                         ; Merged with cardOrder[6][12]           ;
+; cardOrder[11][30]                       ; Merged with cardOrder[6][12]           ;
+; cardOrder[3][6]                         ; Merged with cardOrder[6][12]           ;
+; cardOrder[16][30]                       ; Merged with cardOrder[6][12]           ;
+; cardOrder[2][6]                         ; Merged with cardOrder[6][12]           ;
+; cardOrder[9][30]                        ; Merged with cardOrder[6][12]           ;
+; cardOrder[1][6]                         ; Merged with cardOrder[6][12]           ;
+; cardOrder[17][30]                       ; Merged with cardOrder[6][12]           ;
+; cardOrder[0][6]                         ; Merged with cardOrder[6][12]           ;
+; cardOrder[12][30]                       ; Merged with cardOrder[6][12]           ;
+; cardOrder[17][6]                        ; Merged with cardOrder[6][12]           ;
+; cardOrder[12][22]                       ; Merged with cardOrder[6][12]           ;
+; cardOrder[18][22]                       ; Merged with cardOrder[6][12]           ;
+; cardOrder[7][22]                        ; Merged with cardOrder[6][12]           ;
+; cardOrder[18][6]                        ; Merged with cardOrder[6][12]           ;
+; cardOrder[12][6]                        ; Merged with cardOrder[6][12]           ;
+; cardOrder[7][5]                         ; Merged with cardOrder[6][12]           ;
+; cardOrder[13][26]                       ; Merged with cardOrder[6][12]           ;
+; cardOrder[8][24]                        ; Merged with cardOrder[6][12]           ;
+; cardOrder[19][22]                       ; Merged with cardOrder[6][12]           ;
+; cardOrder[8][22]                        ; Merged with cardOrder[6][12]           ;
+; cardOrder[19][6]                        ; Merged with cardOrder[6][12]           ;
+; cardOrder[8][20]                        ; Merged with cardOrder[6][12]           ;
+; cardOrder[14][26]                       ; Merged with cardOrder[6][12]           ;
+; cardOrder[8][16]                        ; Merged with cardOrder[6][12]           ;
+; cardOrder[14][22]                       ; Merged with cardOrder[6][12]           ;
+; cardOrder[6][30]                        ; Merged with cardOrder[6][12]           ;
+; cardOrder[14][6]                        ; Merged with cardOrder[6][12]           ;
+; cardOrder[5][14]                        ; Merged with cardOrder[6][12]           ;
+; cardOrder[10][6]                        ; Merged with cardOrder[6][12]           ;
+; cardOrder[5][30]                        ; Merged with cardOrder[6][12]           ;
+; cardOrder[15][22]                       ; Merged with cardOrder[6][12]           ;
+; cardOrder[4][14]                        ; Merged with cardOrder[6][12]           ;
+; cardOrder[8][6]                         ; Merged with cardOrder[6][12]           ;
+; cardOrder[4][30]                        ; Merged with cardOrder[6][12]           ;
+; cardOrder[15][6]                        ; Merged with cardOrder[6][12]           ;
+; cardOrder[3][14]                        ; Merged with cardOrder[6][12]           ;
+; cardOrder[11][22]                       ; Merged with cardOrder[6][12]           ;
+; cardOrder[3][30]                        ; Merged with cardOrder[6][12]           ;
+; cardOrder[16][22]                       ; Merged with cardOrder[6][12]           ;
+; cardOrder[2][14]                        ; Merged with cardOrder[6][12]           ;
+; cardOrder[7][6]                         ; Merged with cardOrder[6][12]           ;
+; cardOrder[2][30]                        ; Merged with cardOrder[6][12]           ;
+; cardOrder[16][6]                        ; Merged with cardOrder[6][12]           ;
+; cardOrder[1][14]                        ; Merged with cardOrder[6][12]           ;
+; cardOrder[11][6]                        ; Merged with cardOrder[6][12]           ;
+; cardOrder[1][30]                        ; Merged with cardOrder[6][12]           ;
+; cardOrder[17][22]                       ; Merged with cardOrder[6][12]           ;
+; cardOrder[0][14]                        ; Merged with cardOrder[6][12]           ;
+; cardOrder[9][22]                        ; Merged with cardOrder[6][12]           ;
+; cardOrder[0][30]                        ; Merged with cardOrder[6][12]           ;
+; cardOrder[12][26]                       ; Merged with cardOrder[6][12]           ;
+; cardOrder[9][18]                        ; Merged with cardOrder[6][12]           ;
+; cardOrder[18][26]                       ; Merged with cardOrder[6][12]           ;
+; cardOrder[12][18]                       ; Merged with cardOrder[6][12]           ;
+; cardOrder[18][18]                       ; Merged with cardOrder[6][12]           ;
+; cardOrder[18][10]                       ; Merged with cardOrder[6][12]           ;
+; cardOrder[12][10]                       ; Merged with cardOrder[6][12]           ;
+; cardOrder[9][10]                        ; Merged with cardOrder[6][12]           ;
+; cardOrder[19][26]                       ; Merged with cardOrder[6][12]           ;
+; cardOrder[8][27]                        ; Merged with cardOrder[6][12]           ;
+; cardOrder[13][28]                       ; Merged with cardOrder[6][12]           ;
+; cardOrder[8][25]                        ; Merged with cardOrder[6][12]           ;
+; cardOrder[13][24]                       ; Merged with cardOrder[6][12]           ;
+; cardOrder[7][25]                        ; Merged with cardOrder[6][12]           ;
+; cardOrder[13][20]                       ; Merged with cardOrder[6][12]           ;
+; cardOrder[16][20]                       ; Merged with cardOrder[6][11]           ;
+; cardOrder[2][12]                        ; Merged with cardOrder[6][11]           ;
+; cardOrder[11][16]                       ; Merged with cardOrder[6][11]           ;
+; cardOrder[2][16]                        ; Merged with cardOrder[6][11]           ;
+; cardOrder[16][16]                       ; Merged with cardOrder[6][11]           ;
+; cardOrder[2][20]                        ; Merged with cardOrder[6][11]           ;
+; cardOrder[2][24]                        ; Merged with cardOrder[6][11]           ;
+; cardOrder[16][12]                       ; Merged with cardOrder[6][11]           ;
+; cardOrder[2][28]                        ; Merged with cardOrder[6][11]           ;
+; cardOrder[11][12]                       ; Merged with cardOrder[6][11]           ;
+; cardOrder[16][8]                        ; Merged with cardOrder[6][11]           ;
+; cardOrder[9][28]                        ; Merged with cardOrder[6][11]           ;
+; cardOrder[1][8]                         ; Merged with cardOrder[6][11]           ;
+; cardOrder[1][12]                        ; Merged with cardOrder[6][11]           ;
+; cardOrder[11][8]                        ; Merged with cardOrder[6][11]           ;
+; cardOrder[1][16]                        ; Merged with cardOrder[6][11]           ;
+; cardOrder[1][20]                        ; Merged with cardOrder[6][11]           ;
+; cardOrder[1][24]                        ; Merged with cardOrder[6][11]           ;
+; cardOrder[17][28]                       ; Merged with cardOrder[6][11]           ;
+; cardOrder[1][28]                        ; Merged with cardOrder[6][11]           ;
+; cardOrder[17][24]                       ; Merged with cardOrder[6][11]           ;
+; cardOrder[9][24]                        ; Merged with cardOrder[6][11]           ;
+; cardOrder[0][8]                         ; Merged with cardOrder[6][11]           ;
+; cardOrder[17][20]                       ; Merged with cardOrder[6][11]           ;
+; cardOrder[0][12]                        ; Merged with cardOrder[6][11]           ;
+; cardOrder[0][16]                        ; Merged with cardOrder[6][11]           ;
+; cardOrder[17][16]                       ; Merged with cardOrder[6][11]           ;
+; cardOrder[0][20]                        ; Merged with cardOrder[6][11]           ;
+; cardOrder[7][24]                        ; Merged with cardOrder[6][11]           ;
+; cardOrder[0][24]                        ; Merged with cardOrder[6][11]           ;
+; cardOrder[17][12]                       ; Merged with cardOrder[6][11]           ;
+; cardOrder[0][28]                        ; Merged with cardOrder[6][11]           ;
+; cardOrder[12][28]                       ; Merged with cardOrder[6][11]           ;
+; cardOrder[0][31]                        ; Merged with cardOrder[6][11]           ;
+; cardOrder[12][27]                       ; Merged with cardOrder[6][11]           ;
+; cardOrder[17][7]                        ; Merged with cardOrder[6][11]           ;
+; cardOrder[17][5]                        ; Merged with cardOrder[6][11]           ;
+; cardOrder[12][25]                       ; Merged with cardOrder[6][11]           ;
+; cardOrder[9][19]                        ; Merged with cardOrder[6][11]           ;
+; cardOrder[12][23]                       ; Merged with cardOrder[6][11]           ;
+; cardOrder[18][31]                       ; Merged with cardOrder[6][11]           ;
+; cardOrder[7][23]                        ; Merged with cardOrder[6][11]           ;
+; cardOrder[18][29]                       ; Merged with cardOrder[6][11]           ;
+; cardOrder[12][21]                       ; Merged with cardOrder[6][11]           ;
+; cardOrder[18][27]                       ; Merged with cardOrder[6][11]           ;
+; cardOrder[9][17]                        ; Merged with cardOrder[6][11]           ;
+; cardOrder[18][25]                       ; Merged with cardOrder[6][11]           ;
+; cardOrder[12][19]                       ; Merged with cardOrder[6][11]           ;
+; cardOrder[18][23]                       ; Merged with cardOrder[6][11]           ;
+; cardOrder[8][31]                        ; Merged with cardOrder[6][11]           ;
+; cardOrder[18][21]                       ; Merged with cardOrder[6][11]           ;
+; cardOrder[12][17]                       ; Merged with cardOrder[6][11]           ;
+; cardOrder[18][19]                       ; Merged with cardOrder[6][11]           ;
+; cardOrder[9][15]                        ; Merged with cardOrder[6][11]           ;
+; cardOrder[18][17]                       ; Merged with cardOrder[6][11]           ;
+; cardOrder[12][15]                       ; Merged with cardOrder[6][11]           ;
+; cardOrder[18][15]                       ; Merged with cardOrder[6][11]           ;
+; cardOrder[18][13]                       ; Merged with cardOrder[6][11]           ;
+; cardOrder[12][13]                       ; Merged with cardOrder[6][11]           ;
+; cardOrder[18][11]                       ; Merged with cardOrder[6][11]           ;
+; cardOrder[9][13]                        ; Merged with cardOrder[6][11]           ;
+; cardOrder[18][9]                        ; Merged with cardOrder[6][11]           ;
+; cardOrder[12][11]                       ; Merged with cardOrder[6][11]           ;
+; cardOrder[18][7]                        ; Merged with cardOrder[6][11]           ;
+; cardOrder[8][29]                        ; Merged with cardOrder[6][11]           ;
+; cardOrder[18][5]                        ; Merged with cardOrder[6][11]           ;
+; cardOrder[12][9]                        ; Merged with cardOrder[6][11]           ;
+; cardOrder[9][11]                        ; Merged with cardOrder[6][11]           ;
+; cardOrder[12][7]                        ; Merged with cardOrder[6][11]           ;
+; cardOrder[19][31]                       ; Merged with cardOrder[6][11]           ;
+; cardOrder[7][21]                        ; Merged with cardOrder[6][11]           ;
+; cardOrder[19][29]                       ; Merged with cardOrder[6][11]           ;
+; cardOrder[12][5]                        ; Merged with cardOrder[6][11]           ;
+; cardOrder[19][27]                       ; Merged with cardOrder[6][11]           ;
+; cardOrder[9][9]                         ; Merged with cardOrder[6][11]           ;
+; cardOrder[6][20]                        ; Merged with cardOrder[6][11]           ;
+; cardOrder[9][8]                         ; Merged with cardOrder[6][11]           ;
+; cardOrder[2][31]                        ; Merged with cardOrder[6][11]           ;
+; cardOrder[16][7]                        ; Merged with cardOrder[6][11]           ;
+; cardOrder[9][7]                         ; Merged with cardOrder[6][11]           ;
+; cardOrder[11][11]                       ; Merged with cardOrder[6][11]           ;
+; cardOrder[7][20]                        ; Merged with cardOrder[6][11]           ;
+; cardOrder[9][6]                         ; Merged with cardOrder[6][11]           ;
+; cardOrder[9][27]                        ; Merged with cardOrder[6][10]           ;
+; cardOrder[13][25]                       ; Merged with cardOrder[6][10]           ;
+; cardOrder[1][21]                        ; Merged with cardOrder[6][10]           ;
+; cardOrder[13][23]                       ; Merged with cardOrder[6][10]           ;
+; cardOrder[1][17]                        ; Merged with cardOrder[6][10]           ;
+; cardOrder[13][21]                       ; Merged with cardOrder[6][10]           ;
+; cardOrder[8][23]                        ; Merged with cardOrder[6][10]           ;
+; cardOrder[19][24]                       ; Merged with cardOrder[6][10]           ;
+; cardOrder[19][20]                       ; Merged with cardOrder[6][10]           ;
+; cardOrder[13][16]                       ; Merged with cardOrder[6][10]           ;
+; cardOrder[19][16]                       ; Merged with cardOrder[6][10]           ;
+; cardOrder[1][7]                         ; Merged with cardOrder[6][10]           ;
+; cardOrder[19][12]                       ; Merged with cardOrder[6][10]           ;
+; cardOrder[13][12]                       ; Merged with cardOrder[6][10]           ;
+; cardOrder[19][8]                        ; Merged with cardOrder[6][10]           ;
+; cardOrder[10][28]                       ; Merged with cardOrder[6][10]           ;
+; cardOrder[13][8]                        ; Merged with cardOrder[6][10]           ;
+; cardOrder[0][17]                        ; Merged with cardOrder[6][10]           ;
+; cardOrder[13][5]                        ; Merged with cardOrder[6][10]           ;
+; cardOrder[0][23]                        ; Merged with cardOrder[6][10]           ;
+; cardOrder[17][13]                       ; Merged with cardOrder[6][10]           ;
+; cardOrder[17][9]                        ; Merged with cardOrder[6][10]           ;
+; cardOrder[14][31]                       ; Merged with cardOrder[6][10]           ;
+; cardOrder[12][31]                       ; Merged with cardOrder[6][10]           ;
+; cardOrder[14][29]                       ; Merged with cardOrder[6][10]           ;
+; cardOrder[1][31]                        ; Merged with cardOrder[6][10]           ;
+; cardOrder[14][27]                       ; Merged with cardOrder[6][10]           ;
+; cardOrder[17][25]                       ; Merged with cardOrder[6][10]           ;
+; cardOrder[14][25]                       ; Merged with cardOrder[6][10]           ;
+; cardOrder[0][7]                         ; Merged with cardOrder[6][10]           ;
+; cardOrder[14][23]                       ; Merged with cardOrder[6][10]           ;
+; cardOrder[14][21]                       ; Merged with cardOrder[6][10]           ;
+; cardOrder[14][19]                       ; Merged with cardOrder[6][10]           ;
+; cardOrder[7][14]                        ; Merged with cardOrder[6][10]           ;
+; cardOrder[6][16]                        ; Merged with cardOrder[6][10]           ;
+; cardOrder[14][16]                       ; Merged with cardOrder[6][10]           ;
+; cardOrder[6][18]                        ; Merged with cardOrder[6][10]           ;
+; cardOrder[6][24]                        ; Merged with cardOrder[6][10]           ;
+; cardOrder[14][12]                       ; Merged with cardOrder[6][10]           ;
+; cardOrder[6][28]                        ; Merged with cardOrder[6][10]           ;
+; cardOrder[10][12]                       ; Merged with cardOrder[6][10]           ;
+; cardOrder[14][8]                        ; Merged with cardOrder[6][10]           ;
+; cardOrder[8][12]                        ; Merged with cardOrder[6][10]           ;
+; cardOrder[5][8]                         ; Merged with cardOrder[6][10]           ;
+; cardOrder[5][12]                        ; Merged with cardOrder[6][10]           ;
+; cardOrder[10][8]                        ; Merged with cardOrder[6][10]           ;
+; cardOrder[5][16]                        ; Merged with cardOrder[6][10]           ;
+; cardOrder[5][20]                        ; Merged with cardOrder[6][10]           ;
+; cardOrder[7][12]                        ; Merged with cardOrder[6][10]           ;
+; cardOrder[5][24]                        ; Merged with cardOrder[6][10]           ;
+; cardOrder[15][28]                       ; Merged with cardOrder[6][10]           ;
+; cardOrder[5][28]                        ; Merged with cardOrder[6][10]           ;
+; cardOrder[15][24]                       ; Merged with cardOrder[6][10]           ;
+; cardOrder[8][8]                         ; Merged with cardOrder[6][10]           ;
+; cardOrder[4][8]                         ; Merged with cardOrder[6][10]           ;
+; cardOrder[15][20]                       ; Merged with cardOrder[6][10]           ;
+; cardOrder[4][12]                        ; Merged with cardOrder[6][10]           ;
+; cardOrder[4][16]                        ; Merged with cardOrder[6][10]           ;
+; cardOrder[15][16]                       ; Merged with cardOrder[6][10]           ;
+; cardOrder[4][20]                        ; Merged with cardOrder[6][10]           ;
+; cardOrder[7][28]                        ; Merged with cardOrder[6][10]           ;
+; cardOrder[4][24]                        ; Merged with cardOrder[6][10]           ;
+; cardOrder[15][12]                       ; Merged with cardOrder[6][10]           ;
+; cardOrder[4][28]                        ; Merged with cardOrder[6][10]           ;
+; cardOrder[11][28]                       ; Merged with cardOrder[6][10]           ;
+; cardOrder[15][8]                        ; Merged with cardOrder[6][10]           ;
+; cardOrder[3][8]                         ; Merged with cardOrder[6][10]           ;
+; cardOrder[3][12]                        ; Merged with cardOrder[6][10]           ;
+; cardOrder[11][24]                       ; Merged with cardOrder[6][10]           ;
+; cardOrder[3][16]                        ; Merged with cardOrder[6][10]           ;
+; cardOrder[3][20]                        ; Merged with cardOrder[6][10]           ;
+; cardOrder[7][8]                         ; Merged with cardOrder[6][10]           ;
+; cardOrder[3][24]                        ; Merged with cardOrder[6][10]           ;
+; cardOrder[16][28]                       ; Merged with cardOrder[6][10]           ;
+; cardOrder[3][28]                        ; Merged with cardOrder[6][10]           ;
+; cardOrder[11][20]                       ; Merged with cardOrder[6][10]           ;
+; cardOrder[16][24]                       ; Merged with cardOrder[6][10]           ;
+; cardOrder[2][8]                         ; Merged with cardOrder[6][10]           ;
+; cardOrder[11][19]                       ; Merged with cardOrder[6][9]            ;
+; cardOrder[16][23]                       ; Merged with cardOrder[6][9]            ;
+; cardOrder[2][5]                         ; Merged with cardOrder[6][9]            ;
+; cardOrder[7][7]                         ; Merged with cardOrder[6][9]            ;
+; cardOrder[2][7]                         ; Merged with cardOrder[6][9]            ;
+; cardOrder[16][21]                       ; Merged with cardOrder[6][9]            ;
+; cardOrder[2][9]                         ; Merged with cardOrder[6][9]            ;
+; cardOrder[11][17]                       ; Merged with cardOrder[6][9]            ;
+; cardOrder[2][11]                        ; Merged with cardOrder[6][9]            ;
+; cardOrder[16][19]                       ; Merged with cardOrder[6][9]            ;
+; cardOrder[2][13]                        ; Merged with cardOrder[6][9]            ;
+; cardOrder[9][31]                        ; Merged with cardOrder[6][9]            ;
+; cardOrder[2][15]                        ; Merged with cardOrder[6][9]            ;
+; cardOrder[16][17]                       ; Merged with cardOrder[6][9]            ;
+; cardOrder[2][17]                        ; Merged with cardOrder[6][9]            ;
+; cardOrder[11][15]                       ; Merged with cardOrder[6][9]            ;
+; cardOrder[2][19]                        ; Merged with cardOrder[6][9]            ;
+; cardOrder[16][15]                       ; Merged with cardOrder[6][9]            ;
+; cardOrder[2][21]                        ; Merged with cardOrder[6][9]            ;
+; cardOrder[2][23]                        ; Merged with cardOrder[6][9]            ;
+; cardOrder[16][13]                       ; Merged with cardOrder[6][9]            ;
+; cardOrder[2][25]                        ; Merged with cardOrder[6][9]            ;
+; cardOrder[11][13]                       ; Merged with cardOrder[6][9]            ;
+; cardOrder[2][27]                        ; Merged with cardOrder[6][9]            ;
+; cardOrder[11][5]                        ; Merged with cardOrder[6][9]            ;
+; cardOrder[1][27]                        ; Merged with cardOrder[6][9]            ;
+; cardOrder[8][14]                        ; Merged with cardOrder[6][9]            ;
+; cardOrder[10][14]                       ; Merged with cardOrder[6][9]            ;
+; cardOrder[14][14]                       ; Merged with cardOrder[6][9]            ;
+; cardOrder[6][22]                        ; Merged with cardOrder[6][9]            ;
+; cardOrder[13][18]                       ; Merged with cardOrder[6][8]            ;
+; cardOrder[19][18]                       ; Merged with cardOrder[6][8]            ;
+; cardOrder[17][29]                       ; Merged with cardOrder[6][8]            ;
+; cardOrder[19][10]                       ; Merged with cardOrder[6][8]            ;
+; cardOrder[13][10]                       ; Merged with cardOrder[6][8]            ;
+; cardOrder[7][17]                        ; Merged with cardOrder[6][8]            ;
+; cardOrder[8][19]                        ; Merged with cardOrder[6][8]            ;
+; cardOrder[0][27]                        ; Merged with cardOrder[6][8]            ;
+; cardOrder[14][28]                       ; Merged with cardOrder[6][8]            ;
+; cardOrder[7][30]                        ; Merged with cardOrder[6][8]            ;
+; cardOrder[14][24]                       ; Merged with cardOrder[6][8]            ;
+; cardOrder[17][21]                       ; Merged with cardOrder[6][8]            ;
+; cardOrder[14][20]                       ; Merged with cardOrder[6][8]            ;
+; cardOrder[14][18]                       ; Merged with cardOrder[6][8]            ;
+; cardOrder[6][14]                        ; Merged with cardOrder[6][8]            ;
+; cardOrder[6][26]                        ; Merged with cardOrder[6][8]            ;
+; cardOrder[14][10]                       ; Merged with cardOrder[6][8]            ;
+; cardOrder[10][10]                       ; Merged with cardOrder[6][8]            ;
+; cardOrder[5][10]                        ; Merged with cardOrder[6][8]            ;
+; cardOrder[5][18]                        ; Merged with cardOrder[6][8]            ;
+; cardOrder[8][10]                        ; Merged with cardOrder[6][8]            ;
+; cardOrder[5][26]                        ; Merged with cardOrder[6][8]            ;
+; cardOrder[15][26]                       ; Merged with cardOrder[6][8]            ;
+; cardOrder[4][10]                        ; Merged with cardOrder[6][8]            ;
+; cardOrder[15][18]                       ; Merged with cardOrder[6][8]            ;
+; cardOrder[4][18]                        ; Merged with cardOrder[6][8]            ;
+; cardOrder[7][10]                        ; Merged with cardOrder[6][8]            ;
+; cardOrder[4][26]                        ; Merged with cardOrder[6][8]            ;
+; cardOrder[15][10]                       ; Merged with cardOrder[6][8]            ;
+; cardOrder[11][26]                       ; Merged with cardOrder[6][8]            ;
+; cardOrder[3][10]                        ; Merged with cardOrder[6][8]            ;
+; cardOrder[3][18]                        ; Merged with cardOrder[6][8]            ;
+; cardOrder[3][26]                        ; Merged with cardOrder[6][8]            ;
+; cardOrder[16][26]                       ; Merged with cardOrder[6][8]            ;
+; cardOrder[11][18]                       ; Merged with cardOrder[6][8]            ;
+; cardOrder[2][10]                        ; Merged with cardOrder[6][8]            ;
+; cardOrder[16][18]                       ; Merged with cardOrder[6][8]            ;
+; cardOrder[2][18]                        ; Merged with cardOrder[6][8]            ;
+; cardOrder[7][26]                        ; Merged with cardOrder[6][8]            ;
+; cardOrder[2][26]                        ; Merged with cardOrder[6][8]            ;
+; cardOrder[16][10]                       ; Merged with cardOrder[6][8]            ;
+; cardOrder[11][10]                       ; Merged with cardOrder[6][8]            ;
+; cardOrder[1][10]                        ; Merged with cardOrder[6][8]            ;
+; cardOrder[1][18]                        ; Merged with cardOrder[6][8]            ;
+; cardOrder[9][26]                        ; Merged with cardOrder[6][8]            ;
+; cardOrder[1][26]                        ; Merged with cardOrder[6][8]            ;
+; cardOrder[17][26]                       ; Merged with cardOrder[6][8]            ;
+; cardOrder[0][10]                        ; Merged with cardOrder[6][8]            ;
+; cardOrder[17][18]                       ; Merged with cardOrder[6][8]            ;
+; cardOrder[0][18]                        ; Merged with cardOrder[6][8]            ;
+; cardOrder[0][26]                        ; Merged with cardOrder[6][8]            ;
+; cardOrder[17][10]                       ; Merged with cardOrder[6][8]            ;
+; cardOrder[17][8]                        ; Merged with cardOrder[6][8]            ;
+; cardOrder[9][20]                        ; Merged with cardOrder[6][8]            ;
+; cardOrder[12][24]                       ; Merged with cardOrder[6][8]            ;
+; cardOrder[18][28]                       ; Merged with cardOrder[6][8]            ;
+; cardOrder[12][20]                       ; Merged with cardOrder[6][8]            ;
+; cardOrder[18][24]                       ; Merged with cardOrder[6][8]            ;
+; cardOrder[9][16]                        ; Merged with cardOrder[6][8]            ;
+; cardOrder[18][20]                       ; Merged with cardOrder[6][8]            ;
+; cardOrder[12][16]                       ; Merged with cardOrder[6][8]            ;
+; cardOrder[18][16]                       ; Merged with cardOrder[6][8]            ;
+; cardOrder[18][12]                       ; Merged with cardOrder[6][8]            ;
+; cardOrder[12][12]                       ; Merged with cardOrder[6][8]            ;
+; cardOrder[18][8]                        ; Merged with cardOrder[6][8]            ;
+; cardOrder[9][12]                        ; Merged with cardOrder[6][8]            ;
+; cardOrder[12][8]                        ; Merged with cardOrder[6][8]            ;
+; cardOrder[8][28]                        ; Merged with cardOrder[6][8]            ;
+; cardOrder[19][28]                       ; Merged with cardOrder[6][8]            ;
+; cardOrder[16][9]                        ; Merged with cardOrder[6][8]            ;
+; cardOrder[1][5]                         ; Merged with cardOrder[6][8]            ;
+; cardOrder[13][31]                       ; Merged with cardOrder[6][8]            ;
+; cardOrder[9][29]                        ; Merged with cardOrder[6][8]            ;
+; cardOrder[13][29]                       ; Merged with cardOrder[6][8]            ;
+; cardOrder[1][13]                        ; Merged with cardOrder[6][8]            ;
+; cardOrder[13][27]                       ; Merged with cardOrder[6][8]            ;
+; cardOrder[2][29]                        ; Merged with cardOrder[6][7]            ;
+; cardOrder[1][11]                        ; Merged with cardOrder[6][7]            ;
+; cardOrder[9][5]                         ; Merged with cardOrder[6][7]            ;
+; cardOrder[11][9]                        ; Merged with cardOrder[6][7]            ;
+; cardOrder[1][15]                        ; Merged with cardOrder[6][7]            ;
+; cardOrder[1][9]                         ; Merged with cardOrder[6][7]            ;
+; cardOrder[17][31]                       ; Merged with cardOrder[6][7]            ;
+; cardOrder[1][19]                        ; Merged with cardOrder[6][7]            ;
+; cardOrder[11][7]                        ; Merged with cardOrder[6][7]            ;
+; cardOrder[7][19]                        ; Merged with cardOrder[6][7]            ;
+; cardOrder[1][23]                        ; Merged with cardOrder[6][7]            ;
+; cardOrder[16][5]                        ; Merged with cardOrder[6][7]            ;
+; cardOrder[7][18]                        ; Merged with cardOrder[6][7]            ;
+; cardOrder[19][25]                       ; Merged with cardOrder[6][7]            ;
+; cardOrder[13][19]                       ; Merged with cardOrder[6][7]            ;
+; cardOrder[19][23]                       ; Merged with cardOrder[6][7]            ;
+; cardOrder[1][25]                        ; Merged with cardOrder[6][7]            ;
+; cardOrder[19][21]                       ; Merged with cardOrder[6][7]            ;
+; cardOrder[13][17]                       ; Merged with cardOrder[6][7]            ;
+; cardOrder[19][19]                       ; Merged with cardOrder[6][7]            ;
+; cardOrder[10][31]                       ; Merged with cardOrder[6][7]            ;
+; cardOrder[19][17]                       ; Merged with cardOrder[6][7]            ;
+; cardOrder[13][15]                       ; Merged with cardOrder[6][7]            ;
+; cardOrder[19][15]                       ; Merged with cardOrder[6][7]            ;
+; cardOrder[16][11]                       ; Merged with cardOrder[6][7]            ;
+; cardOrder[19][13]                       ; Merged with cardOrder[6][7]            ;
+; cardOrder[13][13]                       ; Merged with cardOrder[6][7]            ;
+; cardOrder[19][11]                       ; Merged with cardOrder[6][7]            ;
+; cardOrder[10][29]                       ; Merged with cardOrder[6][7]            ;
+; cardOrder[19][9]                        ; Merged with cardOrder[6][7]            ;
+; cardOrder[13][11]                       ; Merged with cardOrder[6][7]            ;
+; cardOrder[19][7]                        ; Merged with cardOrder[6][7]            ;
+; cardOrder[8][21]                        ; Merged with cardOrder[6][7]            ;
+; cardOrder[19][5]                        ; Merged with cardOrder[6][7]            ;
+; cardOrder[13][9]                        ; Merged with cardOrder[6][7]            ;
+; cardOrder[10][27]                       ; Merged with cardOrder[6][7]            ;
+; cardOrder[13][7]                        ; Merged with cardOrder[6][7]            ;
+; cardOrder[10][26]                       ; Merged with cardOrder[6][7]            ;
+; cardOrder[17][17]                       ; Merged with cardOrder[6][7]            ;
+; cardOrder[0][21]                        ; Merged with cardOrder[6][7]            ;
+; cardOrder[10][25]                       ; Merged with cardOrder[6][7]            ;
+; cardOrder[17][15]                       ; Merged with cardOrder[6][7]            ;
+; cardOrder[12][29]                       ; Merged with cardOrder[6][7]            ;
+; cardOrder[0][25]                        ; Merged with cardOrder[6][7]            ;
+; cardOrder[10][24]                       ; Merged with cardOrder[6][7]            ;
+; cardOrder[0][19]                        ; Merged with cardOrder[6][7]            ;
+; cardOrder[9][21]                        ; Merged with cardOrder[6][7]            ;
+; cardOrder[0][29]                        ; Merged with cardOrder[6][7]            ;
+; cardOrder[10][23]                       ; Merged with cardOrder[6][7]            ;
+; cardOrder[17][11]                       ; Merged with cardOrder[6][7]            ;
+; cardOrder[7][16]                        ; Merged with cardOrder[6][7]            ;
+; cardOrder[7][31]                        ; Merged with cardOrder[6][7]            ;
+; cardOrder[10][22]                       ; Merged with cardOrder[6][7]            ;
+; cardOrder[0][15]                        ; Merged with cardOrder[6][7]            ;
+; cardOrder[10][21]                       ; Merged with cardOrder[6][7]            ;
+; cardOrder[8][17]                        ; Merged with cardOrder[6][7]            ;
+; cardOrder[7][15]                        ; Merged with cardOrder[6][7]            ;
+; cardOrder[9][25]                        ; Merged with cardOrder[6][7]            ;
+; cardOrder[10][20]                       ; Merged with cardOrder[6][7]            ;
+; cardOrder[1][29]                        ; Merged with cardOrder[6][7]            ;
+; cardOrder[0][5]                         ; Merged with cardOrder[6][7]            ;
+; cardOrder[10][19]                       ; Merged with cardOrder[6][7]            ;
+; cardOrder[17][23]                       ; Merged with cardOrder[6][7]            ;
+; cardOrder[6][6]                         ; Merged with cardOrder[6][7]            ;
+; cardOrder[0][9]                         ; Merged with cardOrder[6][7]            ;
+; cardOrder[10][18]                       ; Merged with cardOrder[6][7]            ;
+; cardOrder[17][27]                       ; Merged with cardOrder[6][7]            ;
+; cardOrder[9][23]                        ; Merged with cardOrder[6][7]            ;
+; cardOrder[0][13]                        ; Merged with cardOrder[6][7]            ;
+; cardOrder[10][17]                       ; Merged with cardOrder[6][7]            ;
+; cardOrder[17][19]                       ; Merged with cardOrder[6][7]            ;
+; cardOrder[10][16]                       ; Merged with cardOrder[6][7]            ;
+; cardOrder[8][15]                        ; Merged with cardOrder[6][7]            ;
+; cardOrder[6][13]                        ; Merged with cardOrder[6][7]            ;
+; cardOrder[0][11]                        ; Merged with cardOrder[6][7]            ;
+; cardOrder[6][15]                        ; Merged with cardOrder[6][7]            ;
+; cardOrder[14][17]                       ; Merged with cardOrder[6][7]            ;
+; cardOrder[6][17]                        ; Merged with cardOrder[6][7]            ;
+; cardOrder[10][15]                       ; Merged with cardOrder[6][7]            ;
+; cardOrder[6][19]                        ; Merged with cardOrder[6][7]            ;
+; cardOrder[14][15]                       ; Merged with cardOrder[6][7]            ;
+; cardOrder[6][23]                        ; Merged with cardOrder[6][7]            ;
+; cardOrder[6][21]                        ; Merged with cardOrder[6][7]            ;
+; cardOrder[14][13]                       ; Merged with cardOrder[6][7]            ;
+; cardOrder[6][25]                        ; Merged with cardOrder[6][7]            ;
+; cardOrder[10][13]                       ; Merged with cardOrder[6][7]            ;
+; cardOrder[6][27]                        ; Merged with cardOrder[6][7]            ;
+; cardOrder[14][11]                       ; Merged with cardOrder[6][5]            ;
+; cardOrder[6][29]                        ; Merged with cardOrder[6][5]            ;
+; cardOrder[8][13]                        ; Merged with cardOrder[6][5]            ;
+; cardOrder[6][31]                        ; Merged with cardOrder[6][5]            ;
+; cardOrder[14][9]                        ; Merged with cardOrder[6][5]            ;
+; cardOrder[10][11]                       ; Merged with cardOrder[6][5]            ;
+; cardOrder[14][7]                        ; Merged with cardOrder[6][5]            ;
+; cardOrder[5][5]                         ; Merged with cardOrder[6][5]            ;
+; cardOrder[7][13]                        ; Merged with cardOrder[6][5]            ;
+; cardOrder[5][7]                         ; Merged with cardOrder[6][5]            ;
+; cardOrder[14][5]                        ; Merged with cardOrder[6][5]            ;
+; cardOrder[5][9]                         ; Merged with cardOrder[6][5]            ;
+; cardOrder[10][9]                        ; Merged with cardOrder[6][5]            ;
+; cardOrder[5][11]                        ; Merged with cardOrder[6][5]            ;
+; cardOrder[5][13]                        ; Merged with cardOrder[6][5]            ;
+; cardOrder[8][11]                        ; Merged with cardOrder[6][5]            ;
+; cardOrder[5][15]                        ; Merged with cardOrder[6][5]            ;
+; cardOrder[5][17]                        ; Merged with cardOrder[6][5]            ;
+; cardOrder[10][7]                        ; Merged with cardOrder[6][5]            ;
+; cardOrder[5][19]                        ; Merged with cardOrder[6][5]            ;
+; cardOrder[15][31]                       ; Merged with cardOrder[6][5]            ;
+; cardOrder[5][21]                        ; Merged with cardOrder[6][5]            ;
+; cardOrder[7][29]                        ; Merged with cardOrder[6][5]            ;
+; cardOrder[5][23]                        ; Merged with cardOrder[6][5]            ;
+; cardOrder[15][29]                       ; Merged with cardOrder[6][5]            ;
+; cardOrder[5][25]                        ; Merged with cardOrder[6][5]            ;
+; cardOrder[10][5]                        ; Merged with cardOrder[6][5]            ;
+; cardOrder[5][27]                        ; Merged with cardOrder[6][5]            ;
+; cardOrder[15][27]                       ; Merged with cardOrder[6][5]            ;
+; cardOrder[5][29]                        ; Merged with cardOrder[6][5]            ;
+; cardOrder[8][9]                         ; Merged with cardOrder[6][5]            ;
+; cardOrder[5][31]                        ; Merged with cardOrder[6][5]            ;
+; cardOrder[15][25]                       ; Merged with cardOrder[6][5]            ;
+; cardOrder[15][23]                       ; Merged with cardOrder[6][5]            ;
+; cardOrder[4][5]                         ; Merged with cardOrder[6][5]            ;
+; cardOrder[7][11]                        ; Merged with cardOrder[6][5]            ;
+; cardOrder[4][7]                         ; Merged with cardOrder[6][5]            ;
+; cardOrder[15][21]                       ; Merged with cardOrder[6][5]            ;
+; cardOrder[4][9]                         ; Merged with cardOrder[6][5]            ;
+; cardOrder[4][11]                        ; Merged with cardOrder[6][5]            ;
+; cardOrder[15][19]                       ; Merged with cardOrder[6][5]            ;
+; cardOrder[4][13]                        ; Merged with cardOrder[6][5]            ;
+; cardOrder[8][7]                         ; Merged with cardOrder[6][5]            ;
+; cardOrder[4][15]                        ; Merged with cardOrder[6][5]            ;
+; cardOrder[15][17]                       ; Merged with cardOrder[6][5]            ;
+; cardOrder[4][17]                        ; Merged with cardOrder[6][5]            ;
+; cardOrder[11][31]                       ; Merged with cardOrder[6][5]            ;
+; cardOrder[4][19]                        ; Merged with cardOrder[6][5]            ;
+; cardOrder[15][15]                       ; Merged with cardOrder[6][5]            ;
+; cardOrder[4][21]                        ; Merged with cardOrder[6][5]            ;
+; cardOrder[4][23]                        ; Merged with cardOrder[6][5]            ;
+; cardOrder[15][13]                       ; Merged with cardOrder[6][5]            ;
+; cardOrder[4][25]                        ; Merged with cardOrder[6][5]            ;
+; cardOrder[11][29]                       ; Merged with cardOrder[6][5]            ;
+; cardOrder[4][27]                        ; Merged with cardOrder[6][5]            ;
+; cardOrder[15][11]                       ; Merged with cardOrder[6][5]            ;
+; cardOrder[4][29]                        ; Merged with cardOrder[6][5]            ;
+; cardOrder[8][5]                         ; Merged with cardOrder[6][5]            ;
+; cardOrder[4][31]                        ; Merged with cardOrder[6][5]            ;
+; cardOrder[15][9]                        ; Merged with cardOrder[6][5]            ;
+; cardOrder[11][27]                       ; Merged with cardOrder[6][5]            ;
+; cardOrder[15][7]                        ; Merged with cardOrder[6][5]            ;
+; cardOrder[3][5]                         ; Merged with cardOrder[6][5]            ;
+; cardOrder[7][9]                         ; Merged with cardOrder[6][5]            ;
+; cardOrder[3][7]                         ; Merged with cardOrder[6][5]            ;
+; cardOrder[15][5]                        ; Merged with cardOrder[6][5]            ;
+; cardOrder[3][9]                         ; Merged with cardOrder[6][5]            ;
+; cardOrder[11][25]                       ; Merged with cardOrder[6][5]            ;
+; cardOrder[3][11]                        ; Merged with cardOrder[6][5]            ;
+; cardOrder[3][13]                        ; Merged with cardOrder[6][5]            ;
+; cardOrder[3][15]                        ; Merged with cardOrder[6][5]            ;
+; cardOrder[3][17]                        ; Merged with cardOrder[6][5]            ;
+; cardOrder[11][23]                       ; Merged with cardOrder[6][5]            ;
+; cardOrder[3][19]                        ; Merged with cardOrder[6][5]            ;
+; cardOrder[16][31]                       ; Merged with cardOrder[6][5]            ;
+; cardOrder[3][21]                        ; Merged with cardOrder[6][5]            ;
+; cardOrder[7][27]                        ; Merged with cardOrder[6][5]            ;
+; cardOrder[3][23]                        ; Merged with cardOrder[6][5]            ;
+; cardOrder[16][29]                       ; Merged with cardOrder[6][5]            ;
+; cardOrder[3][25]                        ; Merged with cardOrder[6][5]            ;
+; cardOrder[11][21]                       ; Merged with cardOrder[6][5]            ;
+; cardOrder[3][27]                        ; Merged with cardOrder[6][5]            ;
+; cardOrder[16][27]                       ; Merged with cardOrder[6][5]            ;
+; cardOrder[3][29]                        ; Merged with cardOrder[6][5]            ;
+; cardOrder[3][31]                        ; Merged with cardOrder[6][5]            ;
+; cardOrder[16][25]                       ; Merged with cardOrder[6][5]            ;
+; cardOrder[6][7]                         ; Merged with cardOrder[6][12]           ;
+; cardOrder[6][9]                         ; Merged with cardOrder[6][12]           ;
+; cardOrder[6][10]                        ; Merged with cardOrder[6][12]           ;
+; cardOrder[6][5]                         ; Merged with cardOrder[6][12]           ;
+; cardOrder[6][8]                         ; Merged with cardOrder[6][12]           ;
+; cardOrder[6][11]                        ; Merged with cardOrder[6][12]           ;
+; cardOrder[6][12]                        ; Stuck at GND due to stuck port data_in ;
+; numberOfCardsFlipped[17..19]            ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 609 ;                                        ;
++-----------------------------------------+----------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                           ;
-+---------------------+---------------------------+-----------------------------------------------------------------------------------------------------+
-; Register name       ; Reason for Removal        ; Registers Removed due to This Register                                                              ;
-+---------------------+---------------------------+-----------------------------------------------------------------------------------------------------+
-; cardsFlipped[1][31] ; Stuck at GND              ; isOut[0], isOut[1], isOut[2], isOut[3], isOut[4], isOut[5], isOut[6], isOut[7], isOut[8], isOut[9], ;
-;                     ; due to stuck port data_in ; isOut[10], isOut[11], isOut[12], isOut[13], isOut[14], isOut[15], isOut[16], isOut[17],             ;
-;                     ;                           ; isOut[18], isOut[19], cardsFlipped[1][1], cardsFlipped[1][2], cardsFlipped[1][3],                   ;
-;                     ;                           ; cardsFlipped[1][4]                                                                                  ;
-; cardsFlipped[0][31] ; Stuck at GND              ; cardsFlipped[0][1], cardsFlipped[0][2], cardsFlipped[0][3], cardsFlipped[0][4]                      ;
-;                     ; due to stuck port data_in ;                                                                                                     ;
-; cardsFlipped[1][5]  ; Stuck at GND              ; numberOfCardsFlipped[19], numberOfCardsFlipped[18], numberOfCardsFlipped[17]                        ;
-;                     ; due to stuck port data_in ;                                                                                                     ;
-+---------------------+---------------------------+-----------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                   ;
++--------------------+---------------------------+------------------------------------------------------------------------------+
+; Register name      ; Reason for Removal        ; Registers Removed due to This Register                                       ;
++--------------------+---------------------------+------------------------------------------------------------------------------+
+; cardsFlipped[0][5] ; Stuck at GND              ; numberOfCardsFlipped[19], numberOfCardsFlipped[17], numberOfCardsFlipped[18] ;
+;                    ; due to stuck port data_in ;                                                                              ;
++--------------------+---------------------------+------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -315,9 +949,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 187   ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 28    ;
+; Total registers                              ; 350   ;
+; Number of registers using Synchronous Clear  ; 4     ;
+; Number of registers using Synchronous Load   ; 33    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 12    ;
@@ -332,7 +966,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------+---------+
 ; vga_hsync~reg0                         ; 1       ;
 ; vga_vsync~reg0                         ; 1       ;
-; Total number of inverted registers = 2 ;         ;
+; flag                                   ; 138     ;
+; Total number of inverted registers = 3 ;         ;
 +----------------------------------------+---------+
 
 
@@ -341,12 +976,57 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |pepinosDigitais|pos[1]                   ;
-; 3:1                ; 19 bits   ; 38 LEs        ; 38 LEs               ; 0 LEs                  ; Yes        ; |pepinosDigitais|numberOfCardsFlipped[12] ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |pepinosDigitais|pos[0]                   ;
+; 3:1                ; 19 bits   ; 38 LEs        ; 38 LEs               ; 0 LEs                  ; Yes        ; |pepinosDigitais|numberOfCardsFlipped[18] ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |pepinosDigitais|pos[2]                   ;
-; 3:1                ; 28 bits   ; 56 LEs        ; 56 LEs               ; 0 LEs                  ; Yes        ; |pepinosDigitais|pos[22]                  ;
+; 3:1                ; 28 bits   ; 56 LEs        ; 56 LEs               ; 0 LEs                  ; Yes        ; |pepinosDigitais|pos[6]                   ;
+; 3:1                ; 20 bits   ; 40 LEs        ; 40 LEs               ; 0 LEs                  ; Yes        ; |pepinosDigitais|isFlipped[5]             ;
+; 82:1               ; 4 bits    ; 216 LEs       ; 216 LEs              ; 0 LEs                  ; Yes        ; |pepinosDigitais|vga_b[9]~reg0            ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |pepinosDigitais|cardOrder                ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |pepinosDigitais|cardOrder                ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |pepinosDigitais|cardOrder                ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |pepinosDigitais|cardOrder                ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |pepinosDigitais|cardOrder                ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |pepinosDigitais|cardOrder                ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |pepinosDigitais|cardOrder                ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |pepinosDigitais|cardOrder                ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |pepinosDigitais|cardOrder                ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |pepinosDigitais|cardOrder                ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |pepinosDigitais|cardOrder                ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |pepinosDigitais|cardOrder                ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |pepinosDigitais|cardOrder                ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |pepinosDigitais|cardOrder                ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |pepinosDigitais|cardOrder                ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |pepinosDigitais|cardOrder                ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |pepinosDigitais|cardOrder                ;
 ; 3:1                ; 30 bits   ; 60 LEs        ; 60 LEs               ; 0 LEs                  ; No         ; |pepinosDigitais|pos                      ;
-; 62:1               ; 2 bits    ; 82 LEs        ; 48 LEs               ; 34 LEs                 ; No         ; |pepinosDigitais|vga_r                    ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |pepinosDigitais|cardOrder                ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |pepinosDigitais|Mux4                     ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |pepinosDigitais|Mux8                     ;
+; 6:1                ; 5 bits    ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |pepinosDigitais|cardOrder                ;
+; 9:1                ; 5 bits    ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; No         ; |pepinosDigitais|cardOrder                ;
+; 20:1               ; 2 bits    ; 26 LEs        ; 26 LEs               ; 0 LEs                  ; No         ; |pepinosDigitais|Mux154                   ;
+; 17:1               ; 5 bits    ; 55 LEs        ; 30 LEs               ; 25 LEs                 ; No         ; |pepinosDigitais|cardOrder                ;
+; 17:1               ; 5 bits    ; 55 LEs        ; 30 LEs               ; 25 LEs                 ; No         ; |pepinosDigitais|cardOrder                ;
+; 17:1               ; 5 bits    ; 55 LEs        ; 30 LEs               ; 25 LEs                 ; No         ; |pepinosDigitais|cardOrder                ;
+; 10:1               ; 5 bits    ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; No         ; |pepinosDigitais|cardOrder                ;
+; 32:1               ; 5 bits    ; 105 LEs       ; 70 LEs               ; 35 LEs                 ; No         ; |pepinosDigitais|Mux121                   ;
+; 32:1               ; 5 bits    ; 105 LEs       ; 70 LEs               ; 35 LEs                 ; No         ; |pepinosDigitais|Mux151                   ;
+; 33:1               ; 3 bits    ; 66 LEs        ; 30 LEs               ; 36 LEs                 ; No         ; |pepinosDigitais|cardOrder                ;
+; 33:1               ; 3 bits    ; 66 LEs        ; 30 LEs               ; 36 LEs                 ; No         ; |pepinosDigitais|cardOrder                ;
+; 33:1               ; 3 bits    ; 66 LEs        ; 30 LEs               ; 36 LEs                 ; No         ; |pepinosDigitais|cardOrder                ;
+; 33:1               ; 3 bits    ; 66 LEs        ; 30 LEs               ; 36 LEs                 ; No         ; |pepinosDigitais|cardOrder                ;
+; 33:1               ; 3 bits    ; 66 LEs        ; 30 LEs               ; 36 LEs                 ; No         ; |pepinosDigitais|cardOrder                ;
+; 33:1               ; 5 bits    ; 110 LEs       ; 50 LEs               ; 60 LEs                 ; No         ; |pepinosDigitais|cardOrder                ;
+; 33:1               ; 5 bits    ; 110 LEs       ; 50 LEs               ; 60 LEs                 ; No         ; |pepinosDigitais|cardOrder                ;
+; 18:1               ; 5 bits    ; 60 LEs        ; 30 LEs               ; 30 LEs                 ; No         ; |pepinosDigitais|cardOrder                ;
+; 34:1               ; 5 bits    ; 110 LEs       ; 55 LEs               ; 55 LEs                 ; No         ; |pepinosDigitais|cardOrder                ;
+; 66:1               ; 2 bits    ; 88 LEs        ; 28 LEs               ; 60 LEs                 ; No         ; |pepinosDigitais|cardOrder                ;
+; 15:1               ; 2 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; No         ; |pepinosDigitais|cardOrder                ;
+; 15:1               ; 2 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; No         ; |pepinosDigitais|cardOrder                ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; No         ; |pepinosDigitais|cardOrder                ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; No         ; |pepinosDigitais|cardOrder                ;
+; 82:1               ; 6 bits    ; 324 LEs       ; 246 LEs              ; 78 LEs                 ; No         ; |pepinosDigitais|vga_r                    ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
 
 
@@ -415,14 +1095,348 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: randomizer:instancia_randomizer ;
-+----------------+-------+-----------------------------------------------------+
-; Parameter Name ; Value ; Type                                                ;
-+----------------+-------+-----------------------------------------------------+
-; repetitions    ; 100   ; Signed Integer                                      ;
-; maxTries       ; 200   ; Signed Integer                                      ;
-+----------------+-------+-----------------------------------------------------+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod1 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                ;
+; LPM_WIDTHD             ; 6              ; Untyped                ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_bko ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod2 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                ;
+; LPM_WIDTHD             ; 6              ; Untyped                ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_bko ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod3 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                ;
+; LPM_WIDTHD             ; 6              ; Untyped                ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_bko ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                ;
+; LPM_WIDTHD             ; 6              ; Untyped                ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_bko ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod6 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                ;
+; LPM_WIDTHD             ; 5              ; Untyped                ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_ako ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod4 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                ;
+; LPM_WIDTHD             ; 5              ; Untyped                ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_ako ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod5 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                ;
+; LPM_WIDTHD             ; 5              ; Untyped                ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_ako ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod7 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                ;
+; LPM_WIDTHD             ; 5              ; Untyped                ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_ako ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod8 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                ;
+; LPM_WIDTHD             ; 5              ; Untyped                ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_ako ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod10 ;
++------------------------+----------------+-------------------------+
+; Parameter Name         ; Value          ; Type                    ;
++------------------------+----------------+-------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                 ;
+; LPM_WIDTHD             ; 5              ; Untyped                 ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                 ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                 ;
+; LPM_PIPELINE           ; 0              ; Untyped                 ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                 ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                 ;
+; CBXI_PARAMETER         ; lpm_divide_ako ; Untyped                 ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                 ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                 ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY              ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY            ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE            ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE          ;
++------------------------+----------------+-------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod9 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                ;
+; LPM_WIDTHD             ; 5              ; Untyped                ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_ako ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod11 ;
++------------------------+----------------+-------------------------+
+; Parameter Name         ; Value          ; Type                    ;
++------------------------+----------------+-------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                 ;
+; LPM_WIDTHD             ; 4              ; Untyped                 ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                 ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                 ;
+; LPM_PIPELINE           ; 0              ; Untyped                 ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                 ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                 ;
+; CBXI_PARAMETER         ; lpm_divide_9ko ; Untyped                 ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                 ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                 ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY              ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY            ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE            ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE          ;
++------------------------+----------------+-------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod12 ;
++------------------------+----------------+-------------------------+
+; Parameter Name         ; Value          ; Type                    ;
++------------------------+----------------+-------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                 ;
+; LPM_WIDTHD             ; 4              ; Untyped                 ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                 ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                 ;
+; LPM_PIPELINE           ; 0              ; Untyped                 ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                 ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                 ;
+; CBXI_PARAMETER         ; lpm_divide_9ko ; Untyped                 ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                 ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                 ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY              ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY            ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE            ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE          ;
++------------------------+----------------+-------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod13 ;
++------------------------+----------------+-------------------------+
+; Parameter Name         ; Value          ; Type                    ;
++------------------------+----------------+-------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                 ;
+; LPM_WIDTHD             ; 4              ; Untyped                 ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                 ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                 ;
+; LPM_PIPELINE           ; 0              ; Untyped                 ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                 ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                 ;
+; CBXI_PARAMETER         ; lpm_divide_9ko ; Untyped                 ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                 ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                 ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY              ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY            ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE            ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE          ;
++------------------------+----------------+-------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod14 ;
++------------------------+----------------+-------------------------+
+; Parameter Name         ; Value          ; Type                    ;
++------------------------+----------------+-------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                 ;
+; LPM_WIDTHD             ; 3              ; Untyped                 ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                 ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                 ;
+; LPM_PIPELINE           ; 0              ; Untyped                 ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                 ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                 ;
+; CBXI_PARAMETER         ; lpm_divide_8ko ; Untyped                 ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                 ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                 ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY              ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY            ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE            ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE          ;
++------------------------+----------------+-------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -449,7 +1463,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:04     ;
+; Top            ; 00:06:01     ;
 +----------------+--------------+
 
 
@@ -459,12 +1473,11 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Tue Aug 29 20:18:34 2023
+    Info: Processing started: Thu Aug 31 20:55:19 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off pepinosDigitais -c pepinosDigitais
 Warning (20028): Parallel compilation is not licensed and has been disabled
-Info (12021): Found 2 design units, including 2 entities, in source file vga.sv
+Info (12021): Found 1 design units, including 1 entities, in source file vga.sv
     Info (12023): Found entity 1: vga
-    Info (12023): Found entity 2: vga_tb
 Info (12021): Found 1 design units, including 1 entities, in source file pepinosdigitais.sv
     Info (12023): Found entity 1: pepinosDigitais
 Info (12021): Found 2 design units, including 2 entities, in source file clock_25m_divider.sv
@@ -478,47 +1491,184 @@ Info (12021): Found 1 design units, including 1 entities, in source file clock_1
     Info (12023): Found entity 1: clock_1Hz_divider
 Info (12127): Elaborating entity "pepinosDigitais" for the top level hierarchy
 Warning (10036): Verilog HDL or VHDL warning at pepinosDigitais.sv(72): object "gameOver" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at pepinosDigitais.sv(74): object "PAR_CARTAS_1" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at pepinosDigitais.sv(75): object "PAR_CARTAS_2" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at pepinosDigitais.sv(76): object "PAR_CARTAS_3" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at pepinosDigitais.sv(77): object "PAR_CARTAS_4" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at pepinosDigitais.sv(78): object "PAR_CARTAS_5" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at pepinosDigitais.sv(79): object "PAR_CARTAS_6" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at pepinosDigitais.sv(80): object "PAR_CARTAS_7" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at pepinosDigitais.sv(81): object "PAR_CARTAS_8" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at pepinosDigitais.sv(82): object "PAR_CARTAS_9" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at pepinosDigitais.sv(83): object "PAR_CARTAS_10" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at pepinosDigitais.sv(123): object "frame" assigned a value but never read
-Warning (10762): Verilog HDL Case Statement warning at pepinosDigitais.sv(160): can't check case statement for completeness because the case expression has too many possible states
-Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "CARTAS" into its bus
+Warning (10036): Verilog HDL or VHDL warning at pepinosDigitais.sv(105): object "frame" assigned a value but never read
+Warning (10762): Verilog HDL Case Statement warning at pepinosDigitais.sv(142): can't check case statement for completeness because the case expression has too many possible states
+Warning (10027): Verilog HDL or VHDL warning at the pepinosDigitais.sv(247): index expression is not wide enough to address all of the elements in the array
 Info (12128): Elaborating entity "clock_25M_divider" for hierarchy "clock_25M_divider:inst_clock_25M"
 Info (12128): Elaborating entity "clock_1Hz_divider" for hierarchy "clock_1Hz_divider:inst_clock_1Hz"
 Info (12128): Elaborating entity "vga" for hierarchy "vga:instancia_vga"
-Warning (10230): Verilog HDL assignment warning at vga.sv(35): truncated value with size 32 to match size of target (10)
-Info (12128): Elaborating entity "randomizer" for hierarchy "randomizer:instancia_randomizer"
-Warning (10036): Verilog HDL or VHDL warning at randomizer.sv(16): object "counter" assigned a value but never read
-Warning (10855): Verilog HDL warning at randomizer.sv(11): initial value for variable k should be constant
-Warning (10855): Verilog HDL warning at randomizer.sv(11): initial value for variable validNumber should be constant
-Warning (10855): Verilog HDL warning at randomizer.sv(11): initial value for variable feedback should be constant
-Warning (10855): Verilog HDL warning at randomizer.sv(11): initial value for variable LFSR should be constant
-Warning (10855): Verilog HDL warning at randomizer.sv(11): initial value for variable randomInt should be constant
-Warning (10855): Verilog HDL warning at randomizer.sv(11): initial value for variable j should be constant
-Warning (10855): Verilog HDL warning at randomizer.sv(11): initial value for variable cardOrder should be constant
-Warning (10034): Output port "cardOrder" at randomizer.sv(3) has no driver
-Warning (12158): Entity "randomizer" contains only dangling pins
+Warning (10230): Verilog HDL assignment warning at vga.sv(33): truncated value with size 32 to match size of target (10)
+Info (278001): Inferred 15 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod1"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod2"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod3"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod0"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod6"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod4"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod5"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod7"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod8"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod10"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod9"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod11"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod12"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod13"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod14"
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod1"
+Info (12133): Instantiated megafunction "lpm_divide:Mod1" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "6"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_bko.tdf
+    Info (12023): Found entity 1: lpm_divide_bko
+Info (12021): Found 1 design units, including 1 entities, in source file db/abs_divider_lbg.tdf
+    Info (12023): Found entity 1: abs_divider_lbg
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_m2f.tdf
+    Info (12023): Found entity 1: alt_u_div_m2f
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_lkc.tdf
+    Info (12023): Found entity 1: add_sub_lkc
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_mkc.tdf
+    Info (12023): Found entity 1: add_sub_mkc
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_abs_hq9.tdf
+    Info (12023): Found entity 1: lpm_abs_hq9
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_abs_0s9.tdf
+    Info (12023): Found entity 1: lpm_abs_0s9
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod2"
+Info (12133): Instantiated megafunction "lpm_divide:Mod2" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "6"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod3"
+Info (12133): Instantiated megafunction "lpm_divide:Mod3" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "6"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod0"
+Info (12133): Instantiated megafunction "lpm_divide:Mod0" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "6"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod6"
+Info (12133): Instantiated megafunction "lpm_divide:Mod6" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "5"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_ako.tdf
+    Info (12023): Found entity 1: lpm_divide_ako
+Info (12021): Found 1 design units, including 1 entities, in source file db/abs_divider_kbg.tdf
+    Info (12023): Found entity 1: abs_divider_kbg
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_k2f.tdf
+    Info (12023): Found entity 1: alt_u_div_k2f
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_abs_gq9.tdf
+    Info (12023): Found entity 1: lpm_abs_gq9
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod4"
+Info (12133): Instantiated megafunction "lpm_divide:Mod4" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "5"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod5"
+Info (12133): Instantiated megafunction "lpm_divide:Mod5" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "5"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod7"
+Info (12133): Instantiated megafunction "lpm_divide:Mod7" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "5"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod8"
+Info (12133): Instantiated megafunction "lpm_divide:Mod8" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "5"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod10"
+Info (12133): Instantiated megafunction "lpm_divide:Mod10" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "5"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod9"
+Info (12133): Instantiated megafunction "lpm_divide:Mod9" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "5"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod11"
+Info (12133): Instantiated megafunction "lpm_divide:Mod11" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_9ko.tdf
+    Info (12023): Found entity 1: lpm_divide_9ko
+Info (12021): Found 1 design units, including 1 entities, in source file db/abs_divider_jbg.tdf
+    Info (12023): Found entity 1: abs_divider_jbg
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_i2f.tdf
+    Info (12023): Found entity 1: alt_u_div_i2f
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_abs_fq9.tdf
+    Info (12023): Found entity 1: lpm_abs_fq9
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod12"
+Info (12133): Instantiated megafunction "lpm_divide:Mod12" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod13"
+Info (12133): Instantiated megafunction "lpm_divide:Mod13" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod14"
+Info (12133): Instantiated megafunction "lpm_divide:Mod14" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "3"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_8ko.tdf
+    Info (12023): Found entity 1: lpm_divide_8ko
+Info (12021): Found 1 design units, including 1 entities, in source file db/abs_divider_ibg.tdf
+    Info (12023): Found entity 1: abs_divider_ibg
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_g2f.tdf
+    Info (12023): Found entity 1: alt_u_div_g2f
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_abs_eq9.tdf
+    Info (12023): Found entity 1: lpm_abs_eq9
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "vga_blank" is stuck at VCC
-Info (17049): 10 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 967 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 24451 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 4 input pins
     Info (21059): Implemented 34 output pins
-    Info (21061): Implemented 929 logic cells
-Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 27 warnings
-    Info: Peak virtual memory: 1175 megabytes
-    Info: Processing ended: Tue Aug 29 20:19:15 2023
-    Info: Elapsed time: 00:00:41
-    Info: Total CPU time (on all processors): 00:00:41
+    Info (21061): Implemented 24413 logic cells
+Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 8 warnings
+    Info: Peak virtual memory: 787 megabytes
+    Info: Processing ended: Thu Aug 31 21:01:27 2023
+    Info: Elapsed time: 00:06:08
+    Info: Total CPU time (on all processors): 00:06:08
 
 

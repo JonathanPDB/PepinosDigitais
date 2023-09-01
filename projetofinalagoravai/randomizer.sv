@@ -5,40 +5,33 @@ module randomizer (
 reg [7:0] LFSR = 255;
 wire feedback;
 parameter repetitions = 100;
-parameter maxTries = 200;
-
+parameter shifts = 10;
+int randomFrom, randomTo;
+int temp;
+int a, b;
 
 initial begin
-	for(int i=0; i<20; i++) begin
-		
-		int randomInt; 
-		logic validNumber = 0;
-		int counter = 0;
-		
-		for(int k=0; k<maxTries; k++) begin
-			validNumber = 1;
-			
-			for(int i=0; i<repetitions; i++) begin		
-				feedback = LFSR[0] ^ LFSR[2] ^LFSR[3] ^ LFSR[4];
-				LFSR <= {LFSR[6:0],feedback};
-			end
-	
-			randomInt = LFSR % 20;
-			
-			for(int j=0; j<20; j++) begin
-				if (cardOrder[j] == randomInt) begin
-					validNumber = 0;
-					break;
-				end
-			end	
-			
-			
-			if(validNumber)
-				break;
-			
-		end
 
-		cardOrder[i] = randomInt;
+	cardOrder = '{0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19};
+	
+	for(int i=0; i<repetitions; i++) begin
+	  for(int j=0; j<shifts; j++) begin		
+		 feedback = LFSR[0] ^ LFSR[2] ^LFSR[3] ^ LFSR[4];
+	    LFSR <= {LFSR[6:0],feedback};
+	  end
+	   
+	  randomFrom = LFSR % 20;
+	  
+	  for(int j=0; j<shifts; j++) begin		
+		 feedback = LFSR[0] ^ LFSR[2] ^LFSR[3] ^ LFSR[4];
+	    LFSR <= {LFSR[6:0],feedback};
+	  end
+	  randomTo = LFSR % 20;
+	  
+	  temp = cardOrder[randomTo];
+	  cardOrder[randomTo] = cardOrder[randomFrom];
+	  cardOrder[randomFrom] = temp;
+			
 	end
 end
 

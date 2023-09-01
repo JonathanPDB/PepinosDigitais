@@ -1,12 +1,12 @@
-Analysis & Synthesis Status : Successful - Tue Aug 29 20:19:15 2023
+Analysis & Synthesis Status : Successful - Thu Aug 31 21:01:27 2023
 Quartus II 32-bit Version : 12.1 Build 243 01/31/2013 SP 1 SJ Web Edition
 Revision Name : pepinosDigitais
 Top-level Entity Name : pepinosDigitais
 Family : Cyclone II
-Total logic elements : 870
-    Total combinational functions : 844
-    Dedicated logic registers : 187
-Total registers : 187
+Total logic elements : 24,247
+    Total combinational functions : 24,226
+    Dedicated logic registers : 350
+Total registers : 350
 Total pins : 38
 Total virtual pins : 0
 Total memory bits : 0

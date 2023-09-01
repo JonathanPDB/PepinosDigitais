@@ -70,19 +70,7 @@ module pepinosDigitais (
   int pos = 0;
   logic clock_1Hz = 0;
   logic gameOver = 0;
-  
-  integer PAR_CARTAS_1[2:0] = '{COLOR_CYAN_r, COLOR_CYAN_g, COLOR_CYAN_b};
-  integer PAR_CARTAS_2[2:0] = '{COLOR_YELLOW_r, COLOR_YELLOW_g, COLOR_YELLOW_b};
-  integer PAR_CARTAS_3[2:0] = '{COLOR_MAGENTA_r, COLOR_MAGENTA_g, COLOR_MAGENTA_b};
-  integer PAR_CARTAS_4[2:0] = '{COLOR_RED_r, COLOR_RED_g, COLOR_RED_b};
-  integer PAR_CARTAS_5[2:0] = '{COLOR_LIME_r, COLOR_LIME_g, COLOR_LIME_b};
-  integer PAR_CARTAS_6[2:0] = '{COLOR_BLUE_r, COLOR_BLUE_g, COLOR_BLUE_b};
-  integer PAR_CARTAS_7[2:0] = '{COLOR_CYAN_r, COLOR_CYAN_g, COLOR_CYAN_b};
-  integer PAR_CARTAS_8[2:0] = '{COLOR_CYAN_r, COLOR_CYAN_g, COLOR_CYAN_b};
-  integer PAR_CARTAS_9[2:0] = '{COLOR_CYAN_r, COLOR_CYAN_g, COLOR_CYAN_b};
-  integer PAR_CARTAS_10[2:0] = '{COLOR_CYAN_r, COLOR_CYAN_g, COLOR_CYAN_b};
-
-  integer CARTAS[9:0][2:0];
+ 
 
   integer POSX_CARTA[4:0] = '{20,144,268,392,516};
   integer POSY_CARTA[3:0] = '{20,135,250,365};
@@ -112,13 +100,7 @@ module pepinosDigitais (
     de
   );
 
-  int cardOrder[20] = '{-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1};//'{7, 4, 16, 6, 18, 19, 5, 17, 2, 0, 10, 9, 12, 8, 11, 3, 1, 13, 15, 14};
-  	
-	randomizer instancia_randomizer (
-  		cardOrder
-  	);
-
-
+	int cardOrder[20];
 
   logic frame;  // high for one clock tick at the start of vertical blanking
   always_comb frame = (sy == SCREEN_HEIGHT && sx == 0);
@@ -250,7 +232,23 @@ module pepinosDigitais (
   int numberOfCardsFlipped = 0;
   logic gameOverFlag = 0;
   
+  logic flag = 1;  
+  int k;
+  int temp;
+  int seed = 0;
+  
   always_ff @ (negedge select) begin
+    if(flag) begin
+		cardOrder = '{0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19};
+	   for(int i=19; i > 0; i--) begin
+		  k = seed % (i + 1);
+		  temp = cardOrder[i];
+		  cardOrder[i] = cardOrder[k];
+		  cardOrder[k] = temp;
+		end
+	   flag = 0;
+	 end
+	
     if(numberOfCardsFlipped == 2) begin
 	   isFlipped = '{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
 		if(cardOrder[cardsFlipped[0]] % 2) begin
@@ -299,6 +297,8 @@ module pepinosDigitais (
 
   // VGA signal output
   always_ff @(posedge clock_25M) begin
+    seed++;
+	 
     vga_hsync = hsync;
     vga_vsync = vsync;
 
