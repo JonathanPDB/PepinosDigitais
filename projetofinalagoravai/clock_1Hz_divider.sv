@@ -10,7 +10,7 @@ module clock_1Hz_divider (
   
   always_ff @(posedge clk_50m) begin
 	 count++;
-	 if (count == 5000000) begin
+	 if (count == 4000000) begin
 		clk_out = ~clk_out;
 		count = 0;
 	 end 

@@ -9,7 +9,7 @@ module pepinosDigitais (
   output logic      [9:0] vga_b,      // 10-bit VGA blue
   output logic            clock_25M,  // 25 MHz clock for the VGA DAC
   output logic            vga_blank,  // VGA DAC blank pin
-  input logic				select,		 // botÃƒÂµes
+  input logic				select,		 // botÃƒÆ’Ã‚Âµes
   input wire logic				move_x,
   input wire logic				move_y
 );
@@ -61,9 +61,11 @@ module pepinosDigitais (
   parameter COLOR_BROWN_b = 10'd0;
 
   parameter LARGURA_CARTA = 104;
-  parameter ALTURA_CARTA = 95;
+  parameter ALTURA_CARTA = 85;
   parameter ESPACAMENTO_CARTAS = 20;
   parameter OFFSET = 26;
+  parameter LARGURA_VIDA = 15;
+  parameter VIDAS_INICIAL = 10;
 
   logic isFlipped[20] = '{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
   logic isOut[20] = '{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
@@ -73,7 +75,7 @@ module pepinosDigitais (
  
 
   integer POSX_CARTA[4:0] = '{20,144,268,392,516};
-  integer POSY_CARTA[3:0] = '{20,135,250,365};
+  integer POSY_CARTA[3:0] = '{80,175,270,365};
 
   clock_25M_divider inst_clock_25M (
     clock_50M,
@@ -101,6 +103,7 @@ module pepinosDigitais (
   );
 
 	int cardOrder[20];
+	int vidas;
 
   logic frame;  // high for one clock tick at the start of vertical blanking
   always_comb frame = (sy == SCREEN_HEIGHT && sx == 0);
@@ -112,6 +115,8 @@ module pepinosDigitais (
     vga_hsync = 1'b1;
     vga_vsync = 1'b1;
     vga_blank = 1'b1;
+	 
+	 vidas = VIDAS_INICIAL;
   end
 
 
@@ -122,7 +127,13 @@ module pepinosDigitais (
     paint_r = COLOR_BLACK;
     paint_g = COLOR_BLACK;
     paint_b = COLOR_BLACK;
-
+	 
+	 if (sx > 30 && sx < (LARGURA_VIDA*(vidas)+30) && sy > 30 && sy < 50) begin
+		paint_r = COLOR_GRAY;
+		paint_g = COLOR_GRAY;
+		paint_b = COLOR_GRAY;
+	 end
+	 
     cardPos = 0;
     for(int i=0;i<5;i++) begin
       for(int j=0;j<4;j++) begin
@@ -235,7 +246,7 @@ module pepinosDigitais (
   logic flag = 1;  
   int k;
   int temp;
-  int seed = 0;
+  int seed = 2222;
   
   always_ff @ (negedge select) begin
     if(flag) begin
@@ -256,13 +267,17 @@ module pepinosDigitais (
 				 isOut[cardsFlipped[0]] = 1;
 				 isOut[cardsFlipped[1]] = 1;
 			 end
-		  end
-		  else begin
+		end
+		else begin
 		    if((cardOrder[cardsFlipped[0]] + 1) == cardOrder[cardsFlipped[1]]) begin
 				 isOut[cardsFlipped[0]] = 1;
 				 isOut[cardsFlipped[1]] = 1;
 			 end
-		  end
+		end
+		
+		if(!isOut[cardsFlipped[0]]) begin
+			vidas--;
+		end
 	 end
 	 
 	 numberOfCardsFlipped = 0;
@@ -273,7 +288,7 @@ module pepinosDigitais (
 
       for(int i=0; i<20; i++) begin
         if(isFlipped[i]) begin 
-          cardsFlipped[numberOfCardsFlipped] = i;//[0] = 0    [1] = 3
+          cardsFlipped[numberOfCardsFlipped] = i;
           numberOfCardsFlipped ++;
         end
       end
@@ -281,7 +296,7 @@ module pepinosDigitais (
 	 
 	 gameOverFlag = 1;
 	 for(int i=0; i<20; i++) begin
-	   if(!isOut[i]) begin
+	   if(!isOut[i] && vidas) begin
 			gameOverFlag = 0;
 			break;
 		end
@@ -290,6 +305,7 @@ module pepinosDigitais (
 	 if(gameOverFlag) begin
 	   isOut =  '{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
 	   isFlipped = '{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+		vidas=VIDAS_INICIAL;
 	 end
 
   end
@@ -297,7 +313,7 @@ module pepinosDigitais (
 
   // VGA signal output
   always_ff @(posedge clock_25M) begin
-    seed++;
+    //seed++;
 	 
     vga_hsync = hsync;
     vga_vsync = vsync;
