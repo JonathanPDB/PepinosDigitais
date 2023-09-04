@@ -28,9 +28,9 @@ module vga (
 
   // calculate horizontal and vertical screen position
   always_ff @(posedge clk) begin
-    if (sx == LINE) begin  // last pixel on line?
+    if (sx == LINE) begin 
       sx <= 0;
-      sy <= (sy == SCREEN) ? 0 : sy + 1'd1;  // last line on screen?
+      sy <= (sy == SCREEN) ? 0 : sy + 1'd1;
     end else begin
       sx <= sx + 1'd1;
     end

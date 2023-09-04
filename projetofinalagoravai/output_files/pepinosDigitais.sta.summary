@@ -3,35 +3,35 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow Model Setup 'select'
-Slack : -25.650
-TNS   : -1894.037
+Slack : -128.390
+TNS   : -22838.400
 
 Type  : Slow Model Setup 'clock_25M_divider:inst_clock_25M|clk_out'
-Slack : -12.134
-TNS   : -357.226
+Slack : -16.841
+TNS   : -508.723
 
-Type  : Slow Model Setup 'clock_1Hz_divider:inst_clock_1Hz|clk_out'
-Slack : -7.505
-TNS   : -218.490
+Type  : Slow Model Setup 'clock_divider_6_25Hz:inst_clock_6_25Hz|clk_out'
+Slack : -7.684
+TNS   : -229.105
 
 Type  : Slow Model Setup 'clock_50M'
-Slack : -7.116
-TNS   : -228.138
+Slack : -7.067
+TNS   : -228.078
 
 Type  : Slow Model Hold 'clock_50M'
 Slack : -2.558
-TNS   : -5.097
-
-Type  : Slow Model Hold 'clock_25M_divider:inst_clock_25M|clk_out'
-Slack : 0.812
-TNS   : 0.000
+TNS   : -5.085
 
 Type  : Slow Model Hold 'select'
-Slack : 0.935
+Slack : 0.391
 TNS   : 0.000
 
-Type  : Slow Model Hold 'clock_1Hz_divider:inst_clock_1Hz|clk_out'
-Slack : 1.279
+Type  : Slow Model Hold 'clock_25M_divider:inst_clock_25M|clk_out'
+Slack : 0.539
+TNS   : 0.000
+
+Type  : Slow Model Hold 'clock_divider_6_25Hz:inst_clock_6_25Hz|clk_out'
+Slack : 1.094
 TNS   : 0.000
 
 Type  : Slow Model Minimum Pulse Width 'clock_50M'
@@ -40,46 +40,46 @@ TNS   : -67.380
 
 Type  : Slow Model Minimum Pulse Width 'select'
 Slack : -1.222
-TNS   : -100.222
+TNS   : -201.222
 
 Type  : Slow Model Minimum Pulse Width 'clock_25M_divider:inst_clock_25M|clk_out'
 Slack : -0.500
-TNS   : -52.000
+TNS   : -84.000
 
-Type  : Slow Model Minimum Pulse Width 'clock_1Hz_divider:inst_clock_1Hz|clk_out'
+Type  : Slow Model Minimum Pulse Width 'clock_divider_6_25Hz:inst_clock_6_25Hz|clk_out'
 Slack : -0.500
 TNS   : -32.000
 
 Type  : Fast Model Setup 'select'
-Slack : -10.533
-TNS   : -786.340
+Slack : -56.813
+TNS   : -10064.493
 
 Type  : Fast Model Setup 'clock_25M_divider:inst_clock_25M|clk_out'
-Slack : -5.105
-TNS   : -132.452
+Slack : -7.123
+TNS   : -195.640
+
+Type  : Fast Model Setup 'clock_divider_6_25Hz:inst_clock_6_25Hz|clk_out'
+Slack : -2.963
+TNS   : -88.190
 
 Type  : Fast Model Setup 'clock_50M'
-Slack : -2.938
-TNS   : -80.411
-
-Type  : Fast Model Setup 'clock_1Hz_divider:inst_clock_1Hz|clk_out'
-Slack : -2.900
-TNS   : -82.802
+Slack : -2.918
+TNS   : -80.548
 
 Type  : Fast Model Hold 'clock_50M'
-Slack : -1.598
-TNS   : -3.181
-
-Type  : Fast Model Hold 'clock_25M_divider:inst_clock_25M|clk_out'
-Slack : 0.362
-TNS   : 0.000
+Slack : -1.599
+TNS   : -3.171
 
 Type  : Fast Model Hold 'select'
-Slack : 0.412
+Slack : 0.215
 TNS   : 0.000
 
-Type  : Fast Model Hold 'clock_1Hz_divider:inst_clock_1Hz|clk_out'
-Slack : 0.589
+Type  : Fast Model Hold 'clock_25M_divider:inst_clock_25M|clk_out'
+Slack : 0.246
+TNS   : 0.000
+
+Type  : Fast Model Hold 'clock_divider_6_25Hz:inst_clock_6_25Hz|clk_out'
+Slack : 0.507
 TNS   : 0.000
 
 Type  : Fast Model Minimum Pulse Width 'clock_50M'
@@ -88,13 +88,13 @@ TNS   : -67.380
 
 Type  : Fast Model Minimum Pulse Width 'select'
 Slack : -1.222
-TNS   : -100.222
+TNS   : -201.222
 
 Type  : Fast Model Minimum Pulse Width 'clock_25M_divider:inst_clock_25M|clk_out'
 Slack : -0.500
-TNS   : -52.000
+TNS   : -84.000
 
-Type  : Fast Model Minimum Pulse Width 'clock_1Hz_divider:inst_clock_1Hz|clk_out'
+Type  : Fast Model Minimum Pulse Width 'clock_divider_6_25Hz:inst_clock_6_25Hz|clk_out'
 Slack : -0.500
 TNS   : -32.000
 

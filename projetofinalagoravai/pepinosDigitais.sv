@@ -9,9 +9,9 @@ module pepinosDigitais (
   output logic      [9:0] vga_b,      // 10-bit VGA blue
   output logic            clock_25M,  // 25 MHz clock for the VGA DAC
   output logic            vga_blank,  // VGA DAC blank pin
-  input logic				select,		 // botÃƒÆ’Ã‚Âµes
-  input wire logic				move_x,
-  input wire logic				move_y
+  input logic				select,		 // botao selecionar
+  input wire logic				move_x, // botao direita
+  input wire logic				move_y // botao cima
 );
   parameter SCREEN_WIDTH = 10'd640;
   parameter SCREEN_HEIGHT = 10'd480;
@@ -70,7 +70,7 @@ module pepinosDigitais (
   logic isFlipped[20] = '{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
   logic isOut[20] = '{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
   int pos = 0;
-  logic clock_1Hz = 0;
+  logic clock_6_25Hz = 0;
   logic gameOver = 0;
  
 
@@ -83,9 +83,9 @@ module pepinosDigitais (
     clock_25M
   );
   
-  clock_1Hz_divider inst_clock_1Hz (
+  clock_divider_6_25Hz inst_clock_6_25Hz (
     clock_50M,
-    clock_1Hz
+    clock_6_25Hz
   );
 
   logic [9:0] sx;
@@ -129,9 +129,9 @@ module pepinosDigitais (
     paint_b = COLOR_BLACK;
 	 
 	 if (sx > 30 && sx < (LARGURA_VIDA*(vidas)+30) && sy > 30 && sy < 50) begin
-		paint_r = COLOR_GRAY;
-		paint_g = COLOR_GRAY;
-		paint_b = COLOR_GRAY;
+		paint_r = COLOR_RED_r;
+		paint_g = COLOR_RED_g;
+		paint_b = COLOR_RED_b;
 	 end
 	 
     cardPos = 0;
@@ -223,7 +223,7 @@ module pepinosDigitais (
   end
 
 
-  always_ff @ (posedge clock_1Hz) begin
+  always_ff @ (posedge clock_6_25Hz) begin
     if (!move_y) begin
       if(((pos+1) % 4) == 0)
         pos = pos - 3;
@@ -313,7 +313,7 @@ module pepinosDigitais (
 
   // VGA signal output
   always_ff @(posedge clock_25M) begin
-    //seed++;
+    seed++;
 	 
     vga_hsync = hsync;
     vga_vsync = vsync;
